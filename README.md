@@ -32,7 +32,7 @@ npm run build
 # 安装
 npm i
 
-# 启动
+# 启动(win下会报错)
 npm run pm2 || pm2 start npm --name blog-client -- start
 
 # 重启
@@ -58,8 +58,6 @@ blog-client
   static
   store
   .editorconfig
-  .eslintrc.js
-  .prettierrc
   nuxt.config.js
   package.json
 
