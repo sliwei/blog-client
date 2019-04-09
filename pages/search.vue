@@ -1,0 +1,202 @@
+<template>
+  <div class="index">
+    <div class="search">
+      <div class="keyword" v-if="parameter.keyword">
+        关键字：{{parameter.keyword}}
+      </div>
+
+      <div class="item" v-for="(item, i) in users.list" :key="i">
+        <div class="time">
+          <div class="day">{{getDay(item.create_time)}}</div>
+          <div class="year">{{getYear(item.create_time)}}</div>
+        </div>
+        <div class="txt">
+          <div class="title">
+            <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
+          </div>
+          <div class="info">
+            <i class="iconfont a-blog-date"></i>
+            <span>{{getTime(item.create_time)}}</span>
+            <i class="iconfont a-blog-address"></i>
+            <span>重庆 {{item.user_name}}</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <awei-page url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter"/>
+    <awei-back-top/>
+  </div>
+</template>
+
+<script>
+  import Page from '~/components/Page.vue'
+  import BackTop from '~/components/BackTop.vue'
+  import Tool from '~/assets/Tool'
+
+  export default {
+    components: {
+      'awei-page': Page,
+      'awei-back-top': BackTop,
+    },
+    async asyncData({app, route, error}) {
+      let keyword = route.query.keyword || '';
+      // keyword = keyword ? encodeURIComponent(keyword) : '';
+      // console.log(keyword);
+      const {data} = await app.$axios.get(`/blog/client/blog/search?keyword=${encodeURIComponent(keyword)}&pageIndex=${route.query.pageIndex || 1}&pageSize=8`);
+      if (!data.data) {
+        error({message: '你访问的页面不存在', statusCode: 404});
+        return;
+      }
+      let parameter = {
+        keyword: keyword
+      };
+      return {users: data.data, parameter: parameter}
+    },
+    methods: {
+      getDay(time) {
+        // let nTime = new Date(time);
+        // let day = nTime.getDate();
+        // day = day < 10 ? `0${day}` : day;
+        // return day;
+        return Tool.formatDate(time, 'DD');
+      },
+      getYear(time) {
+        // let nTime = new Date(time);
+        // let year = nTime.getFullYear();
+        // let mon = nTime.getMonth() + 1;
+        // mon = mon < 10 ? `0${mon}` : mon;
+        // return `${year}/${mon}`;
+        return Tool.formatDate(time, 'YYYY/MM');
+
+      },
+      getTime(time) {
+        // let nTime = new Date(time);
+        // let year = nTime.getFullYear();
+        // let mon = nTime.getMonth() + 1;
+        // mon = mon < 10 ? `0${mon}` : mon;
+        // let day = nTime.getDate();
+        // day = day < 10 ? `0${day}` : day;
+        // return `${year}/${mon}/${day}`;
+        return Tool.formatDate(time, 'hh:mm');
+      }
+    },
+    head() {
+      return {
+        title: `${this.parameter.keyword} | 布什兔 | bstu.cn`,
+        meta: [
+          { hid: 'description', name: 'description', content: `` },
+          { hid: 'author', content: 'awei' }
+        ]
+      }
+    },
+  }
+</script>
+<style lang="less" scoped>
+  * {
+    transition: all .3s;
+  }
+
+  .index {
+    width: 1028px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    .keyword {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+
+    .item {
+      width: 100%;
+      padding: 0;
+      background: rgba(249, 250, 252, 1);
+      margin-bottom: 60px;
+      display: flex;
+      &:hover {
+        box-shadow: 0 0 0 10px #f1f1f1;
+      }
+      .time {
+        width: 160px;
+        height: 160px;
+        background: rgba(53, 204, 98, 1);
+        padding: 40px 0;
+        text-align: center;
+        color: #ffffff;
+        .day {
+          font-size: 50px;
+          font-family: Montserrat-Regular;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 1);
+        }
+        .year {
+          font-size: 14px;
+          font-family: Montserrat-Medium;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 1);
+          opacity: 0.8;
+        }
+      }
+      .txt {
+        padding: 40px;
+        flex: 1;
+        .info {
+          margin-top: 10px;
+          margin-left: -8px;
+          span {
+            font-size: 14px;
+            font-family: Montserrat-Medium;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 23px;
+            vertical-align: middle;
+          }
+          i {
+            font-size: 30px;
+            vertical-align: middle;
+          }
+        }
+        .title {
+          a {
+            font-size: 28px;
+            font-family: Montserrat-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+            line-height: 32px;
+            text-decoration: none;
+            &:hover {
+              color: #35CC62;
+            }
+          }
+        }
+        .more {
+          display: inline-block;
+          margin-top: 20px;
+          &:hover {
+            a, i {
+              color: #35CC62;
+            }
+          }
+          a {
+            font-size: 14px;
+            font-family: Montserrat-Medium;
+            font-weight: 500;
+            line-height: 14px;
+            color: #999999;
+            vertical-align: middle;
+          }
+          i {
+            color: #999999;
+            font-size: 20px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+
+</style>
