@@ -14,7 +14,7 @@
         </div>
 
         <div class="menu">-
-          <a target="_blank" href="http://lws.bstu.cn">写博客</a>
+          <a target="_blank" href="http://manage.bstu.cn">写博客</a>
           <a target="_blank" href="http://chat.bstu.cn">聊天室</a>
           <a target="_blank" href="http://music.bstu.cn">吉姆音乐厅</a>
           <a target="_blank" href="https://yun.bstu.cn">在线云盘</a>
