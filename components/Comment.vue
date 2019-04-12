@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="item">
-        <p>邮箱 <span class="txt">(您的邮箱将不会泄露)</span></p>
+        <p class="email">邮箱</p>
         <div class="sub">
           <input v-model="mail" v-validate="'email'" name="邮箱" type="text" placeholder="请输入邮箱地址">
           <span>{{ errors.first('邮箱') }}</span>
@@ -85,12 +85,26 @@
 </script>
 <style lang="less" scoped>
 
+  @media only screen and (max-width: 580px) {
+    .comment {
+      .forms {
+        display: initial !important;
+
+        .item {
+          margin-right: 0 !important;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
   .comment {
     /*width: 1028px;*/
-    width: 680px;
-    margin: 50px auto;
+    /*width: 680px;*/
+
     .title {
-      margin: 40px 0;
+      margin: 0 0 40px 0;
+
       span {
         font-size: 28px;
         font-family: Montserrat-Regular;
@@ -99,27 +113,48 @@
         line-height: 46px;
       }
     }
+
     .forms {
       display: flex;
       margin-bottom: 30px;
+
       .item {
         flex: 1;
         margin-right: 32px;
+
         &:last-child {
           margin-right: 0;
         }
+
         p {
           font-size: 14px;
           font-family: Montserrat-Medium;
           font-weight: 500;
           color: rgba(51, 51, 51, 1);
           margin: 0 0 20px 0;
+
           .txt {
             color: #999999;
           }
+
+          &.email {
+            position: relative;
+
+            &:after {
+              content: '您的邮箱将不会泄露';
+              display: block;
+              position: absolute;
+              top: 18px;
+              left: 0;
+              font-size: 12px;
+              color: #a1a1a1;
+            }
+          }
         }
+
         .sub {
           position: relative;
+
           input {
             color: #333333;
             width: 100%;
@@ -129,12 +164,14 @@
             text-indent: 10px;
             font-size: 16px;
             transition: all .35s;
+
             &:focus {
               outline: none;
               border: 2px solid #35CC62;
               box-shadow: 0 0 2px #49fb7e;
             }
           }
+
           textarea {
             color: #333333;
             padding: 5px;
@@ -146,12 +183,14 @@
             resize: vertical;
             transition: all .35s;
             font-family: Arial;
+
             &:focus {
               outline: none;
               border: 2px solid #35CC62;
               box-shadow: 0 0 2px #49fb7e;
             }
           }
+
           span {
             position: absolute;
             display: block;
@@ -162,8 +201,10 @@
         }
       }
     }
+
     .btn {
       text-align: center;
+
       button {
         cursor: pointer;
         width: 202px;

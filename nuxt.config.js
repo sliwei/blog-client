@@ -15,7 +15,7 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_dznoaug96n.css'},
+      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_krocfgj5jgq.css'},
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -34,6 +34,9 @@ module.exports = {
     script: [
       // {src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js'},
       {src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'},
+      {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
+      {src: 'http://www.jq22.com/demo/scrollfix-master20160821/js/scrollfix.js'},
+      // {src: '~/assets/toTop.js'},
     ],
   },
 
@@ -58,6 +61,8 @@ module.exports = {
       {src: '~plugins/message', ssr: false},
       '~/plugins/axios',
       '~/plugins/validate',
+      {src: '~/assets/toTop', ssr: false},
+      // {src: '~/assets/navfix', ssr: false},
     ],
 
   /*

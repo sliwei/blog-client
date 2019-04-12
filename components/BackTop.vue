@@ -48,6 +48,7 @@
     right: 100px;
     width: 50px;
     cursor: pointer;
+
     img {
       width: 50px;
     }

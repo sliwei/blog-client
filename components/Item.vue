@@ -4,8 +4,9 @@
       <div class="item">
         <div class="head">
           <div class="head_img">
-            <img :src="item.c_user.head_img  || 'http://bstu.oss-cn-shenzhen.aliyuncs.com/9.jpg?x-oss-process=style/bstu.cn'"
-                 alt="">
+            <img
+              :src="item.c_user.head_img  || 'http://bstu.oss-cn-shenzhen.aliyuncs.com/9.jpg?x-oss-process=style/bstu.cn'"
+              alt="">
           </div>
         </div>
         <div class="main">
@@ -49,38 +50,47 @@
   ul {
     padding: 0 0 10px 0;
     margin: 0;
+
     li {
       /*margin-bottom: 60px;*/
       list-style: none;
+
       .item {
         margin-bottom: 60px;
         display: flex;
+
         .head {
           width: 80px;
           height: 80px;
+
           img {
             width: 80px;
             height: 80px;
             border-radius: 40px;
           }
         }
+
         .main {
           flex: 1;
           margin-left: 40px;
+
           .info {
             &:after {
               content: '';
               display: block;
               clear: both;
             }
+
             .data {
               float: left;
+
               .name {
                 font-size: 16px;
                 font-family: Montserrat-Regular;
                 font-weight: 400;
                 color: rgba(51, 51, 51, 1);
               }
+
               .time {
                 margin-top: 10px;
                 font-size: 14px;
@@ -89,25 +99,30 @@
                 color: rgba(153, 153, 153, 1);
               }
             }
+
             .reply {
               float: right;
+
               a {
                 text-decoration: none;
                 font-size: 14px;
                 font-family: Montserrat-Medium;
                 font-weight: 500;
                 color: rgba(51, 51, 51, 1);
+
                 &:hover {
                   color: rgba(53, 204, 98, 1);
                 }
               }
             }
           }
+
           .cont {
             margin-top: 20px;
           }
         }
       }
+
       .more {
         margin-left: 120px;
 

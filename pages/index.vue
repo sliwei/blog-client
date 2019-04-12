@@ -30,29 +30,19 @@
         </div>
         <awei-page url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
       </div>
-      <div class="right">
-        <div class="search">
-          <form action="javascript:return true;">
-            <input @keyup.13="search" type="text" v-model="searchVal" placeholder="关键字">
-          </form>
-          <i class="iconfont a-blog-search" @click="search"></i>
-        </div>
-      </div>
+
       <!--<div class="rights"></div>-->
     </div>
-    <awei-back-top/>
   </div>
 </template>
 
 <script>
   import Page from '~/components/Page.vue'
-  import BackTop from '~/components/BackTop.vue'
   import Tool from '~/assets/Tool'
 
   export default {
     components: {
       'awei-page': Page,
-      'awei-back-top': BackTop,
     },
     data() {
       return {
@@ -78,11 +68,19 @@
     },
     head() {
       return {
-        title:'先天之智，后天修为 | 布什兔 | bstu.cn',
-        meta:[
-          {hid:'description',name:'description',content:'李维(awei,sliwei)个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'},
-          {hid:'keywords',name:'keywords',content:'李维,awei,sliwei,互联网,自媒体,李维博客,新鲜科技,科技博客,Bstu,独立博客,个人博客,原创博客,前端,前端开发,全栈,全栈开发,react,reactjs,next,nextjs,nuxt,nuxtjs,vue,vuejs'},
-          {hid:'author',content:'awei'}
+        title: '先天之智，后天修为 | 布什兔 | bstu.cn',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: '李维(awei,sliwei)个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'
+          },
+          {
+            hid: 'keywords',
+            name: 'keywords',
+            content: '李维,awei,sliwei,互联网,自媒体,李维博客,新鲜科技,科技博客,Bstu,独立博客,个人博客,原创博客,前端,前端开发,全栈,全栈开发,react,reactjs,next,nextjs,nuxt,nuxtjs,vue,vuejs'
+          },
+          {hid: 'author', content: 'awei'}
         ]
       }
     },
@@ -95,52 +93,64 @@
 
   .index {
     /*width: 1240px;*/
-    width: 960px;
+    /*width: 960px;*/
     margin: 0 auto;
-    padding: 50px 0;
+
     .cont {
       display: flex;
+
       .lefts {
         width: 118px;
       }
+
       .left {
-        width: 680px;
+        /*width: 680px;*/
+
         .list {
           &:after {
             content: '';
             display: block;
             clear: both;
           }
+
           .item {
-            width: 320px;
+            width: 100%;
             /*padding: 0 0 20px 0;*/
             float: left;
             margin-right: 20px;
             margin-bottom: 20px;
-            background-color: #f9f9f9;
+            /*background-color: #f9f9f9;*/
             padding: 20px 10px;
+
+            background-color: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+
             &:hover {
-              box-shadow: 0 0 0 10px #f1f1f1;
+              /*box-shadow: 0 0 0 10px #f1f1f1;*/
             }
+
             &:nth-child(2n) {
               margin-right: 0;
             }
+
             .img {
               margin: 0 auto;
-              width: 280px;
-              height: 120px;
               overflow: hidden;
               text-align: center;
+
               img {
                 height: 120px;
               }
             }
+
             .txt {
               padding: 0 20px;
-              width: 320px;
+
               .info {
                 margin-top: 20px;
                 margin-left: -8px;
+
                 span {
                   font-size: 14px;
                   font-family: Montserrat-Medium;
@@ -149,14 +159,16 @@
                   line-height: 23px;
                   vertical-align: middle;
                 }
+
                 i {
                   font-size: 30px;
                   vertical-align: middle;
                 }
               }
+
               .title {
                 margin-top: 10px;
-                min-height: 64px;
+
                 a {
                   font-size: 20px;
                   font-family: Montserrat-Regular;
@@ -164,19 +176,23 @@
                   color: rgba(51, 51, 51, 1);
                   line-height: 32px;
                   text-decoration: none;
+
                   &:hover {
                     color: #35CC62;
                   }
                 }
               }
+
               .more {
                 display: inline-block;
                 margin-top: 20px;
+
                 &:hover {
                   a, i {
                     color: #35CC62;
                   }
                 }
+
                 a {
                   font-size: 14px;
                   font-family: Montserrat-Medium;
@@ -185,6 +201,7 @@
                   color: #999999;
                   vertical-align: middle;
                 }
+
                 i {
                   color: #999999;
                   font-size: 20px;
@@ -195,11 +212,14 @@
           }
         }
       }
+
       .right {
         width: 280px;
         padding: 0 20px;
+
         .search {
           position: relative;
+
           input {
             width: 240px;
             height: 48px;
@@ -210,12 +230,14 @@
             font-size: 16px;
             color: #333333;
             transition: all .35s;
+
             &:focus {
               outline: none;
               border: 2px solid #35CC62;
               box-shadow: 0 0 2px #49fb7e;
             }
           }
+
           i {
             cursor: pointer;
             position: absolute;
@@ -223,12 +245,14 @@
             right: 8px;
             font-size: 42px;
             color: #999;
+
             &:hover {
               color: #35CC62 !important;
             }
           }
         }
       }
+
       .rights {
         width: 118px;
       }

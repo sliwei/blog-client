@@ -10,7 +10,8 @@
 
     <a class="ban" href="javascript:;" v-if="left">...</a>
 
-    <a :href="retUrl(index)" :class="{active: index === pageIndex}" v-for="(index, i) in showPage()" :key="i">{{index}}</a>
+    <a :href="retUrl(index)" :class="{active: index === pageIndex}" v-for="(index, i) in showPage()"
+       :key="i">{{index}}</a>
 
     <a class="ban" href="javascript:;" v-if="right">...</a>
 
@@ -56,7 +57,7 @@
         for (let key in obj) {
           str += `${key}=${obj[key]}&`;
         }
-        str = str.slice(0, str.length-1);
+        str = str.slice(0, str.length - 1);
         return str;
       },
       showPage() {
@@ -79,7 +80,12 @@
   }
 
   .page {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    padding: 20px;
     text-align: center;
+
     a {
       text-align: center;
       width: 30px;
@@ -91,9 +97,11 @@
       margin: 10px 5px;
       position: relative;
       text-decoration: none;
+
       &.active {
         color: #35CC62;
         font-weight: bold;
+
         &:after {
           content: '';
           display: block;
@@ -105,15 +113,19 @@
           left: calc(50% - 15px);
         }
       }
+
       &:hover:not(.ban) {
         color: #35CC62;
+
         span {
           color: #35CC62;
         }
+
         i {
           color: #35CC62;
         }
       }
+
       span {
         font-size: 14px;
         font-family: Montserrat-Medium;
@@ -121,14 +133,17 @@
         color: rgba(51, 51, 51, 1);
         line-height: 14px;
       }
+
       i {
         font-size: 30px;
         vertical-align: middle;
       }
     }
+
     .prev, .next {
       width: 100px;
     }
+
     .ban {
       cursor: initial;
     }
