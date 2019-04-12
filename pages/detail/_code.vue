@@ -1,67 +1,62 @@
 <template>
   <div>
     <div class="cont">
-      <div>
-        <div class="index">
-          <div>
+      <div class="index">
+        <div class="first">
+          <img :src="data.img" alt="">
+        </div>
+        <div class="content">
+          <div class="title">
             <h1>{{data.title}}</h1>
           </div>
-          <br>
           <div class="time">
-            <span>{{getTime(data.time)}}</span>
+            <span>发表于 - <span class="txt">{{getTime(data.time)}}</span></span>
           </div>
-
-          <div class="first">
-            <img :src="data.img" alt="">
-          </div>
-
           <div v-html="data.content" class="markdown-body"></div>
         </div>
-        <div class="neighbor">
-          <div class="left" v-if="neighbor.front.code">
-            <div class="txt">
-              <i class="iconfont a-blog-left"></i>
-              <span>上一篇</span>
-            </div>
-            <div>
-              <nuxt-link :to="`/detail/${neighbor.front.code}`">{{neighbor.front.title}}</nuxt-link>
-            </div>
+      </div>
+
+      <div class="neighbor">
+        <div class="left" v-if="neighbor.front.code">
+          <div class="txt">
+            <i class="iconfont a-blog-left"></i>
+            <span>上一篇</span>
           </div>
-          <div class="right" v-if="neighbor.after.code">
-            <div class="txt">
-              <span>下一篇</span>
-              <i class="iconfont a-blog-right"></i>
-            </div>
-            <div>
-              <nuxt-link :to="`/detail/${neighbor.after.code}`">{{neighbor.after.title}}</nuxt-link>
-            </div>
+          <div>
+            <nuxt-link :to="`/detail/${neighbor.front.code}`">{{neighbor.front.title}}</nuxt-link>
           </div>
-          <i class="line" v-if="neighbor.after.code && neighbor.front.code"></i>
         </div>
+        <div class="right" v-if="neighbor.after.code">
+          <div class="txt">
+            <span>下一篇</span>
+            <i class="iconfont a-blog-right"></i>
+          </div>
+          <div>
+            <nuxt-link :to="`/detail/${neighbor.after.code}`">{{neighbor.after.title}}</nuxt-link>
+          </div>
+        </div>
+        <i class="line" v-if="neighbor.after.code && neighbor.front.code"></i>
+      </div>
+      <div class="detail-evaluate">
         <awei-evaluate :b_id="data.id" :evaluate="evaluate"/>
+      </div>
+      <div class="detail-comment">
         <awei-comment :b_id="data.id"/>
       </div>
-      <div class="nav">
-        <awei-nav/>
-      </div>
+
     </div>
-    <awei-back-top/>
   </div>
 </template>
 
 <script>
   import Evaluate from '~/components/Evaluate.vue'
   import Comment from '~/components/Comment.vue'
-  import Nav from '~/components/Nav.vue'
-  import BackTop from '~/components/BackTop.vue'
   import Tool from '~/assets/Tool'
 
   export default {
     components: {
       'awei-evaluate': Evaluate,
       'awei-comment': Comment,
-      'awei-nav': Nav,
-      'awei-back-top': BackTop
     },
     async asyncData({app, route, error}) {
       const {data} = await app.$axios.get(`/blog/client/blog/detail?code=${route.params.code}`)
@@ -93,7 +88,7 @@
     },
     methods: {
       getTime(time) {
-        return Tool.formatDate(time, 'YYYY-MM-DD hh:mm')
+        return Tool.formatDate(time, 'YY年MM月DD日hh时mm分')
       }
     },
     head() {
@@ -113,45 +108,78 @@
   }
 
   .cont {
-    /*width: 1240px;*/
-    width: 960px;
-    margin: 0 auto;
-    display: flex;
 
     .index {
-      /*width: 1028px;*/
-      width: 680px;
-      padding: 50px 0;
+      .first {
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        img {
+          float: left;
+          max-width: 100%;
+          width: 100%;
+          max-height: 100%;
+          height: 100%;
+          border-radius: 4px 4px 0 0;
+        }
+      }
+
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+      margin-bottom: 20px;
 
       .time {
         color: #666666;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #eaecef;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #35CC62;
         margin-bottom: 20px;
+        font-size: 12px;
+        text-align: right;
+
+        .txt {
+          color: #35CC62;
+        }
       }
 
-      .first {
-        margin-bottom: 20px;
-        img {
-          max-width: 100%;
-          border: 10px solid #f1f1f1;
+      .content {
+        padding: 20px;
+
+        .title {
+          h1 {
+            color: #333333;
+          }
+        }
+
+        .markdown-body {
+          /deep/ pre {
+            padding: 0 !important;
+          }
+
         }
       }
     }
 
     .nav {
+      display: none;
       width: 280px;
     }
   }
 
 
   .neighbor {
-    margin: 0 auto;
     display: flex;
     /*width: 1028px;*/
-    width: 680px;
-    background: #efefef;
+    /*width: 680px;*/
     position: relative;
+
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
 
     .left {
       flex: 1;
@@ -206,5 +234,20 @@
       background: rgba(0, 0, 0, 1);
       opacity: 0.1;
     }
+  }
+
+  .detail-evaluate {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .detail-comment {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    padding: 20px;
   }
 </style>

@@ -26,19 +26,16 @@
 
     </div>
     <awei-page url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter"/>
-    <awei-back-top/>
   </div>
 </template>
 
 <script>
   import Page from '~/components/Page.vue'
-  import BackTop from '~/components/BackTop.vue'
   import Tool from '~/assets/Tool'
 
   export default {
     components: {
       'awei-page': Page,
-      'awei-back-top': BackTop,
     },
     async asyncData({app, route, error}) {
       let keyword = route.query.keyword || '';
@@ -86,8 +83,8 @@
       return {
         title: `${this.parameter.keyword} | 布什兔 | bstu.cn`,
         meta: [
-          { hid: 'description', name: 'description', content: `` },
-          { hid: 'author', content: 'awei' }
+          {hid: 'description', name: 'description', content: ``},
+          {hid: 'author', content: 'awei'}
         ]
       }
     },
@@ -99,39 +96,51 @@
   }
 
   .index {
-    width: 1028px;
+    /*width: 1028px;*/
     margin: 0 auto;
-    padding: 100px 0;
 
     .keyword {
-      font-size: 28px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #666666;
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+      padding: 20px;
     }
 
     .item {
       width: 100%;
       padding: 0;
-      background: rgba(249, 250, 252, 1);
-      margin-bottom: 60px;
+      /*background: rgba(249, 250, 252, 1);*/
+      margin-bottom: 20px;
       display: flex;
+
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+
       &:hover {
-        box-shadow: 0 0 0 10px #f1f1f1;
+        /*box-shadow: 0 0 0 10px #f1f1f1;*/
       }
+
       .time {
-        width: 160px;
-        height: 160px;
+        border-radius: 4px 0 0 4px;
+        width: 125px;
+        min-height: 125px;
         background: rgba(53, 204, 98, 1);
-        padding: 40px 0;
+        padding: 20px 0;
         text-align: center;
         color: #ffffff;
+
         .day {
           font-size: 50px;
           font-family: Montserrat-Regular;
           font-weight: 400;
           color: rgba(255, 255, 255, 1);
         }
+
         .year {
           font-size: 14px;
           font-family: Montserrat-Medium;
@@ -140,12 +149,15 @@
           opacity: 0.8;
         }
       }
+
       .txt {
-        padding: 40px;
+        padding: 20px;
         flex: 1;
+
         .info {
           margin-top: 10px;
           margin-left: -8px;
+
           span {
             font-size: 14px;
             font-family: Montserrat-Medium;
@@ -154,32 +166,38 @@
             line-height: 23px;
             vertical-align: middle;
           }
+
           i {
             font-size: 30px;
             vertical-align: middle;
           }
         }
+
         .title {
           a {
-            font-size: 28px;
+            font-size: 18px;
             font-family: Montserrat-Regular;
-            font-weight: 400;
-            color: rgba(51, 51, 51, 1);
+            font-weight: bold;
+            color: #666666;
             line-height: 32px;
             text-decoration: none;
+
             &:hover {
               color: #35CC62;
             }
           }
         }
+
         .more {
           display: inline-block;
           margin-top: 20px;
+
           &:hover {
             a, i {
               color: #35CC62;
             }
           }
+
           a {
             font-size: 14px;
             font-family: Montserrat-Medium;
@@ -188,6 +206,7 @@
             color: #999999;
             vertical-align: middle;
           }
+
           i {
             color: #999999;
             font-size: 20px;

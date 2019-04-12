@@ -22,15 +22,17 @@
 
   .evaluate {
     /*width: 1028px;*/
-    width: 680px;
-    margin: 40px auto;
+    /*width: 680px;*/
+    margin: 10px auto;
+
     .one_evaluate {
       color: #666666;
       text-align: center;
       margin-bottom: 20px;
     }
+
     .separ {
-      width: 680px;
+      /*width: 680px;*/
       height: 1px;
       background: rgba(0, 0, 0, 1);
       opacity: 0.1;
