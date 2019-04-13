@@ -60,10 +60,10 @@
 
       <div class="oper">
         <a href="">
-          <i class="iconfont a-blog-linkedin"/>
+          <i class="in iconfont a-blog-linkedin"/>
         </a>
         <a href="">
-          <i class="iconfont a-blog-love1"/>
+          <i class="love iconfont a-blog-love1"/>
         </a>
       </div>
 
@@ -75,6 +75,9 @@
   export default {}
 </script>
 <style lang="less" scoped>
+  * {
+    transition: all .3s;
+  }
 
   .footer-con {
     background-color: #ffffff;
@@ -126,6 +129,15 @@
             font-size: 16px;
             font-weight: bold;
           }
+
+          .in {
+            color: #0077b5!important;
+          }
+
+          .love {
+            color: #e60012!important;
+          }
+
         }
       }
     }

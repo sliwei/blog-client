@@ -120,7 +120,7 @@
             margin-right: 20px;
             margin-bottom: 20px;
             /*background-color: #f9f9f9;*/
-            padding: 20px 10px;
+            /*padding: 20px 10px;*/
 
             background-color: #ffffff;
             border-radius: 4px;
@@ -140,12 +140,13 @@
               text-align: center;
 
               img {
-                height: 120px;
+                width: 100%;
+                /*height: 120px;*/
               }
             }
 
             .txt {
-              padding: 0 20px;
+              padding: 0px 20px 20px;
 
               .info {
                 margin-top: 20px;
@@ -187,6 +188,11 @@
                 display: inline-block;
                 margin-top: 20px;
 
+                background-color: whitesmoke;
+                border-color: transparent;
+                color: #363636;
+                padding: 5px 10px;
+
                 &:hover {
                   a, i {
                     color: #35CC62;
@@ -194,10 +200,10 @@
                 }
 
                 a {
-                  font-size: 14px;
+                  font-size: 12px;
+                  text-decoration: none;
                   font-family: Montserrat-Medium;
                   font-weight: 500;
-                  line-height: 14px;
                   color: #999999;
                   vertical-align: middle;
                 }
