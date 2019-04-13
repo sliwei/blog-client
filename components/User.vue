@@ -32,11 +32,11 @@
       position: relative;
       padding: 20px;
       text-align: center;
-      background-color: #000000;
+      background-color: #35cc62;
       border-radius: 4px;
 
       img {
-        width: 50px;
+        width: 40px;
       }
     }
   }

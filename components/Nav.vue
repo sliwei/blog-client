@@ -1,5 +1,6 @@
 <template>
   <div class="nav-cont" id="nav_box">
+    <h4 style="padding: 10px;text-align: center">目录</h4>
     <div class="nav" ref="nav"></div>
   </div>
 </template>

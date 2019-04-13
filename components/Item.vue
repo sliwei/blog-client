@@ -56,23 +56,23 @@
       list-style: none;
 
       .item {
-        margin-bottom: 60px;
+        margin-bottom: 20px;
         display: flex;
 
         .head {
-          width: 80px;
-          height: 80px;
+          width: 40px;
+          height: 40px;
 
           img {
-            width: 80px;
-            height: 80px;
-            border-radius: 40px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
           }
         }
 
         .main {
           flex: 1;
-          margin-left: 40px;
+          margin-left: 10px;
 
           .info {
             &:after {
@@ -92,8 +92,7 @@
               }
 
               .time {
-                margin-top: 10px;
-                font-size: 14px;
+                font-size: 12px;
                 font-family: OpenSans;
                 font-weight: 400;
                 color: rgba(153, 153, 153, 1);
@@ -118,14 +117,13 @@
           }
 
           .cont {
-            margin-top: 20px;
+            margin-top: 10px;
           }
         }
       }
 
       .more {
-        margin-left: 120px;
-
+        margin-left: 50px;
       }
     }
   }

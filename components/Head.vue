@@ -72,7 +72,9 @@
   export default {}
 </script>
 <style lang="less" scoped>
-
+  * {
+    transition: all .3s;
+  }
 
   .head-con {
     background-color: #ffffff;
@@ -88,6 +90,8 @@
       a {
         color: #4a4a4a;
         text-decoration: none;
+        padding: 20px 10px;
+        display: block;
 
         &:hover {
           color: #35CC62;
@@ -106,13 +110,14 @@
             float: left;
             font-size: 14px;
             font-weight: 400;
-            padding: 20px 10px;
             cursor: pointer;
             align-items: center;
 
             a {
               color: #4a4a4a;
               text-decoration: none;
+              padding: 20px 10px;
+              display: block;
 
               &:hover {
                 color: #35CC62;
@@ -137,7 +142,7 @@
           text-decoration: none;
           align-items: center;
           display: flex;
-          padding: 20px 12px;
+          padding: 18px 12px;
           color: #4a4a4a;
 
           &:hover {
@@ -192,7 +197,6 @@
       margin: 0 auto;
 
       .logo {
-        padding: 20px 20px;
       }
 
       .menu {
@@ -229,7 +233,6 @@
       width: 100%;
 
       .logo {
-        padding: 20px 20px;
         text-align: center;
       }
 
