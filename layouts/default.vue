@@ -1,6 +1,6 @@
 <template>
   <div>
-    <awei-head/>
+    <awei-head class="animated faster slideInDown"/>
     <div class="cont-con">
       <div class="cont">
         <div class="cont-cen">
@@ -10,22 +10,26 @@
         </div>
         <div class="cont-left">
           <div class="content">
-            <awei-user></awei-user>
+            <awei-user class="animated faster pulse"></awei-user>
           </div>
           <div class="right-content content">
-            <awei-search></awei-search>
-            <awei-nav v-if="$route.name === 'detail-code'"></awei-nav>
+            <awei-search class="animated faster pulse" v-if="1"></awei-search>
+            <transition name="bounce">
+              <awei-nav v-show="$route.name === 'detail-code' && nav"></awei-nav>
+            </transition>
           </div>
         </div>
         <div class="cont-right">
           <div class="content">
-            <awei-search></awei-search>
-            <awei-nav v-if="$route.name === 'detail-code'"></awei-nav>
+            <awei-search class="animated faster pulse" v-if="1"></awei-search>
+            <transition name="bounce">
+              <awei-nav v-show="$route.name === 'detail-code' && nav"></awei-nav>
+            </transition>
           </div>
         </div>
       </div>
     </div>
-    <awei-footer/>
+    <awei-footer class="animated faster slideInUp"/>
 
     <a class="to-top">
       <i class="iconfont a-blog-huidaodingbu"/>
@@ -47,6 +51,11 @@
       'awei-search': Search,
       'awei-nav': Nav,
       'awei-user': User,
+    },
+    computed: {
+      nav() {
+        return this.$store.state.nav.random
+      }
     },
     mounted() {
       console.log($('#__nuxt'));
@@ -127,6 +136,69 @@
     width: 40px;
     border-radius: 20px;
     /*bottom: 167px;*/
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-fill-mode: both
+  }
+
+  .animated.faster {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s
+  }
+
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    transform-origin: center top;
+  }
+
+  @keyframes pulse {
+    0% {
+      -webkit-transform: scale3d(.8, .8, .8);
+      opacity: 0;
+      transform: scale3d(.8, .8, .8)
+    }
+    50% {
+      opacity: 1
+    }
+  }
+
+  @keyframes slideInUp {
+    0% {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible
+    }
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
+    }
+  }
+
+  .slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp
+  }
+
+  @keyframes slideInDown {
+    0% {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      visibility: visible
+    }
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
+    }
+  }
+
+  .slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown
   }
 
 </style>
@@ -299,6 +371,25 @@
         padding: 20px 10px;
         display: block !important;
       }
+    }
+  }
+
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+    transform-origin: center top;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .5s reverse;
+    transform-origin: center top;
+  }
+  @keyframes bounce-in {
+    0% {
+      -webkit-transform: scale3d(.8, .8, .8);
+      opacity: 0;
+      transform: scale3d(.8, .8, .8)
+    }
+    50% {
+      opacity: 1
     }
   }
 

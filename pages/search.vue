@@ -1,11 +1,11 @@
 <template>
   <div class="index">
     <div class="search">
-      <div class="keyword" v-if="parameter.keyword">
+      <div class="keyword animated faster pulse" v-if="parameter.keyword">
         关键字：{{parameter.keyword}}
       </div>
 
-      <div class="item" v-for="(item, i) in users.list" :key="i">
+      <div class="item animated faster pulse" v-for="(item, i) in users.list" :key="i">
         <div class="time">
           <div class="day">{{getDay(item.create_time)}}</div>
           <div class="year">{{getYear(item.create_time)}}</div>
@@ -25,7 +25,7 @@
 
 
     </div>
-    <awei-page url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter"/>
+    <awei-page class="animated faster pulse" url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter"/>
   </div>
 </template>
 

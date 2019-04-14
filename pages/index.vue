@@ -4,7 +4,7 @@
       <!--<div class="lefts"></div>-->
       <div class="left">
         <div class="list">
-          <div class="item" v-for="(item, i) in users.list" :key="i">
+          <div class="item animated faster pulse" v-for="(item, i) in users.list" :key="i">
             <div class="img">
               <nuxt-link :to="`/detail/${item.code}`">
                 <img :src="item.img || 'https://source.unsplash.com/random/442x294'" alt="">
@@ -22,13 +22,14 @@
                 <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
               </div>
               <div class="more">
-                <nuxt-link :to="`/detail/${item.code}`">阅读更多</nuxt-link>
+                <nuxt-link :to="`/detail/${item.code}`">阅读更多 {{counter}}</nuxt-link>
                 <i class="iconfont a-blog-right"></i>
               </div>
+              <button @click="$store.commit('increment')">puls</button>
             </div>
           </div>
         </div>
-        <awei-page url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
+        <awei-page class="animated faster pulse" url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
       </div>
 
       <!--<div class="rights"></div>-->
@@ -46,7 +47,12 @@
     },
     data() {
       return {
-        searchVal: ''
+        searchVal: '',
+      }
+    },
+    computed: {
+      counter() {
+        return this.$store.state.counter
       }
     },
     async asyncData({app, route}) {
@@ -65,6 +71,9 @@
           },
         })
       },
+    },
+    mounted() {
+      console.log(this.$store);
     },
     head() {
       return {
@@ -107,17 +116,17 @@
         /*width: 680px;*/
 
         .list {
-          &:after {
-            content: '';
-            display: block;
-            clear: both;
-          }
+          /*&:after {*/
+            /*content: '';*/
+            /*display: block;*/
+            /*clear: both;*/
+          /*}*/
 
           .item {
             width: 100%;
             /*padding: 0 0 20px 0;*/
-            float: left;
-            margin-right: 20px;
+            /*float: left;*/
+            /*margin-right: 20px;*/
             margin-bottom: 20px;
             /*background-color: #f9f9f9;*/
             /*padding: 20px 10px;*/

@@ -30,6 +30,12 @@
         <p>内容</p>
         <div class="sub">
           <textarea v-model="cont" v-validate="'required'" name="内容" type="text" placeholder="请输入内容"></textarea>
+          <div class="reply" v-if="reply.c_user">
+            <span>@</span>
+            <img :src="reply.c_user.head_img" alt="">
+            <span>{{reply.c_user.name}}</span>
+            <i @click="empty" class="iconfont a-blog-close"></i>
+          </div>
           <span>{{ errors.first('内容') }}</span>
         </div>
       </div>
@@ -44,11 +50,16 @@
     props: ['b_id'],
     data() {
       return {
-        f_id: '',
+        // f_id: '',
         name: '',
         website: '',
         mail: '',
         cont: '',
+      }
+    },
+    computed: {
+      reply() {
+        return this.$store.state.reply.reply
       }
     },
     methods: {
@@ -58,7 +69,7 @@
           if (result) {
             let dat = {
               b_id: this.b_id,
-              f_id: this.f_id,
+              f_id: this.reply.id || '',
               name: this.name,
               website: this.website,
               mail: this.mail,
@@ -79,7 +90,12 @@
             })
           }
         })
-      }
+      },
+
+      // 清空
+      empty() {
+        this.$store.commit('reply/change', {})
+      },
     }
   }
 </script>
@@ -89,7 +105,6 @@
     .comment {
       .forms {
         display: initial !important;
-
         .item {
           margin-right: 0 !important;
           margin-bottom: 20px;
@@ -99,8 +114,11 @@
   }
 
   .comment {
-    /*width: 1028px;*/
-    /*width: 680px;*/
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    padding: 20px;
+    margin-bottom: 20px;
 
     .title {
       margin: 0 0 40px 0;
@@ -155,6 +173,36 @@
         .sub {
           position: relative;
 
+          .reply {
+            display: inline-block;
+            padding: 5px 30px 5px 10px;
+            background: #f1f1f1;
+            border-radius: 16px;
+            color: #35cc62;
+            position: relative;
+            img {
+              border-radius: 10px;
+              width: 20px;
+              vertical-align: middle;
+            }
+            span {
+              vertical-align: middle;
+            }
+            i {
+              position: absolute;
+              right: 10px;
+              top: 10px;
+              font-size: 14px;
+              color: #d1d1d1;
+              vertical-align: middle;
+              cursor: pointer;
+              transition: all .3s;
+              &:hover {
+                color: #e60012;
+              }
+            }
+          }
+
           input {
             color: #333333;
             width: 100%;
@@ -191,7 +239,7 @@
             }
           }
 
-          span {
+          >span {
             position: absolute;
             display: block;
             margin-top: 4px;

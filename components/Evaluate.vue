@@ -1,8 +1,8 @@
 <template>
   <div class="evaluate">
-    <awei-item :list="evaluate"/>
+    <awei-item :list="evaluate" v-if="evaluate.length"/>
     <p class="one_evaluate" v-if="!evaluate.length">^_^成为第一个评论的人吧！</p>
-    <div class="separ"></div>
+    <!--<div class="separ"></div>-->
   </div>
 </template>
 <script>
@@ -23,12 +23,18 @@
   .evaluate {
     /*width: 1028px;*/
     /*width: 680px;*/
-    margin: 10px auto;
+    /*margin: 10px auto;*/
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    padding: 20px;
+    margin-bottom: 20px;
+
 
     .one_evaluate {
       color: #666666;
       text-align: center;
-      margin-bottom: 20px;
+      /*margin-bottom: 20px;*/
     }
 
     .separ {
