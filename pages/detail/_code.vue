@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cont">
-      <div class="index">
+      <div class="index animated faster pulse">
         <div class="first">
           <img :src="data.img" alt="">
         </div>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="neighbor">
+      <div class="neighbor animated faster pulse">
         <div class="left" v-if="neighbor.front.code">
           <div class="txt">
             <i class="iconfont a-blog-left"></i>
@@ -37,12 +37,14 @@
         </div>
         <i class="line" v-if="neighbor.after.code && neighbor.front.code"></i>
       </div>
-      <div class="detail-evaluate">
-        <awei-evaluate :b_id="data.id" :evaluate="evaluate"/>
-      </div>
-      <div class="detail-comment">
-        <awei-comment :b_id="data.id"/>
-      </div>
+
+      <!--评论-->
+      <awei-evaluate class="animated faster pulse" :b_id="data.id" :evaluate="evaluate"/>
+      <!--评论-->
+
+      <!--留言-->
+      <awei-comment class="animated faster pulse" :b_id="data.id"/>
+      <!--留言-->
 
     </div>
   </div>
@@ -83,12 +85,20 @@
           news.push(item)
         }
       })
+      console.log(news);
       const neighbor = await app.$axios.get(`/blog/client/blog/neighbor?id=${data.data.id}`)
       return {data: data.data, evaluate: news, neighbor: neighbor.data.data}
     },
     methods: {
       getTime(time) {
         return Tool.formatDate(time, 'YY年MM月DD日hh时mm分')
+      }
+    },
+    mounted() {
+      if (this.data && this.data.id) {
+        this.$store.commit('nav/random', this.data.id);
+      } else {
+        this.$store.commit('nav/random', 0);
       }
     },
     head() {
@@ -176,9 +186,9 @@
     /*width: 680px;*/
     position: relative;
 
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    /*background-color: #ffffff;*/
+    /*border-radius: 4px;*/
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);*/
     margin-bottom: 20px;
 
     .left {
@@ -236,18 +246,4 @@
     }
   }
 
-  .detail-evaluate {
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-
-  .detail-comment {
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
-    padding: 20px;
-  }
 </style>

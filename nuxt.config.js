@@ -15,7 +15,7 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_krocfgj5jgq.css'},
+      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_nnd0ecj64o.css'},
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -30,6 +30,7 @@ module.exports = {
         // href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css'
       },
       {rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css'},
+      // {rel: 'stylesheet', type: 'text/css', href: 'https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css'},
     ],
     script: [
       // {src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js'},

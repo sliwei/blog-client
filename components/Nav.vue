@@ -13,7 +13,31 @@
     },
     methods: {
       init() {
-        console.log('init')
+        let dom = document.querySelector('.markdown-body');
+        if (dom) {
+          let domList = dom.childNodes
+          let menuName = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+          let html = '';
+          let menu = [];
+          for (let key in domList) {
+            if (menuName.indexOf(domList[key].nodeName) >= 0) {
+              let link = `<a class="nva_item nva_${domList[key].nodeName}" href="#${domList[key].childNodes[0].id}">${domList[key].innerText}</a>`
+              link && (html += link);
+              menu.push(domList[key].childNodes[0].id);
+            }
+          }
+          this.$refs.nav.innerHTML = html;
+          this.menu = menu;
+          setTimeout(() => {
+            this.map();
+            if ($(document).width() >= 754) {
+              $(".nav-cont").scrollFix({distanceTop: 20});
+            }
+          }, 0)
+        }
+      },
+      map() {
+        console.log('map')
         let _this = this;
         const removeClass = function removeClass(kls, dom) {
           let klsReg = new RegExp(kls, 'ig');
@@ -47,30 +71,21 @@
     created() {
     },
     mounted() {
-      setTimeout(() => {
-        let dom = document.querySelector('.markdown-body');
-        if (dom) {
-          let domList = dom.childNodes
-          let menuName = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
-          let html = '';
-          let menu = [];
-          for (let key in domList) {
-            if (menuName.indexOf(domList[key].nodeName) >= 0) {
-              console.log(parseInt(domList[key].nodeName.slice(1, 2)))
-              let link = `<a class="nva_item nva_${domList[key].nodeName}" href="#${domList[key].childNodes[0].id}">${domList[key].innerText}</a>`
-              link && (html += link);
-              menu.push(domList[key].childNodes[0].id);
-            }
-          }
-          this.$refs.nav.innerHTML = html;
-          this.menu = menu;
-          setTimeout(() => {
-            this.init();
-            $(".nav-cont").scrollFix({distanceTop: 20});
-          }, 0)
-        }
-      }, 400)
-    }
+      window.onscroll = null;
+      this.init();
+    },
+    computed: {
+      random() {
+        return this.$store.state.nav.random
+      }
+    },
+    watch: {
+      random: function (o, n) {
+        console.log(n);
+        window.onscroll = null;
+        this.init();
+      }
+    },
   }
 </script>
 <style lang="less" scoped>

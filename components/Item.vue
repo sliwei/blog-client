@@ -16,7 +16,7 @@
               <p class="time">{{getTime(item.create_time)}}</p>
             </div>
             <div class="reply">
-              <a href="">回复</a>
+              <a href="javascript:;" @click="reply(item)">回复</a>
             </div>
           </div>
           <div class="cont">
@@ -25,9 +25,7 @@
         </div>
       </div>
       <div :class="{more: !item.f_id}" v-if="item.children">
-        <item v-for="(item, index) in list"
-              :key="index"
-              :list="item.children">
+        <item :list="item.children">
         </item>
       </div>
     </li>
@@ -43,7 +41,15 @@
       getTime(time) {
         return Tool.formatDate(time, 'YYYY-MM-DD hh:mm');
       },
+
+      // 回复
+      reply(dat) {
+        this.$store.commit('reply/change', dat)
+      },
     },
+    mounted() {
+
+    }
   }
 </script>
 <style lang="less" scoped>
