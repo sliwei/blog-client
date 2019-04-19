@@ -52,17 +52,18 @@
       <div class="info">
         <div class="logo">Bstu</div>
         <div class="copyright">
-          © 2019 风格来源 <a href="Icarus">Icarus</a> <a target="_blank"
-                                                     href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a> <a
+          © 2019 风格来源 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a> <a
+          target="_blank"
+          href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a> <a
           href="javascript:;">公安网备：50010902000222</a>
         </div>
       </div>
 
       <div class="oper">
-        <a href="">
+        <a href="javascript:;">
           <i class="in iconfont a-blog-linkedin"/>
         </a>
-        <a href="">
+        <a href="javascript:;">
           <i class="love iconfont a-blog-love1"/>
         </a>
       </div>
@@ -131,11 +132,11 @@
           }
 
           .in {
-            color: #0077b5!important;
+            color: #0077b5 !important;
           }
 
           .love {
-            color: #e60012!important;
+            color: #e60012 !important;
           }
 
         }

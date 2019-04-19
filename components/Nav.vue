@@ -1,71 +1,35 @@
 <template>
-  <div class="nav-cont" id="nav_box">
+  <div class="nav-cont">
     <h4 style="padding: 10px;text-align: center">目录</h4>
-    <div class="nav" ref="nav"></div>
+    <div class="nav" v-html="menu.tocHtml"></div>
   </div>
 </template>
 <script>
   export default {
-    data() {
-      return {
-        menu: [],
-      }
-    },
     methods: {
       init() {
-        let dom = document.querySelector('.markdown-body');
-        if (dom) {
-          let domList = dom.childNodes
-          let menuName = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
-          let html = '';
-          let menu = [];
-          for (let key in domList) {
-            if (menuName.indexOf(domList[key].nodeName) >= 0) {
-              let link = `<a class="nva_item nva_${domList[key].nodeName}" href="#${domList[key].childNodes[0].id}">${domList[key].innerText}</a>`
-              link && (html += link);
-              menu.push(domList[key].childNodes[0].id);
-            }
-          }
-          this.$refs.nav.innerHTML = html;
-          this.menu = menu;
-          setTimeout(() => {
-            this.map();
-            if ($(document).width() >= 754) {
-              $(".nav-cont").scrollFix({distanceTop: 20});
-            }
-          }, 0)
+        this.map();
+        if ($(document).width() >= 754) {
+          $(".nav-cont").scrollFix({distanceTop: 20});
         }
       },
       map() {
-        console.log('map')
         let _this = this;
-        const removeClass = function removeClass(kls, dom) {
-          let klsReg = new RegExp(kls, 'ig');
-          for (let i = 0; i < dom.length; i++) {
-            let node = dom[i];
-            let klses = node.className;
-            if (klsReg.test(klses)) {
-              node.className = node.className.replace(kls, '')
-            }
-          }
-        };
-        window.onscroll = function () {
+        $(window).scroll(() => {
           let t = document.documentElement.scrollTop || document.body.scrollTop;
           let index = 0;
-          _this.menu.map((item, i) => {
-            if (document.querySelector(`#${item}`).offsetTop < t) {
-              index = i;
+          _this.menu.tocArray.map((item, i) => {
+            $('.markdownIt-TOC').find('a').removeClass('active');
+            if (document.querySelector(`#${item.anchor}`).offsetTop < t) {
+              index = i + 1;
             }
           });
-          let activeList = document.querySelectorAll('.nva_item');
-          if (activeList.length) {
-            let activeDom = document.querySelectorAll('.nva_item')[index];
-            let activeDom2 = document.querySelectorAll('.nva_item')[index + (activeList.length / 2)];
-            removeClass(' active', activeList);
-            activeDom.className = `${activeDom.className} active`;
-            activeDom2.className = `${activeDom2.className} active`;
+          console.log(index);
+          if (index > 0) {
+            $($($('.markdownIt-TOC')[0]).find('a')[index]).addClass('active');
+            $($($('.markdownIt-TOC')[1]).find('a')[index]).addClass('active');
           }
-        }
+        });
       }
     },
     created() {
@@ -75,13 +39,12 @@
       this.init();
     },
     computed: {
-      random() {
-        return this.$store.state.nav.random
+      menu() {
+        return this.$store.state.nav.menu
       }
     },
     watch: {
-      random: function (o, n) {
-        console.log(n);
+      menu: function (o, n) {
         window.onscroll = null;
         this.init();
       }
@@ -102,6 +65,17 @@
       top: 0px;
       position: relative;
       padding: 20px;
+
+      /deep/ ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          margin-left: 10px;
+
+        }
+      }
 
       /deep/ a {
         cursor: pointer;

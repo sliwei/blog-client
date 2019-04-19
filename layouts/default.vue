@@ -15,7 +15,7 @@
           <div class="right-content content">
             <awei-search class="animated faster pulse" v-if="1"></awei-search>
             <transition name="bounce">
-              <awei-nav v-show="$route.name === 'detail-code' && nav"></awei-nav>
+              <awei-nav v-show="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="content">
             <awei-search class="animated faster pulse" v-if="1"></awei-search>
             <transition name="bounce">
-              <awei-nav v-show="$route.name === 'detail-code' && nav"></awei-nav>
+              <awei-nav v-show="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
           </div>
         </div>
@@ -53,15 +53,13 @@
       'awei-user': User,
     },
     computed: {
-      nav() {
-        return this.$store.state.nav.random
+      menu() {
+        return this.$store.state.nav.menu
       }
     },
     mounted() {
-      console.log($('#__nuxt'));
       $('.to-top').toTop();
-      console.log();
-    }
+    },
   }
 
 </script>

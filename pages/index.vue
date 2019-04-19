@@ -22,10 +22,9 @@
                 <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
               </div>
               <div class="more">
-                <nuxt-link :to="`/detail/${item.code}`">阅读更多 {{counter}}</nuxt-link>
+                <nuxt-link :to="`/detail/${item.code}`">阅读更多</nuxt-link>
                 <i class="iconfont a-blog-right"></i>
               </div>
-              <button @click="$store.commit('increment')">puls</button>
             </div>
           </div>
         </div>
@@ -50,11 +49,6 @@
         searchVal: '',
       }
     },
-    computed: {
-      counter() {
-        return this.$store.state.counter
-      }
-    },
     async asyncData({app, route}) {
       const {data} = await app.$axios.get(`/blog/client/blog/list?pageIndex=${route.query.pageIndex || 1}&pageSize=8`);
       return {users: data.data}
@@ -71,9 +65,6 @@
           },
         })
       },
-    },
-    mounted() {
-      console.log(this.$store);
     },
     head() {
       return {

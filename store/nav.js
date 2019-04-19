@@ -1,9 +1,12 @@
 export const state = () => ({
-  random: ''
-})
+  menu: {
+    tocArray: [],
+    tocHtml: '',
+  },
+});
 
 export const mutations = {
-  random(state, type) {
-    state.random = type;
-  }
-}
+  setMenu(state, menu) {
+    state.menu = menu;
+  },
+};
