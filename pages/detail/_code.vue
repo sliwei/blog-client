@@ -12,7 +12,8 @@
           <div class="time">
             <span>发表于 - <span class="txt">{{getTime(data.time)}}</span></span>
           </div>
-          <div v-html="data.content" class="markdown-body"></div>
+          <!--<div v-html="data.content" class="markdown-body"></div>-->
+          <div v-html="html" class="markdown-body"></div>
         </div>
       </div>
 
@@ -54,6 +55,11 @@
   import Evaluate from '~/components/Evaluate.vue'
   import Comment from '~/components/Comment.vue'
   import Tool from '~/assets/Tool'
+  import markdownIt from "markdown-it"
+  import markdownTtHighlightjs from "markdown-it-highlightjs"
+  import markdownItMark from "markdown-it-mark"
+  import markdownItKbd from "markdown-it-kbd"
+  import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
 
   export default {
     components: {
@@ -84,10 +90,34 @@
         if (!item.f_id) {
           news.push(item)
         }
-      })
-      console.log(news);
+      });
+
       const neighbor = await app.$axios.get(`/blog/client/blog/neighbor?id=${data.data.id}`)
-      return {data: data.data, evaluate: news, neighbor: neighbor.data.data}
+
+      let tocArray = [];
+      let tocHtml = '';
+
+      let html = markdownIt({
+        html: true,
+        linkify: true,
+        typographer: true,
+        breaks: true,
+      })
+        .use(markdownTtHighlightjs)
+        .use(markdownItMark)
+        .use(markdownItKbd)
+        .use(markdownItTocAndAnchor, {
+          anchorLinkSymbol: '#',
+          anchorLinkPrefix: 'nav-from',
+          slugify : string => '',
+          tocCallback: function (tocMarkdown, array, html) {
+            tocArray = array;
+            tocHtml = html;
+          }
+        })
+        .render(data.data.markdown);
+
+      return {data: data.data, html: html, tocArray: tocArray, tocHtml: tocHtml, evaluate: news, neighbor: neighbor.data.data}
     },
     methods: {
       getTime(time) {
@@ -95,11 +125,10 @@
       }
     },
     mounted() {
-      if (this.data && this.data.id) {
-        this.$store.commit('nav/random', this.data.id);
-      } else {
-        this.$store.commit('nav/random', 0);
-      }
+      this.$store.commit('nav/setMenu', {
+        tocArray: this.tocArray,
+        tocHtml: this.tocHtml,
+      });
     },
     head() {
       return {
@@ -164,12 +193,6 @@
           }
         }
 
-        .markdown-body {
-          /deep/ pre {
-            padding: 0 !important;
-          }
-
-        }
       }
     }
 
