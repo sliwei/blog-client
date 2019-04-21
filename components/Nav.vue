@@ -1,31 +1,35 @@
 <template>
   <div class="nav-cont">
     <h4 style="padding: 10px;text-align: center">目录</h4>
-    <div class="nav" v-html="menu.tocHtml"></div>
+    <div class="nav" id="nav" v-html="menu.tocHtml"></div>
   </div>
 </template>
 <script>
   export default {
     methods: {
       init() {
-        this.map();
         if ($(document).width() >= 754) {
-          $(".nav-cont").scrollFix({distanceTop: 20});
+          setTimeout(() => {
+            $(".nav-cont").scrollFix({distanceTop: 20, endPos: '.footer-con'});
+            this.map();
+          }, 400)
         }
       },
       map() {
+        window.onscroll = null;
         let _this = this;
+        let rootIndex = 0;
         $(window).scroll(() => {
           let t = document.documentElement.scrollTop || document.body.scrollTop;
           let index = 0;
           _this.menu.tocArray.map((item, i) => {
-            $('.markdownIt-TOC').find('a').removeClass('active');
             if (document.querySelector(`#${item.anchor}`).offsetTop < t) {
               index = i + 1;
             }
           });
-          console.log(index);
-          if (index > 0) {
+          if (rootIndex !== index) {
+            rootIndex = index;
+            $('.markdownIt-TOC').find('a').removeClass('active');
             $($($('.markdownIt-TOC')[0]).find('a')[index]).addClass('active');
             $($($('.markdownIt-TOC')[1]).find('a')[index]).addClass('active');
           }
@@ -35,7 +39,6 @@
     created() {
     },
     mounted() {
-      window.onscroll = null;
       this.init();
     },
     computed: {
@@ -43,10 +46,20 @@
         return this.$store.state.nav.menu
       }
     },
+    destroyed() {
+      // window.onscroll = null;
+      $(window).unbind('scroll');
+      $('.scrollfixedBox').remove();
+      this.$store.commit('nav/setMenu', {
+        tocArray: [],
+        tocHtml: '',
+      });
+    },
     watch: {
       menu: function (o, n) {
-        window.onscroll = null;
-        this.init();
+        // setTimeout(() => {
+          this.map();
+        // }, 400);
       }
     },
   }

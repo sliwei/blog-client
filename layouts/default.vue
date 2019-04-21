@@ -15,7 +15,7 @@
           <div class="right-content content">
             <awei-search class="animated faster pulse" v-if="1"></awei-search>
             <transition name="bounce">
-              <awei-nav v-show="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
+              <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div class="content">
             <awei-search class="animated faster pulse" v-if="1"></awei-search>
             <transition name="bounce">
-              <awei-nav v-show="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
+              <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
           </div>
         </div>
@@ -231,6 +231,7 @@
 
         .right-content {
           display: block;
+          margin-bottom: 20px;
         }
       }
 
