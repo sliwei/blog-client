@@ -36,8 +36,9 @@ module.exports = {
     ],
     script: [
       {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
-      {src: 'https://i.bstu.cn/js/scrollfix.min.js'},
-      {src: 'https://i.bstu.cn/js/fixedScroll.js'},
+      {src: 'https://i.bstu.cn/js/scrollfix.js'},
+      // {src: 'https://i.bstu.cn/js/scrollfix.min.js'},
+      // {src: 'https://i.bstu.cn/js/fixedScroll.js'},
     ],
   },
 
