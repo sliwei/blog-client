@@ -25,7 +25,7 @@
 
 
     </div>
-    <awei-page class="animated faster pulse" url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter"/>
+    <awei-page class="animated faster pulse" url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter" v-if="users.pageCount"/>
   </div>
 </template>
 
@@ -83,7 +83,16 @@
       return {
         title: `${this.parameter.keyword} | 布什兔 | bstu.cn`,
         meta: [
-          {hid: 'description', name: 'description', content: ``},
+          {
+            hid: 'description',
+            name: 'description',
+            content: '李维(awei,sliwei)个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'
+          },
+          {
+            hid: 'keywords',
+            name: 'keywords',
+            content: '李维,awei,sliwei,互联网,自媒体,李维博客,新鲜科技,科技博客,Bstu,独立博客,个人博客,原创博客,前端,前端开发,全栈,全栈开发,react,reactjs,next,nextjs,nuxt,nuxtjs,vue,vuejs'
+          },
           {hid: 'author', content: 'awei'}
         ]
       }

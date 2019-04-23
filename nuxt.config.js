@@ -31,14 +31,9 @@ module.exports = {
         // href: 'https://highlightjs.org/static/demo/styles/monokai.css'
         // href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css'
       },
-      // {rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css'},
-      // {rel: 'stylesheet', type: 'text/css', href: 'https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css'},
     ],
     script: [
       {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
-      {src: 'https://i.bstu.cn/js/scrollfix.js'},
-      // {src: 'https://i.bstu.cn/js/scrollfix.min.js'},
-      // {src: 'https://i.bstu.cn/js/fixedScroll.js'},
     ],
   },
 
@@ -47,8 +42,7 @@ module.exports = {
   */
   loading: {
     color: '#35CC62'
-  }
-  ,
+  },
 
   /*
   ** Global CSS
@@ -60,10 +54,11 @@ module.exports = {
   */
   plugins:
     [
-      {src: '~plugins/message', ssr: false},
       '~/plugins/axios',
       '~/plugins/validate',
+      {src: '~/plugins/message', ssr: false},
       {src: '~/assets/toTop', ssr: false},
+      {src: '~/assets/scrollfix', ssr: false},
     ],
 
   /*

@@ -19,12 +19,13 @@
     },
     methods: {
       search() {
-        this.$router.push({
-          path: '/search',
-          query: {
-            keyword: this.searchVal
-          },
-        })
+        window.location.href = `/search?keyword=${this.searchVal}`;
+        // this.$router.push({
+        //   path: '/search',
+        //   query: {
+        //     keyword: this.searchVal
+        //   },
+        // })
       },
     },
   }
