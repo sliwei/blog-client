@@ -38,21 +38,23 @@
 
   <div class="head-con">
     <div class="head">
-      <div class="logo"><a href="/">Bstu</a></div>
+      <div class="logo">
+        <nuxt-link to="/">Bstu</nuxt-link>
+      </div>
       <div class="menu">
         <div class="nav">
           <ul>
             <li>
-              <a target="_blank" href="http://manage.bstu.cn">写博客</a>
+              <nuxt-link to="/archives">归档</nuxt-link>
             </li>
             <li>
-              <a target="_blank" href="http://chat.bstu.cn">聊天室</a>
+              <nuxt-link to="/categories">分类</nuxt-link>
             </li>
             <li>
-              <a target="_blank" href="http://music.bstu.cn">吉姆音乐厅</a>
+              <nuxt-link to="/tags">标签</nuxt-link>
             </li>
             <li>
-              <a target="_blank" href="https://yun.bstu.cn">在线云盘</a>
+              <nuxt-link to="/about">关于</nuxt-link>
             </li>
           </ul>
         </div>

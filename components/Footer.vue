@@ -50,12 +50,30 @@
     <div class="footer">
 
       <div class="info">
-        <div class="logo">Bstu</div>
+        <div class="logo">
+          <span class="name">Bstu</span>
+          <div class="nav">
+            <ul>
+              <li>
+                <a target="_blank" href="http://manage.bstu.cn">写博客</a>
+              </li>
+              <li>
+                <a target="_blank" href="http://chat.bstu.cn">聊天室</a>
+              </li>
+              <li>
+                <a target="_blank" href="http://music.bstu.cn">吉姆音乐厅</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://yun.bstu.cn">在线云盘</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="copyright">
-          © 2019 风格来源 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a> <a
-          target="_blank"
-          href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a> <a
-          href="javascript:;">公安网备：50010902000222</a>
+          <p>© 2019 awei</p>
+          <p>风格来源 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p>
+          <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p>
+          <p><a href="javascript:;">公安网备：50010902000222</a></p>
         </div>
       </div>
 
@@ -90,13 +108,59 @@
         padding: 0 20px;
 
         .logo {
-          padding: 0 0 20px 0;
+          /*padding: 0 0 20px 0;*/
           font-size: 14px;
           font-weight: bold;
+
+          .name {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 10px;
+          }
+
+          .nav {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 10px;
+            ul {
+              margin: 0;
+              padding: 0;
+
+              li {
+                list-style: none;
+                float: left;
+                font-size: 14px;
+                font-weight: 400;
+                cursor: pointer;
+                align-items: center;
+
+                a {
+                  color: #4a4a4a;
+                  text-decoration: none;
+                  padding: 0px 10px;
+                  display: block;
+
+                  &:hover {
+                    color: #35CC62;
+                  }
+                }
+
+                &:hover {
+                  background-color: #fafafa;
+                }
+
+              }
+            }
+          }
+
         }
 
         .copyright {
           font-size: 12px;
+          p {
+            display: inline-block;
+            margin-bottom: 10px;
+          }
 
           a {
             color: #4a4a4a;

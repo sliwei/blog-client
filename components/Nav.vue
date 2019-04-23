@@ -10,9 +10,10 @@
       init() {
         if ($(document).width() >= 754) {
           setTimeout(() => {
-            $(".nav-cont").scrollFix({distanceTop: 20, endPos: '.footer-con'});
+            $($(".nav-cont")[0]).scrollfix({distanceTop: 20, endPos: '.footer-con'});
+            $($(".nav-cont")[1]).scrollfix({distanceTop: 20, endPos: '.footer-con'});
             this.map();
-          }, 400)
+          }, 100)
         }
       },
       map() {
@@ -47,9 +48,7 @@
       }
     },
     destroyed() {
-      // window.onscroll = null;
       $(window).unbind('scroll');
-      $('.scrollfixedBox').remove();
       this.$store.commit('nav/setMenu', {
         tocArray: [],
         tocHtml: '',
@@ -57,9 +56,7 @@
     },
     watch: {
       menu: function (o, n) {
-        // setTimeout(() => {
-          this.map();
-        // }, 400);
+        this.init();
       }
     },
   }

@@ -4,29 +4,34 @@
       <!--<div class="lefts"></div>-->
       <div class="left">
         <div class="list">
-          <div class="item animated faster pulse" v-for="(item, i) in users.list" :key="i">
-            <div class="img">
-              <nuxt-link :to="`/detail/${item.code}`">
-                <img :src="item.img || 'https://source.unsplash.com/random/442x294'" alt="">
-              </nuxt-link>
-            </div>
-            <div class="txt">
+          <div class="item" v-for="(item, i) in users.list" :key="i">
+            <transition name="layout">
+              <div>
+                <div class="img">
+                  <nuxt-link :to="`/detail/${item.code}`">
+                    <img :src="item.img || 'https://source.unsplash.com/random/442x294'" alt="">
+                  </nuxt-link>
+                </div>
+                <div class="txt">
+                  <div class="info">
+                    <i class="iconfont a-blog-date"></i>
+                    <span>{{getTime(item.create_time)}}</span>
+                    <i class="iconfont a-blog-address"></i>
+                    <span>重庆 {{item.user_name}}</span>
+                  </div>
+                  <div class="title">
+                    <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
+                  </div>
+                  <div class="more">
+                    <nuxt-link :to="`/detail/${item.code}`">阅读更多</nuxt-link>
+                    <i class="iconfont a-blog-right"></i>
+                  </div>
+                </div>
+              </div>
+            </transition>
 
-              <div class="info">
-                <i class="iconfont a-blog-date"></i>
-                <span>{{getTime(item.create_time)}}</span>
-                <i class="iconfont a-blog-address"></i>
-                <span>重庆 {{item.user_name}}</span>
-              </div>
-              <div class="title">
-                <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
-              </div>
-              <div class="more">
-                <nuxt-link :to="`/detail/${item.code}`">阅读更多</nuxt-link>
-                <i class="iconfont a-blog-right"></i>
-              </div>
-            </div>
           </div>
+
         </div>
         <awei-page class="animated faster pulse" url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
       </div>
@@ -41,6 +46,7 @@
   import Tool from '~/assets/Tool'
 
   export default {
+    transition: 'layout',
     components: {
       'awei-page': Page,
     },
@@ -108,9 +114,9 @@
 
         .list {
           /*&:after {*/
-            /*content: '';*/
-            /*display: block;*/
-            /*clear: both;*/
+          /*content: '';*/
+          /*display: block;*/
+          /*clear: both;*/
           /*}*/
 
           .item {

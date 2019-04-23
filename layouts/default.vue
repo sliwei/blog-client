@@ -10,10 +10,14 @@
         </div>
         <div class="cont-left">
           <div class="content">
-            <awei-user class="animated faster pulse"></awei-user>
+            <transition name="bounce">
+              <awei-user class="animated faster pulse"></awei-user>
+            </transition>
           </div>
           <div class="right-content content">
-            <awei-search class="animated faster pulse" v-if="1"></awei-search>
+            <transition name="bounce">
+              <awei-search v-if="sta"></awei-search>
+            </transition>
             <transition name="bounce">
               <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
@@ -21,7 +25,9 @@
         </div>
         <div class="cont-right">
           <div class="content">
-            <awei-search class="animated faster pulse" v-if="1"></awei-search>
+            <transition name="bounce">
+              <awei-search v-if="sta"></awei-search>
+            </transition>
             <transition name="bounce">
               <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
             </transition>
@@ -52,10 +58,18 @@
       'awei-nav': Nav,
       'awei-user': User,
     },
+    data() {
+      return {
+        sta: false
+      }
+    },
     computed: {
       menu() {
         return this.$store.state.nav.menu
       }
+    },
+    created() {
+      this.sta = true;
     },
     mounted() {
       $('.to-top').toTop();
@@ -197,6 +211,38 @@
   .slideInDown {
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown
+  }
+
+  /*.layout-enter-active, .layout-leave-active {*/
+  /*transition: opacity .3s,transform .3s;*/
+  /*!*transform-origin: center top;*!*/
+  /*}*/
+
+  /*.layout-enter, .layout-leave-active {*/
+  /*opacity: 0;*/
+  /*!*transform: translate(0%, 100%)*!*/
+  /*transform: scale3d(.8, .8, .8)*/
+  /*}*/
+
+  .layout-enter-active {
+    animation: layout-in .4s;
+    transform-origin: center top;
+  }
+
+  .layout-leave-active {
+    animation: layout-in .4s reverse;
+    transform-origin: center top;
+  }
+
+  @keyframes layout-in {
+    0% {
+      -webkit-transform: scale3d(.95, .95, .95);
+      opacity: 0;
+      transform: scale3d(.95, .95, .95)
+    }
+    50% {
+      opacity: 1
+    }
   }
 
 </style>
@@ -377,10 +423,12 @@
     animation: bounce-in .5s;
     transform-origin: center top;
   }
+
   .bounce-leave-active {
     animation: bounce-in .5s reverse;
     transform-origin: center top;
   }
+
   @keyframes bounce-in {
     0% {
       -webkit-transform: scale3d(.8, .8, .8);
