@@ -1,7 +1,9 @@
 <template>
   <div class="nav-cont">
-    <h4 style="padding: 10px;text-align: center">目录</h4>
-    <div class="nav" id="nav" v-html="menu.tocHtml"></div>
+    <div class="nav">
+      <p class="title">目录</p>
+      <div v-html="menu.tocHtml" id="nav"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -71,10 +73,20 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
     margin-bottom: 20px;
 
+
     .nav {
       top: 0px;
       position: relative;
       padding: 20px;
+      border-radius: 4px;
+      margin-left: -10px;
+
+      .title {
+        color: #7a7a7a;
+        font-size: 12px;
+        text-align: left;
+        margin-bottom: 10px;
+      }
 
       /deep/ ul {
         margin: 0;

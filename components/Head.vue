@@ -56,6 +56,9 @@
             <li>
               <nuxt-link to="/about">关于</nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/404">404</nuxt-link>
+            </li>
           </ul>
         </div>
 

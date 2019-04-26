@@ -62,7 +62,7 @@
   import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
 
   export default {
-    transition: 'layout',
+    transition: 'bounce',
     components: {
       'awei-evaluate': Evaluate,
       'awei-comment': Comment,

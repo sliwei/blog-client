@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    transition: 'layout'
+    transition: 'bounce'
   }
 </script>
 

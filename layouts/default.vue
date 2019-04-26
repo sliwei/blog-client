@@ -1,42 +1,75 @@
 <template>
   <div>
-    <awei-head class="animated faster slideInDown"/>
-    <div class="cont-con">
-      <div class="cont">
-        <div class="cont-cen">
-          <div class="content">
-            <nuxt/>
+    <transition name="slideInDown">
+      <awei-head v-if="sta"/>
+    </transition>
+
+    <transition name="bounce">
+      <div class="cont-con" v-if="sta">
+        <div class="cont">
+          <div class="cont-cen">
+            <div class="content">
+              <nuxt/>
+            </div>
           </div>
-        </div>
-        <div class="cont-left">
-          <div class="content">
-            <transition name="bounce">
-              <awei-user class="animated faster pulse"></awei-user>
-            </transition>
+          <div class="cont-left">
+            <div class="content">
+              <transition name="bounce">
+                <awei-user v-if="sta"></awei-user>
+              </transition>
+              <transition name="bounce">
+                <awei-links v-if="sta"></awei-links>
+              </transition>
+              <transition name="bounce">
+                <awei-categories v-if="sta"></awei-categories>
+              </transition>
+              <transition name="bounce">
+                <awei-tag-cloud v-if="sta"></awei-tag-cloud>
+              </transition>
+            </div>
+            <div class="right-content content">
+              <transition name="bounce">
+                <awei-search v-if="sta && searchSta"></awei-search>
+              </transition>
+              <transition name="bounce">
+                <awei-recent v-if="sta"></awei-recent>
+              </transition>
+              <transition name="bounce">
+                <awei-archives v-if="sta"></awei-archives>
+              </transition>
+              <transition name="bounce">
+                <awei-tags v-if="sta"></awei-tags>
+              </transition>
+              <transition name="bounce">
+                <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
+              </transition>
+            </div>
           </div>
-          <div class="right-content content">
-            <transition name="bounce">
-              <awei-search v-if="sta"></awei-search>
-            </transition>
-            <transition name="bounce">
-              <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
-            </transition>
-          </div>
-        </div>
-        <div class="cont-right">
-          <div class="content">
-            <transition name="bounce">
-              <awei-search v-if="sta"></awei-search>
-            </transition>
-            <transition name="bounce">
-              <awei-nav v-if="$route.name === 'detail-code' && menu.tocHtml"></awei-nav>
-            </transition>
+          <div class="cont-right">
+            <div class="content">
+              <transition name="bounce">
+                <awei-search v-if="sta && searchSta"></awei-search>
+              </transition>
+              <transition name="bounce">
+                <awei-recent v-if="sta"></awei-recent>
+              </transition>
+              <transition name="bounce">
+                <awei-archives v-if="sta"></awei-archives>
+              </transition>
+              <transition name="bounce">
+                <awei-tags v-if="sta"></awei-tags>
+              </transition>
+              <transition name="bounce">
+                <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
+              </transition>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <awei-footer class="animated faster slideInUp"/>
-
+    </transition>
+    <transition name="slideInUp">
+      <awei-footer v-if="sta"/>
+    </transition>
     <a class="to-top">
       <i class="iconfont a-blog-huidaodingbu"/>
     </a>
@@ -49,30 +82,59 @@
   import Search from '~/components/Search.vue'
   import Nav from '~/components/Nav.vue'
   import User from '~/components/User.vue'
+  import Links from '~/components/Links.vue'
+  import Categories from '~/components/Categories.vue'
+  import TagCloud from '~/components/TagCloud.vue'
+
+  import Recent from '~/components/Recent.vue'
+  import Archives from '~/components/Archives.vue'
+  import Tags from '~/components/Tags.vue'
 
   export default {
+    transition: 'bounce',
     components: {
       'awei-head': Head,
       'awei-footer': Footer,
       'awei-search': Search,
       'awei-nav': Nav,
       'awei-user': User,
+      'awei-links': Links,
+      'awei-categories': Categories,
+      'awei-tag-cloud': TagCloud,
+      'awei-recent': Recent,
+      'awei-archives': Archives,
+      'awei-tags': Tags,
     },
     data() {
       return {
-        sta: false
+        sta: false,
+        searchSta: true,
+        navSta: false,
       }
     },
     computed: {
       menu() {
         return this.$store.state.nav.menu
-      }
+      },
+    },
+    methods: {
+      init() {
+        $('.to-top').toTop();
+        this.sta = true;
+        this.searchSta = this.$route.name !== 'search';
+        this.navSta = this.$route.name === 'detail-code';
+      },
     },
     created() {
-      this.sta = true;
     },
     mounted() {
-      $('.to-top').toTop();
+      this.init();
+    },
+    watch: {
+      '$route': function (newValue, oldValue) {
+        this.searchSta = newValue.name !== 'search';
+        this.navSta = this.$route.name === 'detail-code';
+      }
     },
   }
 
@@ -148,101 +210,6 @@
     width: 40px;
     border-radius: 20px;
     /*bottom: 167px;*/
-  }
-
-  .animated {
-    -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-fill-mode: both
-  }
-
-  .animated.faster {
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s
-  }
-
-  .pulse {
-    -webkit-animation-name: pulse;
-    animation-name: pulse;
-    transform-origin: center top;
-  }
-
-  @keyframes pulse {
-    0% {
-      -webkit-transform: scale3d(.8, .8, .8);
-      opacity: 0;
-      transform: scale3d(.8, .8, .8)
-    }
-    50% {
-      opacity: 1
-    }
-  }
-
-  @keyframes slideInUp {
-    0% {
-      -webkit-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0);
-      visibility: visible
-    }
-    to {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0)
-    }
-  }
-
-  .slideInUp {
-    -webkit-animation-name: slideInUp;
-    animation-name: slideInUp
-  }
-
-  @keyframes slideInDown {
-    0% {
-      -webkit-transform: translate3d(0, -100%, 0);
-      transform: translate3d(0, -100%, 0);
-      visibility: visible
-    }
-    to {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0)
-    }
-  }
-
-  .slideInDown {
-    -webkit-animation-name: slideInDown;
-    animation-name: slideInDown
-  }
-
-  /*.layout-enter-active, .layout-leave-active {*/
-  /*transition: opacity .3s,transform .3s;*/
-  /*!*transform-origin: center top;*!*/
-  /*}*/
-
-  /*.layout-enter, .layout-leave-active {*/
-  /*opacity: 0;*/
-  /*!*transform: translate(0%, 100%)*!*/
-  /*transform: scale3d(.8, .8, .8)*/
-  /*}*/
-
-  .layout-enter-active {
-    animation: layout-in .4s;
-    transform-origin: center top;
-  }
-
-  .layout-leave-active {
-    animation: layout-in .4s reverse;
-    transform-origin: center top;
-  }
-
-  @keyframes layout-in {
-    0% {
-      -webkit-transform: scale3d(.95, .95, .95);
-      opacity: 0;
-      transform: scale3d(.95, .95, .95)
-    }
-    50% {
-      opacity: 1
-    }
   }
 
 </style>
@@ -437,6 +404,50 @@
     }
     50% {
       opacity: 1
+    }
+  }
+
+  .slideInDown-enter-active {
+    animation: slideInDown-in .5s;
+    transform-origin: center top;
+  }
+
+  .slideInDown-leave-active {
+    animation: slideInDown-in .5s reverse;
+    transform-origin: center top;
+  }
+
+  @keyframes slideInDown-in {
+    0% {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      visibility: visible
+    }
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
+    }
+  }
+
+  .slideInUp-enter-active {
+    animation: slideInUp-in .5s;
+    transform-origin: center top;
+  }
+
+  .slideInUp-leave-active {
+    animation: slideInUp-in .5s reverse;
+    transform-origin: center top;
+  }
+
+  @keyframes slideInUp-in {
+    0% {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible
+    }
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
     }
   }
 
