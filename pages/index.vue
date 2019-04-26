@@ -46,7 +46,7 @@
   import Tool from '~/assets/Tool'
 
   export default {
-    transition: 'layout',
+    transition: 'bounce',
     components: {
       'awei-page': Page,
     },
