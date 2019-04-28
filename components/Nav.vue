@@ -2,7 +2,7 @@
   <div class="nav-cont">
     <div class="nav">
       <p class="title">目录</p>
-      <div v-html="menu.tocHtml" id="nav"></div>
+      <div style="margin-left: -10px;" v-html="menu.tocHtml" id="nav"></div>
     </div>
   </div>
 </template>
@@ -79,7 +79,6 @@
       position: relative;
       padding: 20px;
       border-radius: 4px;
-      margin-left: -10px;
 
       .title {
         color: #7a7a7a;
@@ -91,11 +90,31 @@
       /deep/ ul {
         margin: 0;
         padding: 0;
+        position: relative;
 
         li {
           list-style: none;
           margin-left: 10px;
+          position: relative;
 
+        }
+      }
+
+      /deep/ .markdownIt-TOC > li > a {
+        font-weight: bold;
+        color: #333333;
+      }
+
+      /deep/ .markdownIt-TOC > li > ul li {
+        &::before {
+          position: absolute;
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: #666666;
+          font-size: 12px;
+          left: -4px;
+          top: 14px;
         }
       }
 
@@ -110,36 +129,7 @@
 
         &:hover, &.active {
           color: #35CC62;
-          background-color: #f8f8f8;
-        }
-
-        &.nva_H1 {
-          margin-left: 0px;
-          font-weight: bold;
-        }
-
-        &.nva_H2 {
-          margin-left: 10px;
-        }
-
-        &.nva_H3 {
-          margin-left: 20px;
-          font-size: 12px;
-        }
-
-        &.nva_H4 {
-          margin-left: 30px;
-          font-size: 12px;
-        }
-
-        &.nva_H5 {
-          margin-left: 40px;
-          font-size: 12px;
-        }
-
-        &.nva_H6 {
-          margin-left: 50px;
-          font-size: 12px;
+          background-color: #f5f5f5;
         }
       }
     }

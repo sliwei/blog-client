@@ -51,20 +51,29 @@
 
       <div class="info">
         <div class="logo">
+          <span class="logo_icon"><i class="iconfont a-blog-logo"></i></span>
           <span class="name">Bstu</span>
           <div class="nav">
             <ul>
               <li>
-                <a target="_blank" href="http://manage.bstu.cn">写博客</a>
+                <a target="_blank" href="http://manage.bstu.cn">
+                  <i class="iconfont a-blog-edit-square"></i>
+                  写博客</a>
               </li>
               <li>
-                <a target="_blank" href="http://chat.bstu.cn">聊天室</a>
+                <a target="_blank" href="http://chat.bstu.cn">
+                  <i class="iconfont a-blog-comment"></i>
+                  聊天室</a>
               </li>
               <li>
-                <a target="_blank" href="http://music.bstu.cn">吉姆音乐厅</a>
+                <a target="_blank" href="http://music.bstu.cn">
+                  <i class="iconfont a-blog-app"></i>
+                  吉姆音乐厅</a>
               </li>
               <li>
-                <a target="_blank" href="https://yun.bstu.cn">在线云盘</a>
+                <a target="_blank" href="https://yun.bstu.cn">
+                  <i class="iconfont a-blog-cloud-server"></i>
+                  在线云盘</a>
               </li>
             </ul>
           </div>
@@ -73,13 +82,16 @@
           <p>© 2019 awei</p>
           <p>风格来源 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p>
           <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p>
-          <p><a href="javascript:;">公安网备：50010902000222</a></p>
+          <p><a href="javascript:;">
+            <img style="vertical-align: top" height="14" src="~static/img/wb.png" alt="">
+            <span style="vertical-align: top">公安网备：50010902000222</span>
+          </a></p>
         </div>
       </div>
 
       <div class="oper">
         <a href="javascript:;">
-          <i class="in iconfont a-blog-linkedin"/>
+          <i class="iconfont a-blog-linkedin"/>
         </a>
         <a href="javascript:;">
           <i class="love iconfont a-blog-love1"/>
@@ -110,12 +122,18 @@
         .logo {
           /*padding: 0 0 20px 0;*/
           font-size: 14px;
-          font-weight: bold;
+
+          .logo_icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 10px;
+          }
 
           .name {
             display: inline-block;
             vertical-align: middle;
             margin-bottom: 10px;
+            font-weight: bold;
           }
 
           .nav {
@@ -259,6 +277,7 @@
 
         .info {
           text-align: center;
+          padding: 0;
 
           .logo {
             text-align: center;

@@ -5,14 +5,14 @@
         <div class="head">
           <div class="head_img">
             <img
-              :src="item.c_user.head_img  || 'http://bstu.oss-cn-shenzhen.aliyuncs.com/9.jpg?x-oss-process=style/bstu.cn'"
+              :src="(item.c_user && item.c_user.head_img) || 'http://bstu.oss-cn-shenzhen.aliyuncs.com/9.jpg?x-oss-process=style/bstu.cn'"
               alt="">
           </div>
         </div>
         <div class="main">
           <div class="info">
             <div class="data">
-              <p class="name">{{item.c_user.name}}<span v-if="item.comment"> 回复 {{item.comment.c_user.name}}</span></p>
+              <p class="name">{{item.c_user && item.c_user.name}}<span v-if="item.comment"> 回复 {{item.comment.c_user.name}}</span></p>
               <p class="time">{{getTime(item.create_time)}}</p>
             </div>
             <div class="reply">
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="cont">
-            <p>{{item.cont}}</p>
+            <div class="markdown-body" v-html="getHtml(item.cont)"></div>
           </div>
         </div>
       </div>
@@ -33,6 +33,12 @@
 </template>
 <script>
   import Tool from '~/assets/Tool'
+  import markdownIt from "markdown-it"
+  import markdownTtHighlightjs from "markdown-it-highlightjs"
+  import markdownItMark from "markdown-it-mark"
+  import markdownItKbd from "markdown-it-kbd"
+  import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
+  import markdownItEmoji from "markdown-it-emoji"
 
   export default {
     name: 'item',
@@ -46,6 +52,20 @@
       reply(dat) {
         this.$store.commit('reply/change', dat)
       },
+
+      getHtml(dat) {
+        return markdownIt({
+          html: true,
+          linkify: true,
+          typographer: true,
+          breaks: true,
+        })
+          .use(markdownTtHighlightjs)
+          .use(markdownItEmoji)
+          .use(markdownItMark)
+          .use(markdownItKbd)
+          .render(dat);
+      }
     },
     mounted() {
 
@@ -79,6 +99,7 @@
         .main {
           flex: 1;
           margin-left: 10px;
+          overflow: auto;
 
           .info {
             &:after {

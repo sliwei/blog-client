@@ -50,8 +50,8 @@
         width: 100%;
         height: 36px;
         background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        /*border-radius: 4px;*/
         text-indent: 10px;
         font-size: 14px;
         color: #333333;
@@ -59,7 +59,7 @@
 
         &:focus {
           outline: none;
-          border: 1px solid #35CC62;
+          border: 2px solid #35CC62;
           box-shadow: 0 0 2px #49fb7e;
         }
       }
@@ -67,7 +67,7 @@
       i {
         cursor: pointer;
         position: absolute;
-        top: 6px;
+        top: 7px;
         right: 8px;
         font-size: 22px;
         color: #999;
