@@ -15,7 +15,7 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_nnd0ecj64o.css'},
+      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -34,6 +34,7 @@ module.exports = {
     ],
     script: [
       {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
+      {src: 'https://cdn.bootcss.com/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js'},
     ],
   },
 
@@ -59,6 +60,7 @@ module.exports = {
       {src: '~/plugins/message', ssr: false},
       {src: '~/assets/toTop', ssr: false},
       {src: '~/assets/scrollfix', ssr: false},
+      {src: '~/assets/insertTxt', ssr: false},
     ],
 
   /*

@@ -17,6 +17,7 @@
     "cross-env": "^5.2.0",
     "koa": "^2.5.2",
     "markdown-it": "^8.4.2",
+    "markdown-it-emoji": "^1.4.0",
     "markdown-it-highlightjs": "^3.0.0",
     "markdown-it-kbd": "^2.0.0",
     "markdown-it-mark": "^2.0.0",

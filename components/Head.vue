@@ -39,7 +39,10 @@
   <div class="head-con">
     <div class="head">
       <div class="logo">
-        <nuxt-link to="/">Bstu</nuxt-link>
+        <nuxt-link to="/">
+          <i class="iconfont a-blog-logo"></i>
+          <span>Bstu</span>
+        </nuxt-link>
       </div>
       <div class="menu">
         <div class="nav">
@@ -55,9 +58,6 @@
             </li>
             <li>
               <nuxt-link to="/about">关于</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/404">404</nuxt-link>
             </li>
           </ul>
         </div>
@@ -90,16 +90,25 @@
     .logo {
       align-items: center;
       font-size: 14px;
-      font-weight: bold;
 
       a {
         color: #4a4a4a;
         text-decoration: none;
         padding: 20px 10px;
         display: block;
+        i {
+          color: #000000;
+        }
+
+        span {
+          font-weight: bold;
+        }
 
         &:hover {
           color: #35CC62;
+          i {
+            color: #35CC62;
+          }
         }
       }
     }

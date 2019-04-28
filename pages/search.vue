@@ -2,7 +2,7 @@
   <div class="index">
     <div class="search">
       <div class="keyword animated faster pulse" v-if="parameter.keyword">
-        关键字：{{parameter.keyword}}
+        关键字：<a href="javascript:;">{{parameter.keyword}}</a> 得出以下结果
       </div>
 
       <div class="item animated faster pulse" v-for="(item, i) in users.list" :key="i">
@@ -110,7 +110,7 @@
     margin: 0 auto;
 
     .keyword {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #666666;

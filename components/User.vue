@@ -4,15 +4,15 @@
 
       <div class="heads">
         <nuxt-link to="/">
-          <img src="~static/img/logo.png" alt="">
+          <i class="iconfont a-blog-logo"></i>
         </nuxt-link>
       </div>
       <div class="info">
         <p class="name">awei</p>
         <p class="job">前端工程师</p>
         <p class="addr">
-          <i class="in iconfont a-blog-linkedin"/>
-          <span>beijing</span>
+          <i class="iconfont a-blog-location"/>
+          <span>Beijing</span>
         </p>
       </div>
 
@@ -42,11 +42,11 @@
       </div>
 
       <div class="icons">
-        <div class="item"><i class="in iconfont a-blog-linkedin"/></div>
-        <div class="item"><i class="in iconfont a-blog-linkedin"/></div>
-        <div class="item"><i class="in iconfont a-blog-linkedin"/></div>
-        <div class="item"><i class="in iconfont a-blog-linkedin"/></div>
-        <div class="item"><i class="in iconfont a-blog-linkedin"/></div>
+        <div class="item"><i class="iconfont a-blog-smile"/></div>
+        <div class="item"><i class="iconfont a-blog-smile"/></div>
+        <div class="item"><i class="iconfont a-blog-smile"/></div>
+        <div class="item"><i class="iconfont a-blog-smile"/></div>
+        <div class="item"><i class="iconfont a-blog-smile"/></div>
       </div>
 
     </div>
@@ -85,12 +85,18 @@
         margin: 20px auto 10px;
         width: 60px;
         height: 60px;
-        border-radius: 30px;
-        background-color: #35cc62;
 
-        img {
-          margin: 10px;
-          width: 40px;
+        a {
+          text-decoration: none;
+
+          i {
+            font-size: 60px;
+            color: #000000;
+            transition: all .3s;
+            &:hover {
+              color: #35cc62;
+            }
+          }
         }
       }
 
@@ -109,7 +115,7 @@
 
         .addr {
           i {
-            color: #e60012;
+            color: #7a7a7a;
             vertical-align: middle;
           }
 
