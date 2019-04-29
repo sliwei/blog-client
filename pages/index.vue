@@ -57,7 +57,8 @@
     },
     async asyncData({app, route}) {
       const {data} = await app.$axios.get(`/blog/client/blog/list?pageIndex=${route.query.pageIndex || 1}&pageSize=8`);
-      return {users: data.data}
+      const recent = await app.$axios.get(`/blog/client/blog/recent`);
+      return {users: data.data, recent: recent.data.data}
     },
     methods: {
       getTime(time) {
@@ -71,6 +72,9 @@
           },
         })
       },
+    },
+    mounted() {
+      this.$store.commit('recent/change', this.recent)
     },
     head() {
       return {
@@ -110,6 +114,7 @@
       }
 
       .left {
+        width: 100%;
         /*width: 680px;*/
 
         .list {

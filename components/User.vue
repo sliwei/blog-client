@@ -42,11 +42,21 @@
       </div>
 
       <div class="icons">
-        <div class="item"><i class="iconfont a-blog-smile"/></div>
-        <div class="item"><i class="iconfont a-blog-smile"/></div>
-        <div class="item"><i class="iconfont a-blog-smile"/></div>
-        <div class="item"><i class="iconfont a-blog-smile"/></div>
-        <div class="item"><i class="iconfont a-blog-smile"/></div>
+        <div class="item">
+          😄
+        </div>
+        <div class="item">
+          😆
+        </div>
+        <div class="item">
+          😊
+        </div>
+        <div class="item">
+          😍
+        </div>
+        <div class="item">
+          😘
+        </div>
       </div>
 
     </div>

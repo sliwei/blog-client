@@ -5,7 +5,7 @@
         <div class="head">
           <div class="head_img">
             <img
-              :src="(item.c_user && item.c_user.head_img) || 'http://bstu.oss-cn-shenzhen.aliyuncs.com/9.jpg?x-oss-process=style/bstu.cn'"
+              :src="(item.c_user && item.c_user.head_img) || 'http://oss.bstu.cn/images/20190401/bfe66y04xh14bcnn.png'"
               alt="">
           </div>
         </div>
@@ -68,7 +68,7 @@
       }
     },
     mounted() {
-
+      console.log(this.list);
     }
   }
 </script>
@@ -131,10 +131,11 @@
 
               a {
                 text-decoration: none;
-                font-size: 14px;
+                font-size: 12px;
                 font-family: Montserrat-Medium;
                 font-weight: 500;
-                color: rgba(51, 51, 51, 1);
+                color: #666666;
+                transition: all .3s;
 
                 &:hover {
                   color: rgba(53, 204, 98, 1);
