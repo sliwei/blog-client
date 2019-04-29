@@ -171,6 +171,7 @@
   *:after {
     box-sizing: border-box;
     margin: 0;
+    -webkit-overflow-scrolling: touch;
   }
 
   .button--green {

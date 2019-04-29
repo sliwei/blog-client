@@ -4,18 +4,16 @@
       <p class="title">最新文章</p>
       <div class="list">
         <ul>
-          <li v-for="i in 5">
+          <li v-for="(item, i) in list" :key="i">
             <nuxt-link to="/detail/ncig">
               <div class="img">
-                <img src="http://oss.bstu.cn/images/20190406/r7oaut9b20jxnzq0.png" alt="">
+                <img :src="item.img" alt="">
               </div>
             </nuxt-link>
             <div class="right">
-              <p class="time">2019/02/12</p>
+              <p class="time">{{item.create_time}}</p>
               <p class="name">
-                <nuxt-link to="/detail/ncig">
-                  初探JavaScript正则表达式
-                </nuxt-link>
+                <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
               </p>
             </div>
           </li>
@@ -25,7 +23,13 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    computed: {
+      list() {
+        return this.$store.state.recent.list
+      },
+    },
+  }
 </script>
 <style lang="less" scoped>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="evaluate">
+  <div class="evaluate" id="evaluate">
     <awei-item :list="evaluate" v-if="evaluate.length"/>
     <p class="one_evaluate" v-if="!evaluate.length">^_^成为第一个评论的人吧！</p>
     <!--<div class="separ"></div>-->
@@ -15,7 +15,21 @@
     },
     mounted() {
       console.log(this.evaluate)
-    }
+      // console.log(this.upEvaluate);
+    },
+    computed: {
+      upEvaluate() {
+        return this.$store.state.evaluate.evaluate
+      },
+    },
+    watch: {
+      'upEvaluate': function (newValue, oldValue) {
+        if (newValue.length) {
+          this.evaluate = newValue;
+          $('html,body').animate({scrollTop: $('#evaluate').offset().top}, 1000);
+        }
+      }
+    },
   }
 </script>
 <style lang="less" scoped>
