@@ -1,43 +1,28 @@
 <template>
-  <div class="links-cont">
+  <div class="links-cont" v-if="list.length">
     <div class="links">
       <p class="title">链接</p>
-
       <div class="list">
         <ul>
-          <li>
-            <a target="_blank" href="https://bstu.cn">
-              <span class="name">布什兔</span>
-              <span class="url">bstu.cn</span>
+          <li v-for="(item, i) in list" :key="i">
+            <a target="_blank" :href="item.website">
+              <span class="name">{{item.title}}</span>
+              <span class="url">{{item.website}}</span>
             </a>
           </li>
-          <li>
-            <a target="_blank" href="http://coooe.com">
-              <span class="name">易库网</span>
-              <span class="url">coooe.com</span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://88mc.net">
-              <span class="name">MC</span>
-              <span class="url">88mc.net</span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://lsuer.com">
-              <span class="name">LSUER</span>
-              <span class="url">lsuer.com</span>
-            </a>
-          </li>
-
         </ul>
       </div>
-
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    computed: {
+      list() {
+        return this.$store.state.links.list
+      },
+    },
+  }
 </script>
 <style lang="less" scoped>
 

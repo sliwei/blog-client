@@ -9,27 +9,23 @@
   import Item from './Item.vue'
 
   export default {
-    props: ['evaluate', 'b_id'],
+    props: ['b_id'],
     components: {
       'awei-item': Item,
     },
-    mounted() {
-      console.log(this.evaluate)
-      // console.log(this.upEvaluate);
-    },
     computed: {
-      upEvaluate() {
+      evaluate() {
         return this.$store.state.evaluate.evaluate
       },
     },
-    watch: {
-      'upEvaluate': function (newValue, oldValue) {
-        if (newValue.length) {
-          this.evaluate = newValue;
-          $('html,body').animate({scrollTop: $('#evaluate').offset().top}, 1000);
-        }
-      }
-    },
+    // watch: {
+    //   'upEvaluate': function (newValue, oldValue) {
+    //     if (newValue.length) {
+    //       this.evaluate = newValue;
+    //       $('html,body').animate({scrollTop: $('#evaluate').offset().top}, 1000);
+    //     }
+    //   }
+    // },
   }
 </script>
 <style lang="less" scoped>

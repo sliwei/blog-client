@@ -6,7 +6,7 @@
   import Tags from '~/components/Tags.vue'
 
   export default {
-    transition: 'bounce',
+    transition: '',
     components: {
       'awei-tags': Tags,
     },
