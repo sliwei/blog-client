@@ -3,6 +3,7 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  transition: 'bounce',
   /*
   ** Headers of the page
   */
@@ -16,6 +17,7 @@ module.exports = {
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
+      {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -34,7 +36,7 @@ module.exports = {
     ],
     script: [
       {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
-      {src: 'https://cdn.bootcss.com/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js'},
+      {src: 'https://i.bstu.cn/js/jquery.mCustomScrollbar.concat.min.js'},
     ],
   },
 
@@ -74,24 +76,22 @@ module.exports = {
   /*
   ** Axios module configuration
   */
-  axios:
-    {
-      // See https://github.com/nuxt-community/axios-module#options
-      proxy: true,
-      prefix:
-        '/', // it only work when proxy is enabled
-    }
-  ,
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    proxy: true,
+    prefix:
+      '/', // it only work when proxy is enabled
+  },
 
   proxy: {
     '/blog': process.env.NODE_ENV === 'production' ? 'https://api.bstu.cn' : 'http://localhost:3004',
-  }
-  ,
+  },
 
   /*
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     /*
     ** You can extend webpack config here
     */

@@ -1,11 +1,11 @@
 <template>
   <div>
     <transition name="slideInDown">
-      <awei-head v-if="sta"/>
+      <awei-head v-show="sta"/>
     </transition>
 
     <transition name="bounce">
-      <div class="cont-con" v-if="sta">
+      <div class="cont-con" v-show="sta">
         <div class="cont">
           <div class="cont-cen">
             <div class="content">
@@ -15,16 +15,16 @@
           <div class="cont-left">
             <div class="content">
               <transition name="bounce">
-                <awei-user v-if="sta"></awei-user>
+                <awei-user v-show="sta"></awei-user>
               </transition>
               <transition name="bounce">
-                <awei-links v-if="sta"></awei-links>
+                <awei-links v-show="sta"></awei-links>
               </transition>
               <transition name="bounce">
-                <awei-categories v-if="sta"></awei-categories>
+                <awei-categories v-show="sta"></awei-categories>
               </transition>
               <transition name="bounce">
-                <awei-tag-cloud v-if="sta"></awei-tag-cloud>
+                <awei-tag-cloud v-show="sta"></awei-tag-cloud>
               </transition>
             </div>
             <div class="right-content content">
@@ -32,13 +32,13 @@
                 <awei-search v-if="sta && searchSta"></awei-search>
               </transition>
               <transition name="bounce">
-                <awei-recent v-if="sta"></awei-recent>
+                <awei-recent v-show="sta"></awei-recent>
               </transition>
               <transition name="bounce">
-                <awei-archives v-if="sta"></awei-archives>
+                <awei-archives v-show="sta"></awei-archives>
               </transition>
               <transition name="bounce">
-                <awei-tags v-if="sta"></awei-tags>
+                <awei-tags v-show="sta"></awei-tags>
               </transition>
               <transition name="bounce">
                 <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
@@ -51,13 +51,13 @@
                 <awei-search v-if="sta && searchSta"></awei-search>
               </transition>
               <transition name="bounce">
-                <awei-recent v-if="sta"></awei-recent>
+                <awei-recent v-show="sta"></awei-recent>
               </transition>
               <transition name="bounce">
-                <awei-archives v-if="sta"></awei-archives>
+                <awei-archives v-show="sta"></awei-archives>
               </transition>
               <transition name="bounce">
-                <awei-tags v-if="sta"></awei-tags>
+                <awei-tags v-show="sta"></awei-tags>
               </transition>
               <transition name="bounce">
                 <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
@@ -68,7 +68,7 @@
       </div>
     </transition>
     <transition name="slideInUp">
-      <awei-footer v-if="sta"/>
+      <awei-footer v-show="sta"/>
     </transition>
     <a class="to-top">
       <i class="iconfont a-blog-huidaodingbu"/>
@@ -91,7 +91,7 @@
   import Tags from '~/components/Tags.vue'
 
   export default {
-    transition: 'bounce',
+    // transition: 'bounce',
     components: {
       'awei-head': Head,
       'awei-footer': Footer,

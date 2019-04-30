@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    transition: 'bounce',
+    transition: '',
     head() {
       return {
         title: `归档 | 布什兔 | bstu.cn`,

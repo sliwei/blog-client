@@ -54,6 +54,7 @@
       },
 
       getHtml(dat) {
+        return dat
         return markdownIt({
           html: true,
           linkify: true,
@@ -67,9 +68,6 @@
           .render(dat);
       }
     },
-    mounted() {
-      console.log(this.list);
-    }
   }
 </script>
 <style lang="less" scoped>

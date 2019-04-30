@@ -25,7 +25,7 @@
 
 
     </div>
-    <awei-page class="animated faster pulse" url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter" v-if="users.pageCount"/>
+    <awei-page url="/search" :pageCount="users.pageCount" :pageIndex="users.pageIndex" :parameter="parameter" v-if="users.pageCount"/>
   </div>
 </template>
 
@@ -34,7 +34,7 @@
   import Tool from '~/assets/Tool'
 
   export default {
-    transition: 'bounce',
+    transition: '',
     components: {
       'awei-page': Page,
     },

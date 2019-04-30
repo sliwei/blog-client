@@ -33,7 +33,7 @@
           </div>
 
         </div>
-        <awei-page class="animated faster pulse" url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
+        <awei-page url="/" :pageCount="users.pageCount" :pageIndex="users.pageIndex"/>
       </div>
 
       <!--<div class="rights"></div>-->
@@ -46,7 +46,7 @@
   import Tool from '~/assets/Tool'
 
   export default {
-    transition: 'bounce',
+    transition: '',
     components: {
       'awei-page': Page,
     },
@@ -57,8 +57,7 @@
     },
     async asyncData({app, route}) {
       const {data} = await app.$axios.get(`/blog/client/blog/list?pageIndex=${route.query.pageIndex || 1}&pageSize=8`);
-      const recent = await app.$axios.get(`/blog/client/blog/recent`);
-      return {users: data.data, recent: recent.data.data}
+      return {users: data.data}
     },
     methods: {
       getTime(time) {
@@ -72,9 +71,6 @@
           },
         })
       },
-    },
-    mounted() {
-      this.$store.commit('recent/change', this.recent)
     },
     head() {
       return {

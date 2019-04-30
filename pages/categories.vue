@@ -6,7 +6,7 @@
   import Categories from '~/components/Categories.vue'
 
   export default {
-    transition: 'bounce',
+    transition: '',
     components: {
       'awei-categories': Categories,
     },
