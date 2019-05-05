@@ -12,8 +12,26 @@ export const actions = {
 
   // 全局服务初始化
   nuxtServerInit(store, {req, params, route}) {
-    store.dispatch('user/get');
-    store.dispatch('recent/get');
-    store.dispatch('links/get');
+
+    console.log(req.url);
+
+    const storeList = [
+      store.dispatch('recent/list'),
+      store.dispatch('links/list'),
+      store.dispatch('user/list'),
+      store.dispatch('tags/list')
+    ];
+    if (req._parsedUrl.pathname === '/about') {
+      storeList.push(
+        store.dispatch('evaluate/list')
+      )
+    }
+    if (req._parsedUrl.pathname.indexOf('/detail') >= 0) {
+      storeList.push(
+        store.dispatch('evaluate/list', req._parsedUrl.pathname.split('/')[2])
+      )
+    }
+
+    return Promise.all(storeList)
   }
 }

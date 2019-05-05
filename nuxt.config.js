@@ -57,8 +57,8 @@ module.exports = {
   */
   plugins:
     [
-      '~/plugins/axios',
-      '~/plugins/validate',
+      {src: '~/plugins/axios'},
+      {src: '~/plugins/validate'},
       {src: '~/plugins/message', ssr: false},
       {src: '~/assets/toTop', ssr: false},
       {src: '~/assets/scrollfix', ssr: false},

@@ -37,25 +37,25 @@
         error({message: '你访问的页面不存在', statusCode: 404})
         return;
       }
-      const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=`)
-      let evaluateList = []
-      evaluateList = evaluate.data.data || []
-      evaluateList.map(item => {
-        if (item.f_id) {
-          evaluateList.map(list => {
-            if (list.id === item.f_id) {
-              !list.children && (list.children = [])
-              list.children.push(item)
-            }
-          })
-        }
-      })
-      let news = []
-      evaluateList.map(item => {
-        if (!item.f_id) {
-          news.push(item)
-        }
-      });
+      // const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=`)
+      // let evaluateList = []
+      // evaluateList = evaluate.data.data || []
+      // evaluateList.map(item => {
+      //   if (item.f_id) {
+      //     evaluateList.map(list => {
+      //       if (list.id === item.f_id) {
+      //         !list.children && (list.children = [])
+      //         list.children.push(item)
+      //       }
+      //     })
+      //   }
+      // })
+      // let news = []
+      // evaluateList.map(item => {
+      //   if (!item.f_id) {
+      //     news.push(item)
+      //   }
+      // });
 
       let html = markdownIt({
         html: true,
@@ -69,12 +69,15 @@
         .use(markdownItKbd)
         .render(data.data.markdown);
 
-      return {data: data.data, html: html, evaluate: news}
+      return {data: data.data, html: html}
     },
     methods: {
       init() {
-        this.$store.commit('evaluate/update', this.evaluate);
-        this.$store.commit('evaluate/updateCode', '');
+        if (this.$store.state.evaluate.code !== '') {
+          this.$store.commit('evaluate/upEvaluateList', []);
+          this.$store.commit('evaluate/updateCode', '');
+          this.$store.dispatch('evaluate/list', '');
+        }
 
         this.$nextTick(() => {
           $('.mCSB_scrollTools').remove();

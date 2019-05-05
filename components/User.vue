@@ -20,19 +20,19 @@
         <div class="item">
           <nuxt-link to="/">
             <p class="label">文章</p>
-            <p class="value">{{data.blog}}</p>
+            <p class="value">{{num.blog}}</p>
           </nuxt-link>
         </div>
         <div class="item">
           <nuxt-link to="/">
             <p class="label">分类</p>
-            <p class="value">{{data.category}}</p>
+            <p class="value">{{num.category}}</p>
           </nuxt-link>
         </div>
         <div class="item">
           <nuxt-link to="/">
             <p class="label">标签</p>
-            <p class="value">{{data.tags}}</p>
+            <p class="value">{{num.tags}}</p>
           </nuxt-link>
         </div>
       </div>
@@ -64,17 +64,9 @@
 </template>
 <script>
   export default {
-    data() {
-      return {
-        menu: [],
-      }
-    },
-    methods: {},
-    created() {
-    },
     computed: {
-      data() {
-        return this.$store.state.user.data
+      num() {
+        return this.$store.state.user.num
       },
     },
   }

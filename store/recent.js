@@ -1,18 +1,18 @@
-import axios from 'axios'
-
-export const state = () => ({
-  list: [],
-});
+export const state = () => {
+  return {
+    list: []
+  }
+};
 
 export const mutations = {
-  getRecentList(state, list) {
-    state.list = list;
+  upRecentList(state, action) {
+    state.list = action.data
   },
 };
 
 export const actions = {
-  async get({commit}) {
+  async list({commit}) {
     const res = await this.$axios.$get(`/blog/client/blog/recent`);
-    commit('getRecentList', res.data)
+    commit('upRecentList', res)
   }
 };

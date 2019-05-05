@@ -1,7 +1,7 @@
 <template>
   <div class="evaluate" id="evaluate">
-    <awei-item :list="evaluate" v-if="evaluate.length"/>
-    <p class="one_evaluate" v-if="!evaluate.length">^_^成为第一个评论的人吧！</p>
+    <awei-item :list="list" v-if="list.length"/>
+    <p class="one_evaluate" v-if="!list.length">^_^成为第一个评论的人吧！</p>
     <!--<div class="separ"></div>-->
   </div>
 </template>
@@ -14,18 +14,10 @@
       'awei-item': Item,
     },
     computed: {
-      evaluate() {
-        return this.$store.state.evaluate.evaluate
+      list() {
+        return this.$store.state.evaluate.list
       },
     },
-    // watch: {
-    //   'upEvaluate': function (newValue, oldValue) {
-    //     if (newValue.length) {
-    //       this.evaluate = newValue;
-    //       $('html,body').animate({scrollTop: $('#evaluate').offset().top}, 1000);
-    //     }
-    //   }
-    // },
   }
 </script>
 <style lang="less" scoped>
