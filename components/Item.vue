@@ -50,7 +50,9 @@
 
       // 回复
       reply(dat) {
-        this.$store.commit('reply/change', dat)
+        this.$store.commit('reply/change', dat);
+        $('html,body').animate({scrollTop: $('#cont').offset().top}, 1000);
+        $('#cont').focus();
       },
 
       getHtml(dat) {

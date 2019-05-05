@@ -5,10 +5,10 @@
 
       <div class="list">
         <ul>
-          <li v-for="i in 4">
+          <li v-for="(item, i) in list" :key="i">
             <a target="_blank" href="https://bstu.cn">
-              <span class="name">react</span>
-              <span class="url">12</span>
+              <span class="name">{{item.name}}</span>
+              <span class="url">{{item.id}}</span>
             </a>
           </li>
 
@@ -18,7 +18,13 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    computed: {
+      list() {
+        return this.$store.state.tags.list
+      },
+    },
+  }
 </script>
 <style lang="less" scoped>
 

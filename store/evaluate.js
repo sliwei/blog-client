@@ -1,40 +1,40 @@
-import axios from 'axios'
-
-export const state = () => ({
-  evaluate: [],
-  code: '',
-})
+export const state = () => {
+  return {
+    list: [],
+    code: '',
+  }
+};
 
 export const mutations = {
-  update(state, list) {
-    state.evaluate = list;
-  },
-  updateCode(state, code) {
-    state.code = code;
-  },
-}
-
-export const actions = {
-  async getEvaluate({commit}, code) {
-    const response = await axios.get(`/blog/manage/comment/evaluate_list?code=${code}`);
-    let evaluateList = []
-    evaluateList = response.data.data || []
+  upEvaluateList(state, action) {
+    let evaluateList = [];
+    evaluateList = action.data || [];
     evaluateList.map(item => {
       if (item.f_id) {
         evaluateList.map(list => {
           if (list.id === item.f_id) {
-            !list.children && (list.children = [])
+            !list.children && (list.children = []);
             list.children.push(item)
           }
         })
       }
-    })
-    let news = []
+    });
+    let list = [];
     evaluateList.map(item => {
       if (!item.f_id) {
-        news.push(item)
+        list.push(item)
       }
     });
-    commit('update', news)
+    state.list = list;
+  },
+  updateCode(state, code) {
+    state.code = code;
+  },
+};
+
+export const actions = {
+  async list({commit}, code) {
+    const res = await this.$axios.$get(`/blog/manage/comment/evaluate_list?code=${code || ''}`);
+    commit('upEvaluateList', res)
   }
-}
+};

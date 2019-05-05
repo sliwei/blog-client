@@ -1,16 +1,18 @@
-export const state = () => ({
-  data: {},
-});
+export const state = () => {
+  return {
+    num: {}
+  }
+};
 
 export const mutations = {
-  getNum(state, dat) {
-    state.data = dat;
+  upUserNum(state, action) {
+    state.num = action.data
   },
 };
 
 export const actions = {
-  async get({commit}) {
+  async list({commit}) {
     const res = await this.$axios.$get(`/blog/client/blog/num`);
-    commit('getNum', res.data)
+    commit('upUserNum', res)
   }
 };

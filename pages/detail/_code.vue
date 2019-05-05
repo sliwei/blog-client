@@ -74,25 +74,26 @@
         error({message: '你访问的页面不存在', statusCode: 404})
         return;
       }
-      const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=${route.params.code}`)
-      let evaluateList = []
-      evaluateList = evaluate.data.data || []
-      evaluateList.map(item => {
-        if (item.f_id) {
-          evaluateList.map(list => {
-            if (list.id === item.f_id) {
-              !list.children && (list.children = [])
-              list.children.push(item)
-            }
-          })
-        }
-      })
-      let news = []
-      evaluateList.map(item => {
-        if (!item.f_id) {
-          news.push(item)
-        }
-      });
+      //
+      // const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=${route.params.code}`)
+      // let evaluateList = []
+      // evaluateList = evaluate.data.data || []
+      // evaluateList.map(item => {
+      //   if (item.f_id) {
+      //     evaluateList.map(list => {
+      //       if (list.id === item.f_id) {
+      //         !list.children && (list.children = [])
+      //         list.children.push(item)
+      //       }
+      //     })
+      //   }
+      // })
+      // let news = []
+      // evaluateList.map(item => {
+      //   if (!item.f_id) {
+      //     news.push(item)
+      //   }
+      // });
 
       const neighbor = await app.$axios.get(`/blog/client/blog/neighbor?id=${data.data.id}`)
 
@@ -125,7 +126,7 @@
         html: html,
         tocArray: tocArray,
         tocHtml: tocHtml,
-        evaluate: news,
+        // evaluate: news,
         neighbor: neighbor.data.data
       }
     },
@@ -135,8 +136,11 @@
           tocArray: this.tocArray,
           tocHtml: this.tocHtml,
         });
-        this.$store.commit('evaluate/update', this.evaluate);
-        this.$store.commit('evaluate/updateCode', this.data.code);
+        if (this.$store.state.evaluate.code !== this.data.code) {
+          this.$store.commit('evaluate/upEvaluateList', []);
+          this.$store.commit('evaluate/updateCode', this.data.code);
+          this.$store.dispatch('evaluate/list', this.data.code);
+        }
 
         this.$nextTick(() => {
           $('.mCSB_scrollTools').remove();
