@@ -56,7 +56,7 @@
       },
 
       getHtml(dat) {
-        return dat
+        // return dat
         return markdownIt({
           html: true,
           linkify: true,
