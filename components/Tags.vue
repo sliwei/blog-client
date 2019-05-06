@@ -8,7 +8,7 @@
           <li v-for="(item, i) in list" :key="i">
             <a target="_blank" href="https://bstu.cn">
               <span class="name">{{item.name}}</span>
-              <span class="url">{{item.id}}</span>
+              <span class="url">{{item.num}}</span>
             </a>
           </li>
 
