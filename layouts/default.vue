@@ -398,13 +398,24 @@
   }
 
   @keyframes bounce-in {
+    /*0% {*/
+      /*-webkit-transform: scale3d(.8, .8, .8);*/
+      /*opacity: 0;*/
+      /*transform: scale3d(.8, .8, .8)*/
+    /*}*/
+    /*50% {*/
+      /*opacity: 1*/
+    /*}*/
     0% {
-      -webkit-transform: scale3d(.8, .8, .8);
+      -webkit-transform: translate3d(0, 20px, 0);
+      transform: translate3d(0, 20px, 0);
+      visibility: visible;
       opacity: 0;
-      transform: scale3d(.8, .8, .8)
     }
-    50% {
-      opacity: 1
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      opacity: 1;
     }
   }
 
