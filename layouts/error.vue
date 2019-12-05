@@ -74,6 +74,7 @@
             color: #7f828b;
             text-decoration: none;
             font-size: 12px;
+            transition: color .35s;
 
             &:hover {
               color: #35CC62;
