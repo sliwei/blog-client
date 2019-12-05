@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="btn">
-      <button @click="sub">提交 + {{code}}</button>
+      <button @click="sub">提&ensp;交</button>
     </div>
   </div>
 </template>
