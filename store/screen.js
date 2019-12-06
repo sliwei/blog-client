@@ -1,6 +1,6 @@
 export const state = () => {
 	return {
-		contMax: true, // 内容勿扰模式
+		contMax: false, // 内容勿扰模式
 	}
 };
 
