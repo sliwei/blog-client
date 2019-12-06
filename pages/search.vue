@@ -18,7 +18,7 @@
             <i class="iconfont a-blog-date"></i>
             <span>{{getTime(item.create_time)}}</span>
             <i class="iconfont a-blog-address"></i>
-            <span>重庆 {{item.user_name}}</span>
+            <span>未知 {{item.user_name}}</span>
           </div>
         </div>
       </div>
