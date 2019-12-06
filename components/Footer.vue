@@ -112,6 +112,7 @@
 
   .footer-con {
     background-color: #ffffff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
 
     .footer {
       padding: 50px 0 80px;

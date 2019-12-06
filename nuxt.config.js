@@ -50,7 +50,9 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
+  css: [
+    '~/assets/bubble.css'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -63,6 +65,7 @@ module.exports = {
       {src: '~/assets/toTop', ssr: false},
       {src: '~/assets/scrollfix', ssr: false},
       {src: '~/assets/insertTxt', ssr: false},
+      {src: '~/assets/bubble', ssr: false},
     ],
 
   /*

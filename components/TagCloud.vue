@@ -3,22 +3,51 @@
     <div class="tag-cloud">
       <p class="title">标签云</p>
 
-      <div class="list">
-        <ul>
-          <li v-for="i in 2">
-            <a target="_blank" href="https://bstu.cn">
-              <span class="name">vue</span>
-              <span class="url">5</span>
-            </a>
-          </li>
-
-        </ul>
+      <div class="tagcloud">
+        <nuxt-link v-for="(item, i) in list" :class="sty(item)" :to="`/search?tag=${item.id}`" :key="i">{{item.name}}</nuxt-link>
       </div>
+
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    computed: {
+      list() {
+        return this.$store.state.tags.list
+      },
+    },
+    methods: {
+      init() {
+        /*3D标签云*/
+        tagcloud({
+          selector: ".tagcloud", // 元素选择器
+          fontsize: 16, // 基本字体大小, 单位px
+          radius: 140, // 滚动半径, 单位px 页面宽度和高度的五分之一
+          mspeed: "slow", // 滚动最大速度, 取值: slow, normal(默认), fast
+          ispeed: "slow", // 滚动初速度, 取值: slow, normal(默认), fast
+          direction: 135, // 初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+          keep: false// 鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+        });
+      },
+      sty(dat) {
+        let size = 1;
+        if(dat.num > 5) {
+          size = 4
+        } else  if (dat.num > 4) {
+          size = 3
+        } else  if (dat.num > 3) {
+          size = 2
+        }
+        return `b0${size} co0${Math.floor(Math.random()*(1 - 7) + 7)}`
+      },
+    },
+    mounted() {
+      this.$nextTick(() => {
+        this.init();
+      })
+    },
+  }
 </script>
 <style lang="less" scoped>
 
@@ -44,47 +73,13 @@
         margin-bottom: 10px;
       }
 
-      .list {
-        ul {
-          margin: 0;
-          padding: 0;
-
-          li {
-            list-style: none;
-            text-align: left;
-
-            a {
-              color: #4a4a4a;
-              text-decoration: none;
-              display: block;
-              padding: 6px 10px;
-              border-radius: 2px;
-
-              &:hover {
-                background-color: #f5f5f5;
-                color: #363636;
-              }
-
-              .name {
-                display: inline-block;
-                height: 24px;
-              }
-
-              .url {
-                font-size: 12px;
-                background-color: #f5f5f5;
-                border-radius: 4px;
-                display: inline-block;
-                height: 24px;
-                line-height: 22px;
-                padding: 0 5px;
-                float: right;
-
-              }
-
-            }
-          }
-        }
+      .tagcloud {
+        width: 100%;
+        visibility: visible;
+        position: relative;
+        min-height: 150px!important;
+        min-width: auto!important;
+        margin: 30px 60px 0;
       }
 
     }
