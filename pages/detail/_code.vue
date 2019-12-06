@@ -4,7 +4,7 @@
       <div class="index">
 
         <div @click="checkCountMax" class="cont_max">
-          <i :class="`iconfont a-blog-arrowright ${contMax ? 'arrowright_false' : ''}`"/>
+          <i :class="`iconfont a-blog-arrowright ${contMax ? 'arrowright_false' : 'arrowright_true'}`"/>
         </div>
 
         <div class="first">
@@ -205,11 +205,11 @@
 
       @-webkit-keyframes arrow {
         0%, 100% {
-          right: -25px;
+          right: 51%;
           opacity: 1;
         }
         50% {
-          right: -15px;
+          right: 49%;
           opacity: .5;
         }
       }
@@ -219,9 +219,10 @@
         animation: arrow 3s cubic-bezier(.5, 0, .1, 1) infinite;
         -webkit-animation: arrow 3s cubic-bezier(.5, 0, .1, 1) infinite;
         position: absolute;
-        top: 0;
-        right: -15px;
+        top: -20px;
+        right: 50%;
         cursor: pointer;
+        z-index: 99;
         i {
           cursor: pointer;
         }
@@ -230,8 +231,16 @@
           transform: rotate(180deg);
           -ms-transform: rotate(180deg);
           -moz-transform: rotate(180deg);
-          -webkit-transform: rotate(-180deg);
+          -webkit-transform: rotate(180deg);
           -o-transform: rotate(180deg);
+        }
+        .arrowright_true {
+          display: inline-block;
+          transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
         }
         &:hover {
           i {
