@@ -1,10 +1,10 @@
 <template>
   <div class="archives">
     <p class="title">归档</p>
-    <div class="year_item" v-for="item in list">
+    <div class="year_item" v-for="(item, i) in list" :key="i">
       <p class="year">{{item.year}}</p>
       <ul>
-        <li v-for="yearItem in item.list">
+        <li v-for="(yearItem, index) in item.list" :key="index">
           <span class="date">{{yearItem.date}}</span>
           <nuxt-link :to="`/detail/${yearItem.code}`">{{yearItem.title}}</nuxt-link>
         </li>
@@ -16,33 +16,32 @@
 <script>
   export default {
     transition: '',
-    async asyncData({app, route}) {
-      const {data} = await app.$axios.get('/blog/client/blog/archives');
-
-      let list = data.data;
-      let year = [];
-      let yearList = {};
-      list.map(item => {
-        let create_time = new Date(item.create_time);
-        let month = create_time.getMonth() + 1;
-        let dates = create_time.getDate();
-        // month = month < 10 ? `0${month}` : month;
-        dates = dates < 10 ? `0${dates}` : dates;
-        item.date = `${month}.${dates}`;
-        let n = new Date(item.create_time).getFullYear();
-        let index = year.indexOf(n);
-        if (index === -1) {
-          year.push(n);
-          yearList[year.length-1] = {};
-          yearList[year.length-1].year = n;
-          yearList[year.length-1].list = [];
-          yearList[year.length-1].list = [...yearList[year.length-1].list, item];
-        } else {
-          yearList[index].list = [...yearList[index].list, item];
-        }
-      });
-
-      return {list: yearList}
+    computed: {
+      list() {
+        let list = JSON.parse(JSON.stringify(this.$store.state.archives.list));
+        let year = [];
+        let yearList = [];
+        list.map(item => {
+          let create_time = new Date(item.create_time);
+          let month = create_time.getMonth() + 1;
+          let dates = create_time.getDate();
+          // month = month < 10 ? `0${month}` : month;
+          dates = dates < 10 ? `0${dates}` : dates;
+          item.date = `${month}.${dates}`;
+          let n = new Date(item.create_time).getFullYear();
+          let index = year.indexOf(n);
+          if (index === -1) {
+            year.push(n);
+            yearList[year.length-1] = {};
+            yearList[year.length-1].year = n;
+            yearList[year.length-1].list = [];
+            yearList[year.length-1].list = [...yearList[year.length-1].list, item];
+          } else {
+            yearList[index].list = [...yearList[index].list, item];
+          }
+        });
+        return yearList;
+      },
     },
     head() {
       return {
