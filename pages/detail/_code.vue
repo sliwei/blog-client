@@ -2,6 +2,11 @@
   <div>
     <div class="cont">
       <div class="index">
+
+        <div @click="checkCountMax" class="cont_max">
+          <i :class="`iconfont a-blog-arrowright ${contMax ? 'arrowright_false' : ''}`"/>
+        </div>
+
         <div class="first">
           <img :src="data.img" alt="">
         </div>
@@ -130,6 +135,11 @@
         neighbor: neighbor.data.data
       }
     },
+    computed: {
+      contMax() {
+        return this.$store.state.screen.contMax
+      },
+    },
     methods: {
       init() {
         this.$store.commit('nav/setMenu', {
@@ -155,7 +165,10 @@
       },
       getTime(time) {
         return Tool.formatDate(time, 'YY年MM月DD日hh时mm分')
-      }
+      },
+      checkCountMax() {
+        this.$store.commit('screen/changeContMax')
+      },
     },
     mounted() {
       this.init();
@@ -188,6 +201,45 @@
   .cont {
 
     .index {
+      position: relative;
+
+      @-webkit-keyframes arrow {
+        0%, 100% {
+          right: -25px;
+          opacity: 1;
+        }
+        50% {
+          right: -15px;
+          opacity: .5;
+        }
+      }
+
+      .cont_max {
+        opacity: 1;
+        animation: arrow 3s cubic-bezier(.5, 0, .1, 1) infinite;
+        -webkit-animation: arrow 3s cubic-bezier(.5, 0, .1, 1) infinite;
+        position: absolute;
+        top: 0;
+        right: -15px;
+        cursor: pointer;
+        i {
+          cursor: pointer;
+        }
+        .arrowright_false {
+          display: inline-block;
+          transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -webkit-transform: rotate(-180deg);
+          -o-transform: rotate(180deg);
+        }
+        &:hover {
+          i {
+            color: #000;
+          }
+        }
+      }
+
       .first {
         &:after {
           content: '';

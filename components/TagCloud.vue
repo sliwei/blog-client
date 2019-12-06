@@ -74,7 +74,6 @@
       }
 
       .tagcloud {
-        width: 100%;
         visibility: visible;
         position: relative;
         min-height: 150px!important;

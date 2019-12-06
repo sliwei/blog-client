@@ -7,7 +7,7 @@
     <transition name="bounce">
       <div class="cont-con" v-show="sta">
         <div class="cont">
-          <div class="cont-cen">
+          <div :class="`cont-cen ${contMax && isDetailRoute ? 'cont-cen-max' : ''}`">
             <div class="content">
               <nuxt/>
             </div>
@@ -45,7 +45,7 @@
               </transition>
             </div>
           </div>
-          <div class="cont-right">
+          <div :class="`cont-right ${contMax && isDetailRoute ? 'cont-right-min' : ''}`">
             <div class="content">
               <transition name="bounce">
                 <awei-search v-if="sta && searchSta"></awei-search>
@@ -115,6 +115,12 @@
     computed: {
       menu() {
         return this.$store.state.nav.menu
+      },
+      contMax() {
+        return this.$store.state.screen.contMax
+      },
+      isDetailRoute() {
+        return this.$route.name === 'detail-code'
       },
     },
     methods: {
@@ -294,6 +300,10 @@
         padding: 10px 10px;
       }
 
+      .cont-cen-max {
+        width: 66.66667%;
+      }
+
       .cont-right {
         display: none;
         padding: 10px 10px;
@@ -320,6 +330,10 @@
       .cont-cen {
         width: 66.66667%;
         padding: 20px 10px;
+      }
+
+      .cont-cen-max {
+        width: 66.66667%;
       }
 
       .cont-right {
@@ -350,10 +364,17 @@
         padding: 20px 10px;
       }
 
+      .cont-cen-max {
+        width: 75%;
+      }
+
       .cont-right {
         width: 25%;
         padding: 20px 10px;
         display: block !important;
+      }
+      .cont-right-min {
+        display: none!important;
       }
     }
   }
@@ -378,11 +399,17 @@
         width: 50%;
         padding: 20px 10px;
       }
+      .cont-cen-max {
+        width: 75%;
+      }
 
       .cont-right {
         width: 25%;
         padding: 20px 10px;
         display: block !important;
+      }
+      .cont-right-min {
+        display: none!important;
       }
     }
   }
