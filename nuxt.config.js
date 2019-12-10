@@ -18,11 +18,11 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://i.bstu.cn/css/github-markdown.css'
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   type: 'text/css',
+      //   href: 'https://i.bstu.cn/css/github-markdown.css'
+      // },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -51,7 +51,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/bubble.css'
+    '~/assets/css/bubble.css',
+    '~/assets/css/github-markdown.css',
   ],
 
   /*
@@ -62,6 +63,7 @@ module.exports = {
       {src: '~/plugins/axios'},
       {src: '~/plugins/validate'},
       {src: '~/plugins/message', ssr: false},
+      {src: '~/plugins/vue-photo-preview-op', ssr: false},
       {src: '~/assets/toTop', ssr: false},
       {src: '~/assets/scrollfix', ssr: false},
       {src: '~/assets/insertTxt', ssr: false},

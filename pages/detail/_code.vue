@@ -125,7 +125,7 @@
           }
         })
         .render(data.data.markdown);
-
+      html = html.replace(/<img src="/g, '<img preview="0" src="');
       return {
         data: data.data,
         html: html,
@@ -161,6 +161,7 @@
             },
             theme: 'dark-thin'
           });
+          // this.$previewRefresh();
         });
       },
       getTime(time) {
