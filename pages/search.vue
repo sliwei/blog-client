@@ -146,14 +146,14 @@
 
         .day {
           font-size: 50px;
-          font-family: Montserrat-Regular;
+          /*font-family: Montserrat-Regular;*/
           font-weight: 400;
           color: rgba(255, 255, 255, 1);
         }
 
         .year {
           font-size: 14px;
-          font-family: Montserrat-Medium;
+          /*font-family: Montserrat-Medium;*/
           font-weight: 500;
           color: rgba(255, 255, 255, 1);
           opacity: 0.8;
@@ -170,7 +170,7 @@
 
           span {
             font-size: 14px;
-            font-family: Montserrat-Medium;
+            /*font-family: Montserrat-Medium;*/
             font-weight: 500;
             color: rgba(153, 153, 153, 1);
             line-height: 23px;
@@ -186,7 +186,7 @@
         .title {
           a {
             font-size: 18px;
-            font-family: Montserrat-Regular;
+            /*font-family: Montserrat-Regular;*/
             font-weight: bold;
             color: #666666;
             line-height: 32px;
@@ -210,7 +210,7 @@
 
           a {
             font-size: 14px;
-            font-family: Montserrat-Medium;
+            /*font-family: Montserrat-Medium;*/
             font-weight: 500;
             line-height: 14px;
             color: #999999;

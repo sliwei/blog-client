@@ -161,7 +161,6 @@
 
                 span {
                   font-size: 14px;
-                  font-family: Montserrat-Medium;
                   font-weight: 500;
                   color: rgba(153, 153, 153, 1);
                   line-height: 23px;
@@ -179,7 +178,6 @@
 
                 a {
                   font-size: 20px;
-                  font-family: Montserrat-Regular;
                   font-weight: 400;
                   color: rgba(51, 51, 51, 1);
                   line-height: 32px;
@@ -209,7 +207,6 @@
                 a {
                   font-size: 12px;
                   text-decoration: none;
-                  font-family: Montserrat-Medium;
                   font-weight: 500;
                   color: #999999;
                   vertical-align: middle;

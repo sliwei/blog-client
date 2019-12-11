@@ -8,7 +8,7 @@
         </nuxt-link>
       </div>
       <div class="info">
-        <p class="name">awei</p>
+        <p class="name">Liwei</p>
         <p class="job">前端工程师</p>
         <p class="addr">
           <i class="iconfont a-blog-location"/>
@@ -38,7 +38,7 @@
       </div>
 
       <div class="get_me">
-        <button>关注我</button>
+        <a target="_blank" href="https://github.com/sliwei">关注我</a>
       </div>
 
       <div class="icons">
@@ -159,7 +159,9 @@
       .get_me {
         margin: 20px auto;
 
-        button {
+        a {
+          text-decoration: none;
+          display: block;
           width: 100%;
           height: 36px;
           line-height: 36px;
@@ -169,6 +171,7 @@
           color: #fff;
           font-size: 14px;
           cursor: pointer;
+          outline: none;
         }
       }
 

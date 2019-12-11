@@ -79,9 +79,9 @@
           </div>
         </div>
         <div class="copyright">
-          <p>© 2019 awei</p>
-          <p>主题风格致敬 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p>
-          <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p>
+          <p>© liwei 2019 - 2020</p> |
+          <p>风格灵感 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p> |
+          <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p> |
           <p><a href="javascript:;">
             <img style="vertical-align: top" height="14" src="~static/img/wb.png" alt="">
             <span style="vertical-align: top">公安网备：50010902000222</span>

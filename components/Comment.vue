@@ -2019,7 +2019,6 @@
 
         p {
           font-size: 14px;
-          font-family: Montserrat-Medium;
           font-weight: 500;
           color: rgba(51, 51, 51, 1);
           margin: 0 0 5px 0;
@@ -2117,7 +2116,7 @@
             font-size: 14px;
             resize: vertical;
             transition: border .35s;
-            font-family: Arial;
+            /*font-family: Arial;*/
 
             &:focus {
               outline: none;
@@ -2247,6 +2246,7 @@
       text-align: center;
 
       button {
+        font-family: Serif;
         cursor: pointer;
         width: 202px;
         height: 48px;
@@ -2255,7 +2255,6 @@
         border-radius: 4px;
         text-align: center;
         font-size: 16px;
-        font-family: Montserrat-Medium;
         font-weight: 500;
         color: rgba(255, 255, 255, 1);
         border: 0;
