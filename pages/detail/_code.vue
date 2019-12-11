@@ -291,6 +291,9 @@
         .title {
           h1 {
             color: #333333;
+            font-size: 24px;
+            font-weight: 400;
+            font-family: Serif;
           }
         }
 
@@ -347,7 +350,7 @@
       margin: 10px 0 0 0;
       font-weight: bold;
       font-size: 14px;
-      font-family: Montserrat-Regular;
+      /*font-family: Montserrat-Regular;*/
       color: rgba(51, 51, 51, 1);
       line-height: 18px;
       color: #333333;

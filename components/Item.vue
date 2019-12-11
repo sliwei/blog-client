@@ -113,14 +113,13 @@
 
               .name {
                 font-size: 16px;
-                font-family: Montserrat-Regular;
                 font-weight: 400;
                 color: rgba(51, 51, 51, 1);
               }
 
               .time {
                 font-size: 12px;
-                font-family: OpenSans;
+                /*font-family: OpenSans;*/
                 font-weight: 400;
                 color: rgba(153, 153, 153, 1);
               }
@@ -132,7 +131,7 @@
               a {
                 text-decoration: none;
                 font-size: 12px;
-                font-family: Montserrat-Medium;
+                /*font-family: Montserrat-Medium;*/
                 font-weight: 500;
                 color: #666666;
                 transition: all .3s;

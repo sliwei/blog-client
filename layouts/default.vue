@@ -20,13 +20,14 @@
               <transition name="bounce">
                 <awei-links v-show="sta"></awei-links>
               </transition>
-              <transition name="bounce">
-                <awei-categories v-show="sta"></awei-categories>
-              </transition>
+<!--              <transition name="bounce">-->
+<!--                <awei-categories v-show="sta"></awei-categories>-->
+<!--              </transition>-->
               <transition name="bounce">
                 <awei-tag-cloud v-show="sta"></awei-tag-cloud>
               </transition>
             </div>
+            <!--当窄屏模式现实-->
             <div class="right-content content">
               <transition name="bounce">
                 <awei-search v-if="sta && searchSta"></awei-search>
@@ -34,12 +35,12 @@
               <transition name="bounce">
                 <awei-recent v-show="sta"></awei-recent>
               </transition>
-              <transition name="bounce">
-                <awei-archives v-show="sta"></awei-archives>
-              </transition>
-              <transition name="bounce">
-                <awei-tags v-show="sta"></awei-tags>
-              </transition>
+<!--              <transition name="bounce">-->
+<!--                <awei-archives v-show="sta"></awei-archives>-->
+<!--              </transition>-->
+<!--              <transition name="bounce">-->
+<!--                <awei-tags v-show="sta"></awei-tags>-->
+<!--              </transition>-->
               <transition name="bounce">
                 <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
               </transition>
@@ -53,12 +54,12 @@
               <transition name="bounce">
                 <awei-recent v-show="sta"></awei-recent>
               </transition>
-              <transition name="bounce">
-                <awei-archives v-show="sta"></awei-archives>
-              </transition>
-              <transition name="bounce">
-                <awei-tags v-show="sta"></awei-tags>
-              </transition>
+<!--              <transition name="bounce">-->
+<!--                <awei-archives v-show="sta"></awei-archives>-->
+<!--              </transition>-->
+<!--              <transition name="bounce">-->
+<!--                <awei-tags v-show="sta"></awei-tags>-->
+<!--              </transition>-->
               <transition name="bounce">
                 <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
               </transition>
@@ -148,8 +149,8 @@
 
 <style>
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /*font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
+    font-family: Serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -158,6 +159,11 @@
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     background-color: #f7f7f7;
+  }
+
+  input, textarea {
+    font-family: Serif;
+    color: #333;
   }
 
   *,
