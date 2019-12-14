@@ -3,7 +3,7 @@
     <div class="about ">
       <h2>About Me</h2>
       <div class="markdown-body" v-html="html"></div>
-      <p style="margin-top: 20px;font-size: 14px;font-weight: 300;color: #999;font-family: 'serif'">“打工是肯定要打工的，这一辈子都要打工！” —— Mr码·农</p>
+      <p class="no_work">“打工是肯定要打工的，这一辈子都要打工！” —— Mr码·农</p>
     </div>
 
     <!--评论-->
@@ -119,9 +119,9 @@
 
 <style lang="less" scoped>
   .about {
-    background-color: #FFFFFF;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -129,7 +129,14 @@
       font-family: serif;
       font-weight: 300;
       margin-bottom: 20px;
-      color: #999;
+      color: @base_color;
+    }
+    .no_work {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      color: @base_color;
+      font-family: serif;
     }
   }
 </style>

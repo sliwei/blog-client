@@ -29,9 +29,9 @@
   .links-cont {
     width: 100%;
     position: static;
-    background-color: #ffffff;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     margin-bottom: 20px;
 
     .links {
@@ -42,7 +42,7 @@
       border-radius: 4px;
 
       .title {
-        color: #7a7a7a;
+        color: @block_title;
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;
@@ -58,15 +58,15 @@
             text-align: left;
 
             a {
-              color: #4a4a4a;
+              color: @color;
               text-decoration: none;
               display: block;
               padding: 6px 10px;
               border-radius: 2px;
 
               &:hover {
-                background-color: #f5f5f5;
-                color: #363636;
+                background-color: @bg_color;
+                color: @hover_color;
               }
 
               .name {
@@ -76,14 +76,14 @@
 
               .url {
                 font-size: 12px;
-                background-color: #f5f5f5;
+                background-color: @black_color;
                 border-radius: 4px;
                 display: inline-block;
                 height: 24px;
                 line-height: 22px;
                 padding: 0 5px;
                 float: right;
-
+                color: @color;
               }
 
             }

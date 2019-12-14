@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     /*padding-bottom: 20px;*/
 
     .error {
@@ -77,7 +77,7 @@
             transition: color .35s;
 
             &:hover {
-              color: #35CC62;
+              color: @hover_color;
             }
           }
         }

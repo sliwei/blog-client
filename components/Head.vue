@@ -82,8 +82,9 @@
   }
 
   .head-con {
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
+    background-color: @black_color;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05);*/
+    box-shadow: @box_shadow;
   }
 
   .head {
@@ -92,12 +93,14 @@
       font-size: 14px;
 
       a {
-        color: #4a4a4a;
+        /*color: #4a4a4a;*/
+        color: @color;
         text-decoration: none;
         padding: 20px 10px;
         display: block;
         i {
-          color: #000000;
+          /*color: #000000;*/
+          color: @color;
         }
 
         span {
@@ -105,9 +108,9 @@
         }
 
         &:hover {
-          color: #35CC62;
+          color: @hover_color;
           i {
-            color: #35CC62;
+            color: @hover_color;
           }
         }
       }
@@ -128,18 +131,19 @@
             align-items: center;
 
             a {
-              color: #4a4a4a;
+              /*color: #4a4a4a;*/
+              color: @color;
               text-decoration: none;
               padding: 20px 10px;
               display: block;
 
               &:hover {
-                color: #35CC62;
+                color: @hover_color;
               }
             }
 
             &:hover {
-              background-color: #fafafa;
+              /*background-color: #fafafa;*/
             }
 
           }
@@ -157,11 +161,11 @@
           align-items: center;
           display: flex;
           padding: 18px 12px;
-          color: #4a4a4a;
+          color: @color;
 
           &:hover {
-            background-color: #fafafa;
-            color: #35CC62;
+            /*background-color: #fafafa;*/
+            color: @hover_color;
           }
 
           i {

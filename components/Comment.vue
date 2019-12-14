@@ -1991,14 +1991,14 @@
   }
 
   .comment {
-    background-color: #ffffff;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     padding: 20px;
     margin-bottom: 20px;
 
     .title {
-      color: #7a7a7a;
+      color: @block_title;
       font-size: 12px;
       text-align: left;
       margin-bottom: 10px;
@@ -2020,7 +2020,7 @@
         p {
           font-size: 14px;
           font-weight: 500;
-          color: rgba(51, 51, 51, 1);
+          color: @color;
           margin: 0 0 5px 0;
 
           .txt {
@@ -2088,7 +2088,6 @@
           }
 
           input {
-            color: #333333;
             width: 100%;
             height: 36px;
             border: 2px solid rgba(0, 0, 0, .1);
@@ -2099,14 +2098,13 @@
 
             &:focus {
               outline: none;
-              border: 2px solid #35CC62;
+              border: 2px solid @hover_color;
               box-shadow: 0 0 2px #49fb7e;
             }
           }
 
           textarea {
             float: left;
-            color: #333333;
             padding: 5px 10px;
             width: 100%;
             min-height: 128px;
@@ -2120,7 +2118,7 @@
 
             &:focus {
               outline: none;
-              border: 2px solid #35CC62;
+              border: 2px solid @hover_color;
               box-shadow: 0 0 2px #49fb7e;
             }
 
@@ -2156,7 +2154,7 @@
                 transition: all .3s;
 
                 &:hover, &.active {
-                  color: #35CC62;
+                  color: @hover_color;
                 }
               }
 
@@ -2166,10 +2164,10 @@
           .emoji {
             margin-top: -2px;
             border: 2px solid #e5e5e5;
-            background-color: #ffffff;
+            background-color: @black_color;
 
             .menu {
-              border-bottom: 1px solid #35CC62;
+              border-bottom: 1px solid @hover_color;
               display: flex;
               &:after {
                 content: '';
@@ -2180,18 +2178,18 @@
                 float: left;
                 display: inline-block;
                 font-size: 12px;
-                color: #4a4a4a;
+                color: @color;
                 cursor: pointer;
                 transition: all .3s;
                 flex: 1;
                 padding: 8px 0;
                 text-align: center;
                 &:hover {
-                  background-color: fade(#35CC62, 20);
-                  color: #35CC62;
+                  background-color: fade(@hover_color, 20);
+                  color: @hover_color;
                 }
                 &.active {
-                  background-color: fade(#35CC62, 80);
+                  background-color: fade(@hover_color, 80);
                   color: #FFFFFF;
                 }
               }
@@ -2205,7 +2203,7 @@
             }
 
             &.active {
-              border: 2px solid #35CC62;
+              border: 2px solid @hover_color;
               box-shadow: 0 0 2px #49fb7e;
             }
 
@@ -2217,12 +2215,12 @@
               padding: 2px;
               float: left;
               margin: 2px;
-              border: 1px solid #ffffff;
+              border: 1px solid @black_color;
               cursor: pointer;
 
               &:hover {
-                border: 1px solid #35CC62;
-                background-color: fade(#35CC62, 20);
+                border: 1px solid @hover_color;
+                background-color: fade(@hover_color, 20);
               }
             }
           }
@@ -2251,12 +2249,12 @@
         width: 202px;
         height: 48px;
         line-height: 48px;
-        background: rgba(53, 204, 98, 1);
+        background: @bg_color;
         border-radius: 4px;
         text-align: center;
         font-size: 16px;
         font-weight: 500;
-        color: rgba(255, 255, 255, 1);
+        color: @color;
         border: 0;
         outline: none;
       }

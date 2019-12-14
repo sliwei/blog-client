@@ -245,7 +245,7 @@
         }
         &:hover {
           i {
-            color: #000;
+            color: @color;
           }
         }
       }
@@ -267,21 +267,21 @@
         }
       }
 
-      background-color: #ffffff;
+      background-color: @black_color;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+      box-shadow: @box_shadow;
       margin-bottom: 20px;
 
       .time {
-        color: #666666;
+        color: @base_color;
         padding-bottom: 5px;
-        border-bottom: 1px dashed #35CC62;
+        border-bottom: 1px dashed @color;
         margin-bottom: 20px;
         font-size: 12px;
         text-align: right;
 
         .txt {
-          color: #35CC62;
+          color: @color;
         }
       }
 
@@ -290,7 +290,8 @@
 
         .title {
           h1 {
-            color: #333333;
+            /*color: #333333;*/
+            color: @color;
             font-size: 24px;
             font-weight: 400;
             font-family: Serif;
@@ -315,7 +316,7 @@
 
     /*background-color: #ffffff;*/
     /*border-radius: 4px;*/
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);*/
+    /*box-shadow: @box_shadow;*/
     margin-bottom: 20px;
 
     .left {
@@ -356,7 +357,7 @@
       color: #333333;
 
       &:hover {
-        color: #35CC62;
+        color: @hover_color;
       }
     }
 

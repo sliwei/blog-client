@@ -147,7 +147,7 @@
 
 </script>
 
-<style>
+<style lang="less">
   html {
     /*font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
     font-family: Serif;
@@ -158,12 +158,26 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    background-color: #f7f7f7;
+    background-color: @bg_color;
+    color: @color;
+  }
+  
+  body {
+    color: @color;
+  }
+  
+  a {
+    color: @color;
   }
 
   input, textarea {
     font-family: Serif;
-    color: #333;
+    color: @color;
+    background-color: @bg_color;
+    &::placeholder {
+      /* placeholder颜色  */
+      color: @base_color;
+    }
   }
 
   *,
@@ -215,7 +229,7 @@
     text-align: center;
     bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 10px, rgba(0, 0, 0, 0.1) 0px 0px 1px;
-    background-color: #ffffff;
+    background-color: @black_color;
     transition: .4s ease width, .4s ease transform, .4s ease border-radius;
   }
 
@@ -251,7 +265,7 @@
         .content {
           /*background-color: #ffffff;*/
           /*border-radius: 4px;*/
-          /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);*/
+          /*box-shadow: @box_shadow;*/
           /*padding: 20px;*/
         }
 
@@ -278,7 +292,7 @@
         .content {
           /*background-color: #ffffff;*/
           /*border-radius: 4px;*/
-          /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);*/
+          /*box-shadow: @box_shadow;*/
           /*padding: 20px;*/
         }
       }
