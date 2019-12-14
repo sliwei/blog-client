@@ -36,9 +36,9 @@
   }
 
   .search-cont {
-    background-color: #ffffff;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     padding: 20px;
     margin-bottom: 20px;
 
@@ -49,18 +49,18 @@
       input {
         width: 100%;
         height: 36px;
-        background: rgba(255, 255, 255, 0.1);
+        background: @bg_color;
         border: 2px solid rgba(0, 0, 0, 0.1);
         /*border-radius: 4px;*/
         text-indent: 10px;
         font-size: 14px;
-        color: #333333;
+        color: @color;
         transition: all 0.35s;
 
         &:focus {
           outline: none;
-          border: 2px solid #35CC62;
-          box-shadow: 0 0 2px #49fb7e;
+          border: 2px solid @hover_color;
+          box-shadow: 0 0 2px @hover_color;
         }
       }
 
@@ -73,7 +73,7 @@
         color: #999;
 
         &:hover {
-          color: #35CC62 !important;
+          color: @hover_color;
         }
       }
     }

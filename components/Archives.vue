@@ -80,9 +80,9 @@
   .archives-cont {
     width: 100%;
     position: static;
-    background-color: #ffffff;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     margin-bottom: 20px;
 
     .archives {
@@ -93,7 +93,7 @@
       border-radius: 4px;
 
       .title {
-        color: #7a7a7a;
+        color: @block_title;
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;

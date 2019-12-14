@@ -111,8 +111,9 @@
   }
 
   .footer-con {
-    background-color: #ffffff;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    background-color: @black_color;
+    // box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: @box_shadow;
 
     .footer {
       padding: 50px 0 80px;
@@ -154,18 +155,18 @@
                 align-items: center;
 
                 a {
-                  color: #4a4a4a;
+                  color: @color;
                   text-decoration: none;
                   padding: 0px 10px;
                   display: block;
 
                   &:hover {
-                    color: #35CC62;
+                    color: @hover_color;
                   }
                 }
 
                 &:hover {
-                  background-color: #fafafa;
+                  /*background-color: #fafafa;*/
                 }
 
               }
@@ -182,11 +183,11 @@
           }
 
           a {
-            color: #4a4a4a;
+            color: @color;
             text-decoration: none;
 
             &:hover {
-              color: #35CC62;
+              color: @hover_color;
             }
           }
         }
@@ -203,10 +204,10 @@
           align-items: center;
           display: flex;
           padding: 20px 12px;
-          color: #4a4a4a;
+          color: @color;
 
           &:hover {
-            color: #35CC62;
+            color: @hover_color;
           }
 
           i {
@@ -215,11 +216,11 @@
           }
 
           .in {
-            color: #0077b5 !important;
+            color: @color;
           }
 
           .love {
-            color: #e60012 !important;
+            color: #E91E63 !important;
           }
 
         }
@@ -346,7 +347,7 @@
   /*text-decoration: none;*/
   /*margin: 0 8px;*/
   /*&:hover {*/
-  /*color: #35CC62;*/
+  /*color: @hover_color;*/
   /*text-decoration: underline;*/
   /*}*/
   /*}*/
@@ -361,7 +362,7 @@
   /*color: #ffffff;*/
   /*font-size: 18px;*/
   /*&:hover {*/
-  /*color: #35CC62;*/
+  /*color: @hover_color;*/
   /*}*/
   /*}*/
   /*}*/
@@ -419,7 +420,7 @@
   /*text-decoration: none;*/
   /*margin: 0 8px;*/
   /*&:hover {*/
-  /*color: #35CC62;*/
+  /*color: @hover_color;*/
   /*text-decoration: underline;*/
   /*}*/
   /*}*/

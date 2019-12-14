@@ -86,7 +86,7 @@
 	.page {
 		/*background-color: #ffffff;*/
 		/*border-radius: 4px;*/
-		/*box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);*/
+		/*box-shadow: @box_shadow;*/
 		padding: 20px;
 		text-align: center;
 
@@ -103,7 +103,7 @@
 			text-decoration: none;
 
 			&.active {
-				color: #35CC62;
+				color: @hover_color;
 				font-weight: bold;
 
 				&:after {
@@ -111,7 +111,7 @@
 					display: block;
 					width: 30px;
 					height: 2px;
-					background-color: #35CC62;
+					background-color: @hover_color;
 					position: absolute;
 					bottom: -10px;
 					left: calc(50% - 15px);
@@ -119,14 +119,14 @@
 			}
 
 			&:hover:not(.ban) {
-				color: #35CC62;
+				color: @hover_color;
 
 				span {
-					color: #35CC62;
+					color: @hover_color;
 				}
 
 				i {
-					color: #35CC62;
+					color: @hover_color;
 				}
 			}
 

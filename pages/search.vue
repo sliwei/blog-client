@@ -116,7 +116,7 @@
       color: #666666;
       background-color: #ffffff;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+      box-shadow: @box_shadow;
       padding: 20px;
     }
 
@@ -129,7 +129,7 @@
 
       background-color: #ffffff;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+      box-shadow: @box_shadow;
 
       &:hover {
         /*box-shadow: 0 0 0 10px #f1f1f1;*/
@@ -193,7 +193,7 @@
             text-decoration: none;
 
             &:hover {
-              color: #35CC62;
+              color: @hover_color;
             }
           }
         }
@@ -204,7 +204,7 @@
 
           &:hover {
             a, i {
-              color: #35CC62;
+              color: @hover_color;
             }
           }
 
@@ -213,12 +213,12 @@
             /*font-family: Montserrat-Medium;*/
             font-weight: 500;
             line-height: 14px;
-            color: #999999;
+            color: @color;
             vertical-align: middle;
           }
 
           i {
-            color: #999999;
+            color: @color;
             font-size: 20px;
             vertical-align: middle;
           }

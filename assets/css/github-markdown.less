@@ -52,7 +52,7 @@
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #24292e;
+  color: @color;
   line-height: 1.5;
   /*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;*/
   font-family: serif;
@@ -164,7 +164,7 @@
 
 .markdown-body .pl-mi2 {
   background-color: #005cc5;
-  color: #f6f8fa;
+  color: @black_color;
 }
 
 .markdown-body .pl-mdr {
@@ -254,7 +254,7 @@
 }
 
 .markdown-body a {
-  color: #0366d6;
+  color: @link;
   text-decoration: none;
 }
 
@@ -536,7 +536,7 @@
 
 .markdown-body blockquote {
   border-left: .2em solid #03A9F4;
-  color: #6a737d;
+  color: @color;
   background-color: rgba(102,128,153,0.05);
   padding: .2em .5rem;
 }
@@ -581,7 +581,7 @@
 
 .markdown-body h1,
 .markdown-body h2 {
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid @border;
   padding-bottom: .3em;
 }
 
@@ -649,9 +649,11 @@
 }
 
 .markdown-body table {
-  display: block;
   overflow: auto;
   width: 100%;
+  /deep/ .mCSB_container {
+    display: table;
+  }
 }
 
 .markdown-body table th {
@@ -665,12 +667,12 @@
 }
 
 .markdown-body table tr {
-  background-color: #fff;
+  background-color: @black_color;
   border-top: 1px solid #c6cbd1;
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+  background-color: @black_color;
 }
 
 .markdown-body img {
@@ -692,7 +694,7 @@
 }
 
 .markdown-body code {
-  background-color: rgba(244, 67, 54, 0.18);
+  //background-color: rgba(244, 67, 54, 0.18);
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
@@ -831,7 +833,7 @@
 }
 
 .markdown-body :checked+.radio-label {
-  border-color: #0366d6;
+  border-color: @link;
   position: relative;
   z-index: 1;
 }
@@ -971,5 +973,5 @@
   font-size: 85%;
   background-color: #FF5722;
   border-radius: 3px;
-  color: #FFFFFF;
+  color: @color;
 }

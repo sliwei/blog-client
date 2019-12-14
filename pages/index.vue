@@ -129,9 +129,9 @@
             /*background-color: #f9f9f9;*/
             /*padding: 20px 10px;*/
 
-            background-color: #ffffff;
+            background-color: @black_color;
             border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+            box-shadow: @box_shadow;
 
             &:hover {
               /*box-shadow: 0 0 0 10px #f1f1f1;*/
@@ -162,7 +162,7 @@
                 span {
                   font-size: 14px;
                   font-weight: 500;
-                  color: rgba(153, 153, 153, 1);
+                  color: @color;
                   line-height: 23px;
                   vertical-align: middle;
                 }
@@ -179,12 +179,12 @@
                 a {
                   font-size: 20px;
                   font-weight: 400;
-                  color: rgba(51, 51, 51, 1);
+                  color: @color;
                   line-height: 32px;
                   text-decoration: none;
 
                   &:hover {
-                    color: #35CC62;
+                    color: @hover_color;
                   }
                 }
               }
@@ -193,14 +193,14 @@
                 display: inline-block;
                 margin-top: 20px;
 
-                background-color: whitesmoke;
+                background-color: @bg_color;
                 border-color: transparent;
-                color: #363636;
+                color: @color;
                 padding: 5px 10px;
 
                 &:hover {
                   a, i {
-                    color: #35CC62;
+                    color: @hover_color;
                   }
                 }
 
@@ -208,7 +208,7 @@
                   font-size: 12px;
                   text-decoration: none;
                   font-weight: 500;
-                  color: #999999;
+                  color: @base_color;
                   vertical-align: middle;
                 }
 
@@ -243,7 +243,7 @@
 
             &:focus {
               outline: none;
-              border: 2px solid #35CC62;
+              border: 2px solid @hover_color;
               box-shadow: 0 0 2px #49fb7e;
             }
           }
@@ -257,7 +257,7 @@
             color: #999;
 
             &:hover {
-              color: #35CC62 !important;
+              color: @hover_color !important;
             }
           }
         }

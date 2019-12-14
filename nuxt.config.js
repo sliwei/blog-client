@@ -18,21 +18,6 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
-      // {
-      //   rel: 'stylesheet',
-      //   type: 'text/css',
-      //   href: 'https://i.bstu.cn/css/github-markdown.css'
-      // },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        // href: 'https://highlightjs.org/static/demo/styles/an-old-hope.css'
-        // href: 'https://highlightjs.org/static/demo/styles/monokai-sublime.css'
-        // href: 'https://i.bstu.cn/css/dracula.css'
-        href: 'https://i.bstu.cn/css/monokai-sublime.css'
-        // href: 'https://highlightjs.org/static/demo/styles/monokai.css'
-        // href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css'
-      },
     ],
     script: [
       {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
@@ -44,7 +29,8 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#35CC62'
+    // color: '#35CC62'
+    color: '#FF9800'
   },
 
   /*
@@ -52,7 +38,8 @@ module.exports = {
   */
   css: [
     '~/assets/css/bubble.css',
-    '~/assets/css/github-markdown.css',
+    '~/assets/css/github-markdown.less',
+    '~/assets/css/monokai-sublime.less',
   ],
 
   /*
@@ -77,7 +64,12 @@ module.exports = {
     [
       // Doc: https://github.com/nuxt-community/axios-module#usage
       '@nuxtjs/axios',
+      '@nuxtjs/style-resources'
     ],
+  styleResources: {
+    less: './assets/css/theme.less'
+    // sass: ...
+  },
   /*
   ** Axios module configuration
   */

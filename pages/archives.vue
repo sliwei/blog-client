@@ -66,9 +66,9 @@
 
 <style lang="less" scoped>
   .archives {
-    background-color: #FFFFFF;
+    background-color: @black_color;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+    box-shadow: @box_shadow;
     padding: 20px;
     .title {
       color: #7a7a7a;
@@ -81,7 +81,7 @@
         display: inline-block;
         padding: 2px 10px;
         border-radius: 4px;
-        background-color: #35CC62;
+        background-color: @hover_color;
         color: white;
         margin-left: 54px;
       }
@@ -108,7 +108,7 @@
           .date {
             line-height: 22px;
             font-size: 14px;
-            color: #4a4a4a;
+            color: @color;
             display: inline-block;
             width: 60px;
             text-align: right;
@@ -119,7 +119,7 @@
               width: 6px;
               height: 6px;
               border-radius: 3px;
-              background-color: white;
+              background-color: @black_color;
               position: absolute;
               right: -24px;
               top: 8px;
@@ -140,7 +140,7 @@
           }
 
           a {
-            color: #4a4a4a;
+            color: @color;
             text-decoration: none;
             margin-left: 40px;
             display: inline-block;
@@ -148,7 +148,7 @@
             transition: color .35s;
             flex: 1;
             &:hover {
-              color: #35CC62;
+              color: @hover_color;
             }
           }
         }
