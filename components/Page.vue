@@ -1,12 +1,12 @@
 <template>
 	<div class="page">
 
-		<a class="prev" href="javascript:;">
+		<div class="prev">
 			<a :href="retUrl(pageIndex - 1)" v-if="pageIndex !== 1">
 				<i class="iconfont a-blog-left"></i>
 				<!--<span>前一页</span>-->
 			</a>
-		</a>
+		</div>
 
 		<a :href="retUrl(1)" v-if="prev" :class="{active: 1 === pageIndex}">{{1}}</a>
 
@@ -19,12 +19,12 @@
 
 		<a :href="retUrl(pageCount)" v-if="next" :class="{active: this.pageCount === pageIndex}">{{this.pageCount}}</a>
 
-		<a class="next" href="javascript:;">
+		<div class="next">
 			<a :href="retUrl(pageIndex + 1)" v-if="pageCount !== pageIndex">
 				<!--<span>后一页</span>-->
 				<i class="iconfont a-blog-right"></i>
 			</a>
-		</a>
+		</div>
 
 	</div>
 </template>
@@ -146,6 +146,7 @@
 
 		.prev, .next {
 			width: 100px;
+			display: inline-block;
 		}
 
 		.ban {
