@@ -17,11 +17,13 @@ module.exports = {
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
-      {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
+      // {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
     ],
     script: [
-      {src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'},
-      {src: 'https://i.bstu.cn/js/jquery.mCustomScrollbar.concat.min.js'},
+      {src: 'https://i.bstu.cn/js/jquery.min.js'},
+      // {src: 'https://i.bstu.cn/js/jquery.mCustomScrollbar.concat.min.js'}, 美化滚动条
+      {src: 'https://i.bstu.cn/js/highlight.min.js'},
+      {src: 'https://i.bstu.cn/js/highlightjs-line-numbers.min.js'},
     ],
   },
 
@@ -29,8 +31,8 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    // color: '#35CC62'
-    color: '#FF9800'
+    color: '#35CC62'
+    // color: '#FF9800'
   },
 
   /*
@@ -39,6 +41,7 @@ module.exports = {
   css: [
     '~/assets/css/bubble.css',
     '~/assets/css/github-markdown.less',
+    '~/assets/css/highlightjs-line-numbers.css',
     '~/assets/css/monokai-sublime.less',
   ],
 

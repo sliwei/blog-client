@@ -153,15 +153,17 @@
         }
 
         this.$nextTick(() => {
-          $('.mCSB_scrollTools').remove();
-          $(".hljs, .markdown-body table").mCustomScrollbar({
-            horizontalScroll: true,
-            scrollButtons: {
-              enable: true
-            },
-            theme: 'dark-thin'
-          });
-          // this.$previewRefresh();
+          hljs.initHighlightingOnLoad();
+          hljs.initLineNumbersOnLoad();
+        //   $('.mCSB_scrollTools').remove();
+        //   $(".hljs, .markdown-body table").mCustomScrollbar({
+        //     horizontalScroll: true,
+        //     scrollButtons: {
+        //       enable: true
+        //     },
+        //     theme: 'dark-thin'
+        //   });
+        //   // this.$previewRefresh();
         });
       },
       getTime(time) {

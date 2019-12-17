@@ -1949,14 +1949,16 @@
           .render(this.cont);
 
         this.$nextTick(() => {
-          $('.mCSB_scrollTools').remove();
-          $(".hljs, .markdown-body table").mCustomScrollbar({
-            horizontalScroll: true,
-            scrollButtons: {
-              enable: true
-            },
-            theme: 'dark-thin'
-          });
+          hljs.initHighlightingOnLoad();
+          hljs.initLineNumbersOnLoad();
+          // $('.mCSB_scrollTools').remove();
+          // $(".hljs, .markdown-body table").mCustomScrollbar({
+          //   horizontalScroll: true,
+          //   scrollButtons: {
+          //     enable: true
+          //   },
+          //   theme: 'dark-thin'
+          // });
         });
       },
       insertText(str) {

@@ -286,7 +286,7 @@
   display: table;
 }
 
-.markdown-body table {
+.markdown-body table:not(.hljs-ln) {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -648,7 +648,7 @@
   padding: 0 16px;
 }
 
-.markdown-body table {
+.markdown-body table:not(.hljs-ln) {
   overflow: auto;
   width: 100%;
   /deep/ .mCSB_container {
@@ -656,22 +656,22 @@
   }
 }
 
-.markdown-body table th {
+.markdown-body table:not(.hljs-ln) th {
   font-weight: 600;
 }
 
-.markdown-body table td,
-.markdown-body table th {
+.markdown-body table:not(.hljs-ln) td,
+.markdown-body table:not(.hljs-ln) th {
   border: 1px solid #dfe2e5;
   padding: 6px 13px;
 }
 
-.markdown-body table tr {
+.markdown-body table:not(.hljs-ln) tr {
   background-color: @black_color;
   border-top: 1px solid #c6cbd1;
 }
 
-.markdown-body table tr:nth-child(2n) {
+.markdown-body table:not(.hljs-ln) tr:nth-child(2n) {
   background-color: @black_color;
 }
 
@@ -679,7 +679,7 @@
   cursor: zoom-in;
   background-color: #fff;
   max-width: 100%;
-  border: 1px solid #ececec;
+  //border: 1px solid #ececec;
   box-sizing: content-box;
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
@@ -746,7 +746,7 @@
   /*overflow: visible;*/
   /*padding: 0;*/
   /*word-wrap: normal;*/
-  padding: 2px 5px;
+  padding: 0;
 }
 
 .markdown-body .commit-tease-sha {
