@@ -258,6 +258,10 @@
   text-decoration: none;
 }
 
+.markdownIt-Anchor {
+  color: #d2d2d2!important;
+}
+
 .markdown-body a:hover {
   text-decoration: underline;
 }
@@ -308,10 +312,11 @@
 .markdown-body h6 {
   margin-bottom: 0;
   margin-top: 0;
+  color: fadeout(@color, 20%);
 }
 
 .markdown-body h1 {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .markdown-body h1,
@@ -320,11 +325,11 @@
 }
 
 .markdown-body h2 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .markdown-body h3 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .markdown-body h3,
@@ -658,12 +663,19 @@
 
 .markdown-body table:not(.hljs-ln) th {
   font-weight: 600;
+  background-color: #3173dc;
+  color: #FFFFFF;
 }
 
 .markdown-body table:not(.hljs-ln) td,
 .markdown-body table:not(.hljs-ln) th {
   border: 1px solid #dfe2e5;
-  padding: 6px 13px;
+  padding: 3px 6px;
+  font-size: 14px;
+}
+
+.markdown-body table:not(.hljs-ln) tbody tr:hover {
+  background-color: fadeout(#3173dc, 90%);
 }
 
 .markdown-body table:not(.hljs-ln) tr {
@@ -672,7 +684,7 @@
 }
 
 .markdown-body table:not(.hljs-ln) tr:nth-child(2n) {
-  background-color: @black_color;
+  background-color: @bg_color;
 }
 
 .markdown-body img {
@@ -971,7 +983,7 @@
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
-  background-color: #FF5722;
-  border-radius: 3px;
-  color: @color;
+  background-color: #3173dc;
+  border-radius: 2px;
+  color: @black_color;
 }
