@@ -31,9 +31,9 @@
   .archives-cont {
     width: 100%;
     position: static;
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     margin-bottom: 20px;
 
     .archives {
@@ -44,7 +44,7 @@
       border-radius: 4px;
 
       .title {
-        color: @block_title;
+        color: var(--block_title);
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;
@@ -60,15 +60,15 @@
             text-align: left;
 
             a {
-              color: @color;
+              color: var(--color);
               text-decoration: none;
               display: block;
               padding: 6px 10px;
               border-radius: 2px;
 
               &:hover {
-                background-color: @bg_color;
-                color: @hover_color;
+                background-color: var(--bg_color);
+                color: var(--hover_color);
               }
 
               .name {
@@ -78,14 +78,14 @@
 
               .url {
                 font-size: 12px;
-                background-color: @black_color;
+                background-color: var(--black_color);
                 border-radius: 4px;
                 display: inline-block;
                 height: 24px;
                 line-height: 22px;
                 padding: 0 5px;
                 float: right;
-                color: @color;
+                color: var(--color);
               }
 
             }

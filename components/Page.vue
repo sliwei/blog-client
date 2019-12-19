@@ -86,7 +86,7 @@
 	.page {
 		/*background-color: #ffffff;*/
 		/*border-radius: 4px;*/
-		/*box-shadow: @box_shadow;*/
+		/*box-shadow: var(--box_shadow);*/
 		padding: 20px;
 		text-align: center;
 
@@ -95,7 +95,7 @@
 			width: 30px;
 			/*font-family: Montserrat-Medium;*/
 			font-weight: 500;
-			color: rgba(51, 51, 51, 1);
+			color: var(--color);
 			line-height: 14px;
 			display: inline-block;
 			margin: 10px 5px;
@@ -103,7 +103,7 @@
 			text-decoration: none;
 
 			&.active {
-				color: @hover_color;
+				color: var(--hover_color);
 				font-weight: bold;
 
 				&:after {
@@ -111,7 +111,7 @@
 					display: block;
 					width: 30px;
 					height: 2px;
-					background-color: @hover_color;
+					background-color: var(--hover_color);
 					position: absolute;
 					bottom: -10px;
 					left: calc(50% - 15px);
@@ -119,14 +119,14 @@
 			}
 
 			&:hover:not(.ban) {
-				color: @hover_color;
+				color: var(--hover_color);
 
 				span {
-					color: @hover_color;
+					color: var(--hover_color);
 				}
 
 				i {
-					color: @hover_color;
+					color: var(--hover_color);
 				}
 			}
 

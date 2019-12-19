@@ -1993,14 +1993,14 @@
   }
 
   .comment {
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     padding: 20px;
     margin-bottom: 20px;
 
     .title {
-      color: @block_title;
+      color: var(--block_title);
       font-size: 12px;
       text-align: left;
       margin-bottom: 10px;
@@ -2022,7 +2022,7 @@
         p {
           font-size: 14px;
           font-weight: 500;
-          color: @color;
+          color: var(--color);
           margin: 0 0 5px 0;
 
           .txt {
@@ -2100,7 +2100,7 @@
 
             &:focus {
               outline: none;
-              border: 2px solid @hover_color;
+              border: 2px solid var(--hover_color);
               box-shadow: 0 0 2px #49fb7e;
             }
           }
@@ -2120,7 +2120,7 @@
 
             &:focus {
               outline: none;
-              border: 2px solid @hover_color;
+              border: 2px solid var(--hover_color);
               box-shadow: 0 0 2px #49fb7e;
             }
 
@@ -2156,7 +2156,7 @@
                 transition: all .3s;
 
                 &:hover, &.active {
-                  color: @hover_color;
+                  color: var(--hover_color);
                 }
               }
 
@@ -2166,10 +2166,10 @@
           .emoji {
             margin-top: -2px;
             border: 2px solid #e5e5e5;
-            background-color: @black_color;
+            background-color: var(--black_color);
 
             .menu {
-              border-bottom: 1px solid @hover_color;
+              border-bottom: 1px solid var(--hover_color);
               display: flex;
               &:after {
                 content: '';
@@ -2180,18 +2180,18 @@
                 float: left;
                 display: inline-block;
                 font-size: 12px;
-                color: @color;
+                color: var(--color);
                 cursor: pointer;
                 transition: all .3s;
                 flex: 1;
                 padding: 8px 0;
                 text-align: center;
                 &:hover {
-                  background-color: fade(@hover_color, 20);
-                  color: @hover_color;
+                  background-color: rgba(var(--hover_color), .2);
+                  color: var(--hover_color);
                 }
                 &.active {
-                  background-color: fade(@hover_color, 80);
+                  background-color: rgba(var(--hover_color), .8);
                   color: #FFFFFF;
                 }
               }
@@ -2205,7 +2205,7 @@
             }
 
             &.active {
-              border: 2px solid @hover_color;
+              border: 2px solid var(--hover_color);
               box-shadow: 0 0 2px #49fb7e;
             }
 
@@ -2217,12 +2217,12 @@
               padding: 2px;
               float: left;
               margin: 2px;
-              border: 1px solid @black_color;
+              border: 1px solid var(--black_color);
               cursor: pointer;
 
               &:hover {
-                border: 1px solid @hover_color;
-                background-color: fade(@hover_color, 20);
+                border: 1px solid var(--hover_color);
+                background-color: rgba(var(--hover_color), .2);
               }
             }
           }
@@ -2251,12 +2251,12 @@
         width: 202px;
         height: 48px;
         line-height: 48px;
-        background: @bg_color;
+        background: var(--bg_color);
         border-radius: 4px;
         text-align: center;
         font-size: 16px;
         font-weight: 500;
-        color: @color;
+        color: var(--color);
         border: 0;
         outline: none;
       }

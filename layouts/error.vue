@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     /*padding-bottom: 20px;*/
 
     .error {
@@ -77,7 +77,7 @@
             transition: color .35s;
 
             &:hover {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
         }

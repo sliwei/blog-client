@@ -82,9 +82,9 @@
   }
 
   .head-con {
-    background-color: @black_color;
+    background-color: var(--black_color);
     /*box-shadow: 0 4px 10px rgba(0, 0, 0, .05);*/
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
   }
 
   .head {
@@ -94,13 +94,13 @@
 
       a {
         /*color: #4a4a4a;*/
-        color: @color;
+        color: var(--color);
         text-decoration: none;
         padding: 20px 10px;
         display: block;
         i {
           /*color: #000000;*/
-          color: @color;
+          color: var(--color);
         }
 
         span {
@@ -108,9 +108,9 @@
         }
 
         &:hover {
-          color: @hover_color;
+          color: var(--hover_color);
           i {
-            color: @hover_color;
+            color: var(--hover_color);
           }
         }
       }
@@ -132,13 +132,13 @@
 
             a {
               /*color: #4a4a4a;*/
-              color: @color;
+              color: var(--color);
               text-decoration: none;
               padding: 20px 10px;
               display: block;
 
               &:hover {
-                color: @hover_color;
+                color: var(--hover_color);
               }
             }
 
@@ -161,11 +161,11 @@
           align-items: center;
           display: flex;
           padding: 18px 12px;
-          color: @color;
+          color: var(--color);
 
           &:hover {
             /*background-color: #fafafa;*/
-            color: @hover_color;
+            color: var(--hover_color);
           }
 
           i {

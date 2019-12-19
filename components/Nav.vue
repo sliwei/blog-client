@@ -68,9 +68,9 @@
   .nav-cont {
     width: 100%;
     position: static;
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     margin-bottom: 20px;
 
 
@@ -81,7 +81,7 @@
       border-radius: 4px;
 
       .title {
-        color: @block_title;
+        color: var(--block_title);
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;
@@ -102,7 +102,7 @@
 
       /deep/ .markdownIt-TOC > li > a {
         font-weight: bold;
-        color: @color;
+        color: var(--color);
       }
 
       /deep/ .markdownIt-TOC > li > ul li {
@@ -111,7 +111,7 @@
           content: '';
           width: 4px;
           height: 4px;
-          background-color: @bg_color;
+          background-color: var(--bg_color);
           font-size: 12px;
           left: -4px;
           top: 14px;
@@ -121,15 +121,15 @@
       /deep/ a {
         cursor: pointer;
         display: block;
-        color: @color;
+        color: var(--color);
         text-decoration: none;
         font-size: 14px;
         margin: 0 0 4px 0;
         padding: 5px;
 
         &:hover, &.active {
-          color: @hover_color;
-          background-color: @bg_color;
+          color: var(--hover_color);
+          background-color: var(--bg_color);
         }
       }
     }

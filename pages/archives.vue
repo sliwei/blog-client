@@ -66,9 +66,9 @@
 
 <style lang="less" scoped>
   .archives {
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     padding: 20px;
     .title {
       color: #7a7a7a;
@@ -81,8 +81,8 @@
         display: inline-block;
         padding: 2px 10px;
         border-radius: 4px;
-        background-color: @hover_color;
-        color: white;
+        background-color: var(--hover_color);
+        color: var(--black_color);
         margin-left: 54px;
       }
       ul {
@@ -108,7 +108,7 @@
           .date {
             line-height: 22px;
             font-size: 14px;
-            color: @color;
+            color: var(--color);
             display: inline-block;
             width: 60px;
             text-align: right;
@@ -119,7 +119,7 @@
               width: 6px;
               height: 6px;
               border-radius: 3px;
-              background-color: @black_color;
+              background-color: var(--black_color);
               position: absolute;
               right: -24px;
               top: 8px;
@@ -140,7 +140,7 @@
           }
 
           a {
-            color: @color;
+            color: var(--color);
             text-decoration: none;
             margin-left: 40px;
             display: inline-block;
@@ -148,7 +148,7 @@
             transition: color .35s;
             flex: 1;
             &:hover {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
         }

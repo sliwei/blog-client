@@ -54,9 +54,9 @@
   .tag-cloud-cont {
     width: 100%;
     position: static;
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     margin-bottom: 20px;
 
     .tag-cloud {
@@ -67,7 +67,7 @@
       border-radius: 4px;
 
       .title {
-        color: @block_title;
+        color: var(--block_title);
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;
