@@ -33,9 +33,9 @@
 
 <style lang="less" scoped>
   .tags {
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     padding: 20px;
 
     .title {

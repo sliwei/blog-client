@@ -129,9 +129,9 @@
             /*background-color: #f9f9f9;*/
             /*padding: 20px 10px;*/
 
-            background-color: @black_color;
+            background-color: var(--black_color);
             border-radius: 4px;
-            box-shadow: @box_shadow;
+            box-shadow: var(--box_shadow);
 
             &:hover {
               /*box-shadow: 0 0 0 10px #f1f1f1;*/
@@ -162,7 +162,7 @@
                 span {
                   font-size: 14px;
                   font-weight: 500;
-                  color: @color;
+                  color: var(--color);
                   line-height: 23px;
                   vertical-align: middle;
                 }
@@ -179,12 +179,12 @@
                 a {
                   font-size: 20px;
                   font-weight: 400;
-                  color: @color;
+                  color: var(--color);
                   line-height: 32px;
                   text-decoration: none;
 
                   &:hover {
-                    color: @hover_color;
+                    color: var(--hover_color);
                   }
                 }
               }
@@ -193,14 +193,14 @@
                 display: inline-block;
                 margin-top: 20px;
 
-                background-color: @bg_color;
+                background-color: var(--bg_color);
                 border-color: transparent;
-                color: @color;
+                color: var(--color);
                 padding: 5px 10px;
 
                 &:hover {
                   a, i {
-                    color: @hover_color;
+                    color: var(--hover_color);
                   }
                 }
 
@@ -208,7 +208,7 @@
                   font-size: 12px;
                   text-decoration: none;
                   font-weight: 500;
-                  color: @base_color;
+                  color: var(--base_color);
                   vertical-align: middle;
                 }
 
@@ -243,7 +243,7 @@
 
             &:focus {
               outline: none;
-              border: 2px solid @hover_color;
+              border: 2px solid var(--hover_color);
               box-shadow: 0 0 2px #49fb7e;
             }
           }
@@ -257,7 +257,7 @@
             color: #999;
 
             &:hover {
-              color: @hover_color !important;
+              color: var(--hover_color) !important;
             }
           }
         }

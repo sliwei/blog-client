@@ -121,9 +121,9 @@
 
 <style lang="less" scoped>
   .about {
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -131,13 +131,13 @@
       font-family: serif;
       font-weight: 300;
       margin-bottom: 20px;
-      color: @base_color;
+      color: var(--base_color);
     }
     .no_work {
       margin-top: 20px;
       font-size: 14px;
       font-weight: 300;
-      color: @base_color;
+      color: var(--base_color);
       font-family: serif;
     }
   }

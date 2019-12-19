@@ -114,7 +114,7 @@
               .name {
                 font-size: 16px;
                 font-weight: 400;
-                color: rgba(51, 51, 51, 1);
+                color: var(--color);
               }
 
               .time {
@@ -137,7 +137,7 @@
                 transition: all .3s;
 
                 &:hover {
-                  color: rgba(53, 204, 98, 1);
+                  color: var(--hover_color);
                 }
               }
             }

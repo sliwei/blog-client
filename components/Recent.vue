@@ -36,9 +36,9 @@
   .recent-cont {
     width: 100%;
     position: static;
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     margin-bottom: 20px;
 
     .recent {
@@ -49,7 +49,7 @@
       border-radius: 4px;
 
       .title {
-        color: @block_title;
+        color: var(--block_title);
         font-size: 12px;
         text-align: left;
         margin-bottom: 10px;
@@ -92,7 +92,7 @@
               text-align: left;
               .time {
                 font-size: 12px;
-                color: @block_title;
+                color: var(--block_title);
                 margin-bottom: 5px;
                 margin-top: 5px;
               }
@@ -100,10 +100,10 @@
                 font-size: 14px;
                 a {
                   text-decoration: none;
-                  color: @color;
+                  color: var(--color);
                   transition: all .3s;
                   &:hover {
-                    color: #35cc62;
+                    color: var(--hover_color);
                   }
                 }
               }

@@ -16,7 +16,7 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_urxbleg8ya.css'},
+      {rel: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_1005748_078q4anarj2g.css'},
       // {rel: 'stylesheet', type: 'text/css', href: 'https://i.bstu.cn/css/jquery.mCustomScrollbar.min.css'},
     ],
     script: [
@@ -31,7 +31,8 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#35CC62'
+    color: '#3273dc'
+    // color: '#35CC62'
     // color: '#FF9800'
   },
 

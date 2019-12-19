@@ -116,7 +116,7 @@
       color: #666666;
       background-color: #ffffff;
       border-radius: 4px;
-      box-shadow: @box_shadow;
+      box-shadow: var(--box_shadow);
       padding: 20px;
     }
 
@@ -129,7 +129,7 @@
 
       background-color: #ffffff;
       border-radius: 4px;
-      box-shadow: @box_shadow;
+      box-shadow: var(--box_shadow);
 
       &:hover {
         /*box-shadow: 0 0 0 10px #f1f1f1;*/
@@ -193,7 +193,7 @@
             text-decoration: none;
 
             &:hover {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
         }
@@ -204,7 +204,7 @@
 
           &:hover {
             a, i {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
 
@@ -213,12 +213,12 @@
             /*font-family: Montserrat-Medium;*/
             font-weight: 500;
             line-height: 14px;
-            color: @color;
+            color: var(--color);
             vertical-align: middle;
           }
 
           i {
-            color: @color;
+            color: var(--color);
             font-size: 20px;
             vertical-align: middle;
           }

@@ -76,9 +76,9 @@
   .user-cont {
     width: 100%;
     position: static;
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     margin-bottom: 20px;
 
     .user {
@@ -98,10 +98,10 @@
 
           i {
             font-size: 60px;
-            color: @color;
+            color: var(--color);
             transition: all .3s;
             &:hover {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
         }
@@ -109,25 +109,25 @@
 
       .info {
         .name {
-          color: @color;
+          color: var(--color);
           font-size: 14px;
           margin-bottom: 5px;
         }
 
         .job {
-          color: @color;
+          color: var(--color);
           font-size: 14px;
           margin-bottom: 5px;
         }
 
         .addr {
           i {
-            color: @base_color;
+            color: var(--base_color);
             vertical-align: middle;
           }
 
           span {
-            color: @base_color;
+            color: var(--base_color);
             font-size: 12px;
             vertical-align: middle;
           }
@@ -145,12 +145,12 @@
             text-decoration: none;
             .label {
               font-size: 14px;
-              color: @color;
+              color: var(--color);
             }
 
             .value {
               font-size: 14px;
-              color: @color;
+              color: var(--color);
             }
           }
         }
@@ -183,7 +183,7 @@
           flex: 1;
 
           i {
-            color: @block_title;
+            color: var(--block_title);
             cursor: pointer;
             transition: all .3s;
 

@@ -52,7 +52,7 @@
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: @color;
+  color: var(--color);
   line-height: 1.5;
   /*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;*/
   font-family: serif;
@@ -164,7 +164,7 @@
 
 .markdown-body .pl-mi2 {
   background-color: #005cc5;
-  color: @black_color;
+  color: var(--black_color);
 }
 
 .markdown-body .pl-mdr {
@@ -254,7 +254,7 @@
 }
 
 .markdown-body a {
-  color: @link;
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -312,7 +312,7 @@
 .markdown-body h6 {
   margin-bottom: 0;
   margin-top: 0;
-  color: fadeout(@color, 20%);
+  color: rgba(var(--color), .2);
 }
 
 .markdown-body h1 {
@@ -541,7 +541,7 @@
 
 .markdown-body blockquote {
   border-left: .2em solid #03A9F4;
-  color: @color;
+  color: var(--color);
   background-color: rgba(102,128,153,0.05);
   padding: .2em .5rem;
 }
@@ -586,7 +586,7 @@
 
 .markdown-body h1,
 .markdown-body h2 {
-  border-bottom: 1px solid @border;
+  border-bottom: 1px solid var(--border);
   padding-bottom: .3em;
 }
 
@@ -679,12 +679,12 @@
 }
 
 .markdown-body table:not(.hljs-ln) tr {
-  background-color: @black_color;
+  background-color: var(--black_color);
   border-top: 1px solid #c6cbd1;
 }
 
 .markdown-body table:not(.hljs-ln) tr:nth-child(2n) {
-  background-color: @bg_color;
+  background-color: var(--bg_color);
 }
 
 .markdown-body img {
@@ -845,7 +845,7 @@
 }
 
 .markdown-body :checked+.radio-label {
-  border-color: @link;
+  border-color: var(--link);
   position: relative;
   z-index: 1;
 }
@@ -985,5 +985,5 @@
   font-size: 85%;
   background-color: #3173dc;
   border-radius: 2px;
-  color: @black_color;
+  color: var(--black_color);
 }

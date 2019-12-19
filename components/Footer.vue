@@ -111,9 +111,9 @@
   }
 
   .footer-con {
-    background-color: @black_color;
+    background-color: var(--black_color);
     // box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
 
     .footer {
       padding: 50px 0 80px;
@@ -155,13 +155,13 @@
                 align-items: center;
 
                 a {
-                  color: @color;
+                  color: var(--color);
                   text-decoration: none;
                   padding: 0px 10px;
                   display: block;
 
                   &:hover {
-                    color: @hover_color;
+                    color: var(--hover_color);
                   }
                 }
 
@@ -183,11 +183,11 @@
           }
 
           a {
-            color: @color;
+            color: var(--color);
             text-decoration: none;
 
             &:hover {
-              color: @hover_color;
+              color: var(--hover_color);
             }
           }
         }
@@ -204,10 +204,10 @@
           align-items: center;
           display: flex;
           padding: 20px 12px;
-          color: @color;
+          color: var(--color);
 
           &:hover {
-            color: @hover_color;
+            color: var(--hover_color);
           }
 
           i {
@@ -216,7 +216,7 @@
           }
 
           .in {
-            color: @color;
+            color: var(--color);
           }
 
           .love {
@@ -347,7 +347,7 @@
   /*text-decoration: none;*/
   /*margin: 0 8px;*/
   /*&:hover {*/
-  /*color: @hover_color;*/
+  /*color: var(--hover_color);*/
   /*text-decoration: underline;*/
   /*}*/
   /*}*/
@@ -362,7 +362,7 @@
   /*color: #ffffff;*/
   /*font-size: 18px;*/
   /*&:hover {*/
-  /*color: @hover_color;*/
+  /*color: var(--hover_color);*/
   /*}*/
   /*}*/
   /*}*/
@@ -420,7 +420,7 @@
   /*text-decoration: none;*/
   /*margin: 0 8px;*/
   /*&:hover {*/
-  /*color: @hover_color;*/
+  /*color: var(--hover_color);*/
   /*text-decoration: underline;*/
   /*}*/
   /*}*/

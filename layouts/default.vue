@@ -4,6 +4,8 @@
       <awei-head v-show="sta"/>
     </transition>
 
+    <awei-setting></awei-setting>
+
     <transition name="bounce">
       <div class="cont-con" v-show="sta">
         <div class="cont">
@@ -90,6 +92,7 @@
   import Recent from '~/components/Recent.vue'
   import Archives from '~/components/Archives.vue'
   import Tags from '~/components/Tags.vue'
+  import Setting from '~/components/Setting.vue'
 
   export default {
     // transition: 'bounce',
@@ -105,6 +108,7 @@
       'awei-recent': Recent,
       'awei-archives': Archives,
       'awei-tags': Tags,
+      'awei-setting': Setting,
     },
     data() {
       return {
@@ -148,6 +152,45 @@
 </script>
 
 <style lang="less">
+  .default {
+    --color: #333333;
+    --hover_color: #35CC62;
+    --base_color: #666666;
+    --block_title: #7A7A7A;
+    --bg_color: #f7f7f7;
+    --black_color: #FFFFFF;
+    --link: #0366d6;
+    --hljs: #2d2d2d;
+    --border: #eaecef;
+    --box_shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .yellow {
+    --color: #F1F1F1;
+    --hover_color: #FF9800;
+    --base_color: #C1C1C1;
+    --block_title: #AAAAAA;
+    --bg_color: #6b8d9c;
+    --black_color: #5b7d8c;
+    --link: #FF9800;
+    --hljs: #38525d;
+    --border: #3e3e3e;
+    --box_shadow: 0 0 4px #465f6b, 0 0 1px #465f6b;
+  }
+
+  .dark {
+    --color: #DDDDDD;
+    --hover_color: #FFFFFF;
+    --base_color: #C1C1C1;
+    --block_title: #AAAAAA;
+    --bg_color: #333333;
+    --black_color: #222222;
+    --link: #FF9800;
+    --hljs: #2E2E2E;
+    --border: #3e3e3e;
+    --box_shadow: 0 0 4px #333333, 0 0 1px #333333;
+  }
+  
   html {
     /*font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
     font-family: Serif;
@@ -158,25 +201,36 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    background-color: @bg_color;
-    color: @color;
+    color: var(--color);
   }
   
   body {
-    color: @color;
+    --color: #333333;
+    --hover_color: #35CC62;
+    --base_color: #666666;
+    --block_title: #7A7A7A;
+    --bg_color: #f7f7f7;
+    --black_color: #FFFFFF;
+    --link: #0366d6;
+    --hljs: #2d2d2d;
+    --border: #eaecef;
+    --box_shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+    
+    color: var(--color);
+    background-color: var(--bg_color);
   }
   
   a {
-    color: @color;
+    color: var(--color);
   }
 
   input, textarea {
     font-family: Serif;
-    color: @color;
-    background-color: @bg_color;
+    color: var(--color);
+    background-color: var(--bg_color);
     &::placeholder {
       /* placeholder颜色  */
-      color: @base_color;
+      color: var(--base_color);
     }
   }
 
@@ -229,7 +283,7 @@
     text-align: center;
     bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 10px, rgba(0, 0, 0, 0.1) 0px 0px 1px;
-    background-color: @black_color;
+    background-color: var(--black_color);
     transition: .4s ease width, .4s ease transform, .4s ease border-radius;
   }
 
@@ -265,7 +319,7 @@
         .content {
           /*background-color: #ffffff;*/
           /*border-radius: 4px;*/
-          /*box-shadow: @box_shadow;*/
+          /*box-shadow: var(--box_shadow);*/
           /*padding: 20px;*/
         }
 
@@ -292,7 +346,7 @@
         .content {
           /*background-color: #ffffff;*/
           /*border-radius: 4px;*/
-          /*box-shadow: @box_shadow;*/
+          /*box-shadow: var(--box_shadow);*/
           /*padding: 20px;*/
         }
       }

@@ -26,15 +26,15 @@
     /*width: 1028px;*/
     /*width: 680px;*/
     /*margin: 10px auto;*/
-    background-color: @black_color;
+    background-color: var(--black_color);
     border-radius: 4px;
-    box-shadow: @box_shadow;
+    box-shadow: var(--box_shadow);
     padding: 20px;
     margin-bottom: 20px;
 
 
     .one_evaluate {
-      color: @color;
+      color: var(--color);
       text-align: center;
       /*margin-bottom: 20px;*/
     }
