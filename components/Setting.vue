@@ -2,26 +2,31 @@
 	<div :class="`setting ${setSta ? '' : 'close_set'}`" @mousemove="moveSet" @mouseleave="leaveSet">
 		<div class="icon_box">
 			<div class="icon_cont">
-				<div class="icon"><i class="iconfont a-blog-setting-fill"/></div>
+				<div :class="`icon ${setSta ? 'icon_animation' : ''}`"><i class="iconfont a-blog-setting-fill"/></div>
 			</div>
 			<div class="title">设置</div>
 		</div>
 		<div class="panel">
 			<div class="theme" @click="changeTheme">
-				<i :class="`iconfont a-blog-yewan ${theme === 'default' ? '' : 'left_a'}`"/>
-				<i :class="`iconfont a-blog-qing ${theme === 'dark' ? '' : 'right_a'}`"/>
+				<i :class="`iconfont a-blog-qing ${theme === 'default' ? '' : 'left_a'}`"/>
+				<i :class="`iconfont a-blog-yewan ${theme === 'dark' ? '' : 'right_a'}`"/>
+			</div>
+		</div>
+		<div class="language">
+			<div class="language_box" @click="changeLanguage">
+				<img src="~static/img/ch.png" :class="`${language === 'ch' ? '' : 'left_a'}`"/>
+				<img src="~static/img/en.png" :class="`${language === 'en' ? '' : 'right_a'}`"/>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-	import Item from './Item.vue'
-
 	export default {
 		data() {
 			return {
 				setSta: true,
-				theme: 'default' // dark
+				theme: 'default', // dark
+				language: 'ch', // ch en
 			}
 		},
 		methods: {
@@ -38,6 +43,13 @@
 				} else {
 					this.theme  = 'default'
 					document.querySelector('body').className = 'default'
+				}
+			},
+			changeLanguage() {
+				if (this.language === 'ch') {
+					this.language  = 'en';
+				} else {
+					this.language  = 'ch'
 				}
 			},
 		}
@@ -77,7 +89,6 @@
 					height: 20px;
 					text-align: center;
 					line-height: 20px;
-					animation: rotation 8s linear infinite;
 					margin: 3px;
 					i {
 						font-size: 20px;
@@ -86,6 +97,9 @@
 							color: var(--black_color);
 						}
 					}
+				}
+				.icon_animation {
+					animation: rotation 8s linear infinite;
 				}
 			}
 			.title {
@@ -121,6 +135,37 @@
 				}
 				.left_a {
 					left: -20px;
+				}
+				.right_a {
+					left: 40px;
+				}
+			}
+		}
+		.language {
+			margin: 10px auto 0;
+			width: 60px;
+			height: 40px;
+			position: relative;
+			text-align: center;
+			.language_box {
+				cursor: pointer;
+				margin: 0 auto;
+				border: 1px solid #000;
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				box-shadow: inset 0 0 2px 2px var(--base_color);
+				overflow: hidden;
+				position: relative;
+				img {
+					width: 100%;
+					position: absolute;
+					left: 0;
+					transition: left .35s;
+				}
+				.left_a {
+					left: -40px;
 				}
 				.right_a {
 					left: 40px;

@@ -183,12 +183,12 @@
     --hover_color: #FFFFFF;
     --base_color: #C1C1C1;
     --block_title: #AAAAAA;
-    --bg_color: #333333;
-    --black_color: #222222;
+    --bg_color: #313642;
+    --black_color: rgba(40, 44, 53, .5);
     --link: #FF9800;
     --hljs: #2E2E2E;
     --border: #3e3e3e;
-    --box_shadow: 0 0 4px #333333, 0 0 1px #333333;
+    --box_shadow: 0 0 4px #282c35, 0 0 1px #282c35;
   }
   
   html {
