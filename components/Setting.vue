@@ -39,17 +39,21 @@
 			changeTheme() {
 				if (this.theme === 'default') {
 					this.theme  = 'dark';
-					document.querySelector('body').className = 'dark'
+					document.querySelector('body').className = 'dark';
+					localStorage.setItem('theme', 'dark')
 				} else {
 					this.theme  = 'default'
-					document.querySelector('body').className = 'default'
+					document.querySelector('body').className = 'default';
+					localStorage.setItem('theme', 'default')
 				}
 			},
 			changeLanguage() {
 				if (this.language === 'ch') {
-					this.language  = 'en';
+					this.language  = 'en';						
+					localStorage.setItem('language', 'en')
 				} else {
-					this.language  = 'ch'
+					this.language  = 'ch';
+					localStorage.setItem('language', 'ch')
 				}
 			},
 		}

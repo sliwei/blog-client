@@ -134,6 +134,18 @@
         this.sta = true;
         this.searchSta = this.$route.name !== 'search';
         this.navSta = this.$route.name === 'detail-code';
+        let theme = localStorage.getItem('theme');
+        if (theme === 'default') {
+          document.querySelector('body').className = 'default';
+        } else {
+          document.querySelector('body').className = 'dark';
+        }
+        let language = localStorage.getItem('language');
+        if (language === 'ch') {
+          // i18n
+        } else {
+          // i18n
+        }
       },
     },
     created() {
