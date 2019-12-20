@@ -2,28 +2,28 @@
 	<div class="page">
 
 		<div class="prev">
-			<a :href="retUrl(pageIndex - 1)" v-if="pageIndex !== 1">
+			<nuxt-link :to="retUrl(pageIndex - 1)" v-if="pageIndex !== 1">
 				<i class="iconfont a-blog-left"></i>
 				<!--<span>前一页</span>-->
-			</a>
+			</nuxt-link>
 		</div>
 
-		<a :href="retUrl(1)" v-if="prev" :class="{active: 1 === pageIndex}">{{1}}</a>
+		<nuxt-link :to="retUrl(1)" v-if="prev" :class="{active: 1 === pageIndex}">{{1}}</nuxt-link>
 
 		<a class="ban" href="javascript:;" v-if="left">...</a>
 
-		<a :href="retUrl(index)" :class="{active: index === pageIndex}" v-for="(index, i) in showPage()"
-		   :key="i">{{index}}</a>
+		<nuxt-link :to="retUrl(index)" :class="{active: index === pageIndex}" v-for="(index, i) in showPage()"
+		   :key="i">{{index}}</nuxt-link>
 
 		<a class="ban" href="javascript:;" v-if="right">...</a>
 
-		<a :href="retUrl(pageCount)" v-if="next" :class="{active: this.pageCount === pageIndex}">{{this.pageCount}}</a>
+		<nuxt-link :to="retUrl(pageCount)" v-if="next" :class="{active: this.pageCount === pageIndex}">{{this.pageCount}}</nuxt-link>
 
 		<div class="next">
-			<a :href="retUrl(pageIndex + 1)" v-if="pageCount !== pageIndex">
+			<nuxt-link :to="retUrl(pageIndex + 1)" v-if="pageCount !== pageIndex">
 				<!--<span>后一页</span>-->
 				<i class="iconfont a-blog-right"></i>
-			</a>
+			</nuxt-link>
 		</div>
 
 	</div>
