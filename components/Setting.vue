@@ -24,7 +24,7 @@
 	export default {
 		data() {
 			return {
-				setSta: true,
+				setSta: false,
 				theme: 'default', // dark
 				language: 'ch', // ch en
 			}
