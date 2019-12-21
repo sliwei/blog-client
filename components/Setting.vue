@@ -25,8 +25,8 @@
 		data() {
 			return {
 				setSta: false,
-				theme: 'default', // dark
-				language: 'ch', // ch en
+				theme: '', // dark
+				language: '', // ch en
 			}
 		},
 		methods: {
@@ -56,7 +56,28 @@
 					localStorage.setItem('language', 'ch')
 				}
 			},
-		}
+			init() {
+				let theme = localStorage.getItem('theme');
+				if (theme === 'dark') {
+					document.querySelector('body').className = 'dark';
+					this.theme  = 'dark';
+				} else {
+					document.querySelector('body').className = 'default';
+					this.theme  = 'default';
+				}
+				let language = localStorage.getItem('language');
+				if (language === 'en') {
+					// i18n
+					this.language  = 'en';
+				} else {
+					// i18n
+					this.language  = 'ch';
+				}
+			},
+		},
+		mounted() {
+			this.init();
+		},
 	}
 </script>
 <style lang="less" scoped>

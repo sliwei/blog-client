@@ -134,18 +134,6 @@
         this.sta = true;
         this.searchSta = this.$route.name !== 'search';
         this.navSta = this.$route.name === 'detail-code';
-        let theme = localStorage.getItem('theme');
-        if (theme === 'dark') {
-          document.querySelector('body').className = 'dark';
-        } else {
-          document.querySelector('body').className = 'default';
-        }
-        let language = localStorage.getItem('language');
-        if (language === 'en') {
-          // i18n
-        } else {
-          // i18n
-        }
       },
     },
     created() {
@@ -196,7 +184,7 @@
     --base_color: #C1C1C1;
     --block_title: #AAAAAA;
     --bg_color: #313642;
-    --black_color: rgba(40, 44, 53, .5);
+    --black_color: #282c35;
     --link: #FF9800;
     --hljs: #2E2E2E;
     --border: #3e3e3e;
