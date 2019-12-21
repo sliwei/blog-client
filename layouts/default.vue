@@ -135,13 +135,13 @@
         this.searchSta = this.$route.name !== 'search';
         this.navSta = this.$route.name === 'detail-code';
         let theme = localStorage.getItem('theme');
-        if (theme === 'default') {
-          document.querySelector('body').className = 'default';
-        } else {
+        if (theme === 'dark') {
           document.querySelector('body').className = 'dark';
+        } else {
+          document.querySelector('body').className = 'default';
         }
         let language = localStorage.getItem('language');
-        if (language === 'ch') {
+        if (language === 'en') {
           // i18n
         } else {
           // i18n

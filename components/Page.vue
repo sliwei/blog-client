@@ -35,10 +35,6 @@
 			pageIndex: Number, // 当前页码
 			url: String, // 跳转地址
 			parameter: Object, // 携带参数(对象)
-			pageName: { // 页码参数名称
-				type: String,
-				default: 'pageIndex'
-			}
 		},
 		data() {
 			return {
@@ -50,11 +46,13 @@
 		},
 		methods: {
 			retUrl(page) {
-				let parameter = {
-					[this.pageName]: page,
-					...this.parameter,
-				};
-				return `${this.url}?${this.qs(parameter)}`
+				if (this.url === '/' && page !== 1) {
+					return `/page/${page}`
+				}
+				if ((this.url === '/' && page === 1) || (this.url === '/page/' && page === 1)) {
+					return '/'
+				}
+				return `${this.url}${page}${this.parameter && Object.keys(this.parameter).length ? `?${this.qs(this.parameter)}` : ''}`
 			},
 			qs(obj) {
 				let str = '';

@@ -7,25 +7,29 @@ export const state = () => {
 
 export const mutations = {
   upEvaluateList(state, action) {
-    let evaluateList = [];
-    evaluateList = action.data || [];
-    evaluateList.map(item => {
-      if (item.f_id) {
-        evaluateList.map(list => {
-          if (list.id === item.f_id) {
-            !list.children && (list.children = []);
-            list.children.push(item)
-          }
-        })
-      }
-    });
-    let list = [];
-    evaluateList.map(item => {
-      if (!item.f_id) {
-        list.push(item)
-      }
-    });
-    state.list = list;
+    try {
+      let evaluateList = [];
+      evaluateList = action.data || [];
+      evaluateList.map(item => {
+        if (item.f_id) {
+          evaluateList.map(list => {
+            if (list.id === item.f_id) {
+              !list.children && (list.children = []);
+              list.children.push(item)
+            }
+          })
+        }
+      });
+      let list = [];
+      evaluateList.map(item => {
+        if (!item.f_id) {
+          list.push(item)
+        }
+      });
+      state.list = list;
+    } catch (e) {
+      
+    }
   },
   updateCode(state, code) {
     state.code = code;
