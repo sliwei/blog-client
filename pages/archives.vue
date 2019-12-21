@@ -81,7 +81,7 @@
         display: inline-block;
         padding: 2px 10px;
         border-radius: 4px;
-        background-color: var(--hover_color);
+        background-color: var(--base_color);
         color: var(--black_color);
         margin-left: 54px;
       }
@@ -97,7 +97,7 @@
           left: 80px;
           height: 100%;
           width: 2px;
-          background-color: #999;
+          background-color: var(--black_color);
         }
         li {
           list-style: none;
@@ -131,7 +131,7 @@
               width: 10px;
               height: 10px;
               border-radius: 5px;
-              background-color: #999;
+              background-color: var(--black_color);
               position: absolute;
               right: -26px;
               top: 6px;
