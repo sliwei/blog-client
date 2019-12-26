@@ -1,51 +1,4 @@
 <template>
-  <!--<div class="footer">-->
-  <!--<div class="cont">-->
-  <!--<div class="info">-->
-
-  <!--<div class="title">-->
-  <!--<span>Bstu.cn</span>-->
-  <!--</div>-->
-
-  <!--<div class="menu">-->
-  <!--<nuxt-link to="/">首页</nuxt-link>-->
-  <!--<nuxt-link to="/">博客</nuxt-link>-->
-  <!--<nuxt-link to="/">联系</nuxt-link>-->
-  <!--<nuxt-link to="/">关于</nuxt-link>-->
-  <!--</div>-->
-
-  <!--<div class="link">-->
-  <!--<a href=""><i style="font-size: 20px" class="iconfont a-blog-linkedin"/></a>-->
-  <!--<a target="_blank" href="https://github.com/sliwei"><i style="font-size: 20px" class="iconfont a-blog-github"/></a>-->
-  <!--</div>-->
-
-  <!--</div>-->
-
-  <!--<div class="cen"></div>-->
-
-  <!--<div class="but">-->
-
-  <!--<div class="creation">-->
-  <!--<span>Copyright © 2019 by </span>-->
-  <!--<nuxt-link to="/">布什兔</nuxt-link>-->
-  <!--<a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a>-->
-  <!--<a href="javascript:;">公安网备：50010902000222</a>-->
-  <!--</div>-->
-
-  <!--<div class="love">-->
-  <!--<i class="iconfont a-blog-love1"/>-->
-  <!--</div>-->
-
-  <!--<div class="policy">-->
-  <!--<a href="">隐私政策</a>-->
-  <!--<a href="">服务条款</a>-->
-  <!--</div>-->
-
-  <!--</div>-->
-
-  <!--</div>-->
-  <!--</div>-->
-
   <div class="footer-con">
     <div class="footer">
 
@@ -79,7 +32,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>© liwei 2019 - 2020</p> |
+          <p>© Liwei 2019 - 2020</p> |
           <p>风格灵感 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p> |
           <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p> |
           <p><a href="javascript:;">

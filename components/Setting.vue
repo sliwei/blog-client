@@ -14,8 +14,12 @@
 		</div>
 		<div class="language">
 			<div class="language_box" @click="changeLanguage">
-				<img src="~static/img/ch.png" :class="`${language === 'ch' ? '' : 'left_a'}`"/>
-				<img src="~static/img/en.png" :class="`${language === 'en' ? '' : 'right_a'}`"/>
+				<nuxt-link :to="`/en` + $route.fullPath" class="Header__Link" active-class="none" exact>
+					<img src="~static/img/zh.png" :class="`${language === 'zh' ? '' : 'left_a'}`"/>
+				</nuxt-link>
+				<nuxt-link :to="$route.fullPath.replace(/^\/[^\/]+/, '')" class="Header__Link" active-class="none" exact>
+					<img src="~static/img/en.png" :class="`${language === 'en' ? '' : 'right_a'}`"/>
+				</nuxt-link>
 			</div>
 		</div>
 	</div>
@@ -26,7 +30,7 @@
 			return {
 				setSta: false,
 				theme: '', // dark
-				language: '', // ch en
+				language: '', // zh en
 			}
 		},
 		methods: {
@@ -48,12 +52,10 @@
 				}
 			},
 			changeLanguage() {
-				if (this.language === 'ch') {
+				if (this.language === 'zh') {
 					this.language  = 'en';						
-					localStorage.setItem('language', 'en')
 				} else {
-					this.language  = 'ch';
-					localStorage.setItem('language', 'ch')
+					this.language  = 'zh';
 				}
 			},
 			init() {
@@ -65,13 +67,13 @@
 					document.querySelector('body').className = 'default';
 					this.theme  = 'default';
 				}
-				let language = localStorage.getItem('language');
+				let language = this.$route.params.lang;
 				if (language === 'en') {
 					// i18n
 					this.language  = 'en';
 				} else {
 					// i18n
-					this.language  = 'ch';
+					this.language  = 'zh';
 				}
 			},
 		},

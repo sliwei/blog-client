@@ -47,12 +47,12 @@
 		methods: {
 			retUrl(page) {
 				if (this.url === '/' && page !== 1) {
-					return `/page/${page}`
+					return this.$i18n.path(`/page/${page}`)
 				}
 				if ((this.url === '/' && page === 1) || (this.url === '/page/' && page === 1)) {
-					return '/'
+					return this.$i18n.path('/')
 				}
-				return `${this.url}${page}${this.parameter && Object.keys(this.parameter).length ? `?${this.qs(this.parameter)}` : ''}`
+				return this.$i18n.path(`${this.url}${page}${this.parameter && Object.keys(this.parameter).length ? `?${this.qs(this.parameter)}` : ''}`)
 			},
 			qs(obj) {
 				let str = '';

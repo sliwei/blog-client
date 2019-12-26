@@ -3,7 +3,7 @@
     <div class="user">
 
       <div class="heads">
-        <nuxt-link to="/">
+        <nuxt-link :to="$i18n.path('/')">
           <i class="iconfont a-blog-logo"></i>
         </nuxt-link>
       </div>
@@ -18,19 +18,19 @@
 
       <div class="cont">
         <div class="item">
-          <nuxt-link to="/">
+          <nuxt-link :to="$i18n.path('/')">
             <p class="label">文章</p>
             <p class="value">{{num.blog}}</p>
           </nuxt-link>
         </div>
         <div class="item">
-          <nuxt-link to="/">
+          <nuxt-link :to="$i18n.path('/')">
             <p class="label">分类</p>
             <p class="value">{{num.category}}</p>
           </nuxt-link>
         </div>
         <div class="item">
-          <nuxt-link to="/">
+          <nuxt-link :to="$i18n.path('/')">
             <p class="label">标签</p>
             <p class="value">{{num.tags}}</p>
           </nuxt-link>

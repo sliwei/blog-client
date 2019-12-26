@@ -41,9 +41,9 @@ module.exports = {
   */
   css: [
     '~/assets/css/bubble.css',
-    '~/assets/css/github-markdown.less',
+    '~/assets/less/github-markdown.less',
     '~/assets/css/highlightjs-line-numbers.css',
-    '~/assets/css/monokai-sublime.less',
+    '~/assets/css/monokai-sublime.css',
   ],
 
   /*
@@ -53,14 +53,20 @@ module.exports = {
     [
       {src: '~/plugins/axios'},
       {src: '~/plugins/validate'},
+      {src: '~/plugins/i18n'},
       {src: '~/plugins/message', ssr: false},
       {src: '~/plugins/vue-photo-preview-op', ssr: false},
-      {src: '~/assets/toTop', ssr: false},
-      {src: '~/assets/scrollfix', ssr: false},
-      {src: '~/assets/insertTxt', ssr: false},
-      {src: '~/assets/bubble', ssr: false},
+      {src: '~/assets/js/toTop', ssr: false},
+      {src: '~/assets/js/scrollfix', ssr: false},
+      {src: '~/assets/js/insertTxt', ssr: false},
+      {src: '~/assets/js/bubble', ssr: false},
     ],
-
+  /**
+   * 中间件
+   */
+  router: {
+    middleware: 'i18n',
+  },
   /*
   ** Nuxt.js modules
   */
@@ -70,8 +76,11 @@ module.exports = {
       '@nuxtjs/axios',
       '@nuxtjs/style-resources'
     ],
+  /**
+   * 全局样式
+   */
   styleResources: {
-    less: './assets/css/theme.less'
+    // less: './assets/css/theme.less'
     // sass: ...
   },
   /*

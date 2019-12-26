@@ -1,45 +1,8 @@
 <template>
-  <!--<div class="head">-->
-  <!--<div class="bg">-->
-  <!--<div class="mask"></div>-->
-  <!--</div>-->
-  <!--<div class="cont">-->
-  <!--<div class="bar">-->
-
-  <!--<div class="logo">-->
-  <!--<nuxt-link to="/">-->
-  <!--<img src="~static/img/logo.png" alt="">-->
-  <!--<h1 style="display: none">布什兔</h1>-->
-  <!--</nuxt-link>-->
-  <!--</div>-->
-
-  <!--<div class="menu">- -->
-  <!--<a target="_blank" href="http://manage.bstu.cn">写博客</a>-->
-  <!--<a target="_blank" href="http://chat.bstu.cn">聊天室</a>-->
-  <!--<a target="_blank" href="http://music.bstu.cn">吉姆音乐厅</a>-->
-  <!--<a target="_blank" href="https://yun.bstu.cn">在线云盘</a>-->
-  <!--<nuxt-link to="/">更多想法~</nuxt-link>-->
-  <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="motto">-->
-  <!--<h2>先天之智，后天修为</h2>-->
-  <!--&lt;!&ndash;<h2>没有与生俱来的智慧，就要积极进取的学习</h2>&ndash;&gt;-->
-  <!--</div>-->
-
-  <!--<div class="nav">-->
-  <!--<nuxt-link class="active" to="/">首页</nuxt-link>&ensp;/&ensp;-->
-  <!--<nuxt-link to="/search?keyword=">时间轴</nuxt-link>&ensp;/&ensp;-->
-  <!--<nuxt-link to="/log">日志</nuxt-link>-->
-  <!--</div>-->
-
-  <!--</div>-->
-  <!--</div>-->
-
   <div class="head-con">
     <div class="head">
       <div class="logo">
-        <nuxt-link to="/">
+        <nuxt-link :to="$i18n.path('/')">
           <i class="iconfont a-blog-logo"></i>
           <span>Bstu</span>
         </nuxt-link>
@@ -48,16 +11,16 @@
         <div class="nav">
           <ul>
             <li>
-              <nuxt-link to="/archives">归档</nuxt-link>
+              <nuxt-link :to="$i18n.path('/archives')">{{$t('components.head.archives')}}</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/categories">分类</nuxt-link>
+              <nuxt-link :to="$i18n.path('/categories')">{{$t('components.head.categories')}}</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/tags">标签</nuxt-link>
+              <nuxt-link :to="$i18n.path('/tags')">{{$t('components.head.tags')}}</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/about">关于</nuxt-link>
+              <nuxt-link :to="$i18n.path('/about')">{{$t('components.head.about')}}</nuxt-link>
             </li>
           </ul>
         </div>

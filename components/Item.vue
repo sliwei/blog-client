@@ -32,7 +32,7 @@
   </ul>
 </template>
 <script>
-  import Tool from '~/assets/Tool'
+  import Tool from '~/assets/js/Tool'
   import markdownIt from "markdown-it"
   import markdownTtHighlightjs from "markdown-it-highlightjs"
   import markdownItMark from "markdown-it-mark"

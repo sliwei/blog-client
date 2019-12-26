@@ -1,0 +1,99 @@
+{
+  "components": {
+    "archives": {
+      "title": "Archives"
+    },
+    "categories": {
+      "title": "Categories"
+    },
+    "comment": {
+      "title": "Comment",
+      "nickname": "Nickname",
+      "nickname-placeholder": "Please enter nickname",
+      "email": "Email",
+      "reply-notice": "Reply notice",
+      "email-placeholder": "Please enter email",
+      "website": "Website",
+      "website-placeholder": "Please enter website",
+      "content": "Content",
+      "support": "can use",
+      "syntax": "syntax",
+      "content-placeholder": "Please enter content",
+      "emoji": "Emoji",
+      "photo": "Photo",
+      "code": "Code",
+      "preview": "Preview",
+      "submit": "Submit",
+      "people": "People",
+      "nature": "Nature",
+      "object": "Object",
+      "address": "Address",
+      "symbol": "Symbol"
+    },
+    "evaluate": {
+      "note": "Be the first to comment."
+    },
+    "footer": {
+      "new-blog": "New blog",
+      "chat-room": "Chat room",
+      "jim-nmusic": "Jim music",
+      "cloud-disk": "Cloud disk",
+      "style": "Style"
+    },
+    "head": {
+      "archives": "Archives",
+      "categories": "Categories",
+      "tags": "Tags",
+      "about": "About"
+    },
+    "item": {
+      "reply": "Reply"
+    },
+    "links": {
+      "title": "Links"
+    },
+    "nav": {
+      "title": "Menu"
+    },
+    "page": {
+      "prev": "Prev",
+      "next": "Next"
+    },
+    "recent": {
+      "title": "Recent"
+    },
+    "search": {
+      "keyword": "Keyword"
+    },
+    "setting": {
+      "title": "Setting"
+    },
+    "tag-cloud": {
+      "title": "TagCloud"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "user": {
+      "job": "Front end Engineer",
+      "article": "Article",
+      "categories": "Categories",
+      "tags": "Tags",
+      "follow": "Follow me"
+    }
+  },
+  "layouts": {
+    "error": {
+      "not-found": "Not Found~",
+      "back-home": "Back Home"
+    }
+  },
+  "pages": {
+  },
+  "global": {
+    "y": "/",
+    "m": "/",
+    "d": "",
+    "submit-success": "Submit successfully"
+  }
+}

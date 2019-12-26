@@ -15,7 +15,8 @@ export const actions = {
   // 公共部分（顶部/底部/侧边）的数据需要在这里先获取，存到store里面，然后全局都能使用
   nuxtServerInit(store, {req, params, route}) {
 
-    console.log(req.url);
+    console.log('params:', params);
+    console.log('url:', req.url);
 
     // 获取 最新文章/标签/友链/数量/归档/分类
     const storeList = [
