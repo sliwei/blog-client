@@ -1,0 +1,99 @@
+{
+  "components": {
+    "archives": {
+      "title": "归档"
+    },
+    "categories": {
+      "title": "分类"
+    },
+    "comment": {
+      "title": "评论",
+      "nickname": "昵称",
+      "nickname-placeholder": "请输入昵称",
+      "email": "邮箱",
+      "reply-notice": "回复通知",
+      "email-placeholder": "请输入邮箱地址",
+      "website": "站点",
+      "website-placeholder": "请输入站点",
+      "content": "内容",
+      "support": "支持",
+      "syntax": "语法",
+      "content-placeholder": "请输入内容",
+      "emoji": "表情",
+      "photo": "图片",
+      "code": "代码",
+      "preview": "预览",
+      "submit": "提  交",
+      "people": "人物",
+      "nature": "自然",
+      "object": "物体",
+      "address": "地方",
+      "symbol": "符号"
+    },
+    "evaluate": {
+      "note": "成为第一个评论的人吧！"
+    },
+    "footer": {
+      "new-blog": "写博客",
+      "chat-room": "聊天室",
+      "jim-nmusic": "吉姆音乐厅",
+      "cloud-disk": "在线云盘",
+      "style": "风格灵感"
+    },
+    "head": {
+      "archives": "归档",
+      "categories": "分类",
+      "tags": "标签",
+      "about": "关于"
+    },
+    "item": {
+      "reply": "回复"
+    },
+    "links": {
+      "title": "友链"
+    },
+    "nav": {
+      "title": "目录"
+    },
+    "page": {
+      "prev": "前一页",
+      "next": "后一页"
+    },
+    "recent": {
+      "title": "最新文章"
+    },
+    "search": {
+      "keyword": "关键字"
+    },
+    "setting": {
+      "title": "设置"
+    },
+    "tag-cloud": {
+      "title": "标签云"
+    },
+    "tags": {
+      "title": "标签"
+    },
+    "user": {
+      "job": "前端工程师",
+      "article": "文章",
+      "categories": "分类",
+      "tags": "标签",
+      "follow": "关注我"
+    }
+  },
+  "layouts": {
+    "error": {
+      "not-found": "页面找不到啦~",
+      "back-home": "回到首页"
+    }
+  },
+  "pages": {
+  },
+  "global": {
+    "y": "年",
+    "m": "月",
+    "d": "日",
+    "submit-success": "提交成功"
+  }
+}

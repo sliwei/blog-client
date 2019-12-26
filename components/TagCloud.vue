@@ -4,7 +4,7 @@
       <p class="title">标签云</p>
 
       <div class="tagcloud">
-        <nuxt-link v-for="(item, i) in list" :class="sty(item)" :to="`/search?tag=${item.id}`" :key="i">{{item.name}}</nuxt-link>
+        <nuxt-link v-for="(item, i) in list" :class="sty(item)" :to="$i18n.path(`/search?tag=${item.id}`)" :key="i">{{item.name}}</nuxt-link>
       </div>
 
     </div>

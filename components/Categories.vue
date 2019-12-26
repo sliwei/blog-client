@@ -1,7 +1,7 @@
 <template>
   <div class="archives-cont">
     <div class="archives">
-      <p class="title">分类</p>
+      <p class="title">{{$t('components.categories.title')}}</p>
 
       <div class="list">
         <ul>

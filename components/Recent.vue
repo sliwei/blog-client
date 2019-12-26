@@ -5,7 +5,7 @@
       <div class="list">
         <ul>
           <li v-for="(item, i) in list" :key="i">
-            <nuxt-link to="/detail/ncig">
+            <nuxt-link :to="$i18n.path(`/article/${item.code}`)">
               <div class="img">
                 <img :src="item.img" alt="">
               </div>
@@ -13,7 +13,7 @@
             <div class="right">
               <p class="time">{{item.create_time}}</p>
               <p class="name">
-                <nuxt-link :to="`/detail/${item.code}`">{{item.title}}</nuxt-link>
+                <nuxt-link :to="$i18n.path(`/article/${item.code}`)">{{item.title}}</nuxt-link>
               </p>
             </div>
           </li>

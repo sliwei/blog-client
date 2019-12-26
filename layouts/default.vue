@@ -130,6 +130,7 @@
     },
     methods: {
       init() {
+        console.log(this.$route);
         $('.to-top').toTop();
         this.sta = true;
         this.searchSta = this.$route.name !== 'search';

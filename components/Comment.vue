@@ -1,6 +1,6 @@
 <template>
   <div class="comment">
-    <p class="title">评论</p>
+    <p class="title">{{$t('components.comment.title')}}</p>
     <div class="forms">
       <div class="item">
         <p>昵称</p>
@@ -2169,7 +2169,7 @@
             background-color: var(--black_color);
 
             .menu {
-              border-bottom: 1px solid var(--hover_color);
+              border-bottom: 1px solid var(--bg_color);
               display: flex;
               &:after {
                 content: '';
@@ -2187,12 +2187,10 @@
                 padding: 8px 0;
                 text-align: center;
                 &:hover {
-                  background-color: rgba(var(--hover_color), .2);
                   color: var(--hover_color);
                 }
                 &.active {
-                  background-color: rgba(var(--hover_color), .8);
-                  color: #FFFFFF;
+                  color: var(--hover_color);
                 }
               }
 
@@ -2205,8 +2203,8 @@
             }
 
             &.active {
-              border: 2px solid var(--hover_color);
-              box-shadow: 0 0 2px #49fb7e;
+              /*border: 2px solid var(--hover_color);*/
+              /*box-shadow: 0 0 2px #49fb7e;*/
             }
 
             span {

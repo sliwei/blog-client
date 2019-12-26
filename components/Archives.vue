@@ -1,7 +1,7 @@
 <template>
   <div class="archives-cont">
     <div class="archives">
-      <p class="title">归档</p>
+      <p class="title">{{$t('components.archives.title')}}</p>
       <div class="list">
         <ul>
           <li v-for="(item, i) in list" :key="i">
@@ -30,7 +30,7 @@
           months = months < 10 ? `0${months}` : months;
           dates = dates < 10 ? `0${dates}` : dates;
           item.date = `${month}.${dates}`;
-          let n = `${new Date(item.create_time).getFullYear()}年${months}`;
+          let n = `${new Date(item.create_time).getFullYear()}${$t('global.y')}${months}`;
           let index = month.indexOf(n);
           if (index === -1) {
             month.push(n);
@@ -45,34 +45,6 @@
         return monthList;
       },
     },
-    // async asyncData({app, route}) {
-    //   const {data} = await app.$axios.get('/blog/client/blog/archives');
-    //   console.log(data);
-    //   let list = data.data;
-    //   let month = [];
-    //   let monthList = {};
-    //   list.map(item => {
-    //     let create_time = new Date(item.create_time);
-    //     let months = create_time.getMonth() + 1;
-    //     let dates = create_time.getDate();
-    //     months = months < 10 ? `0${months}` : months;
-    //     dates = dates < 10 ? `0${dates}` : dates;
-    //     item.date = `${month}.${dates}`;
-    //     let n = `${new Date(item.create_time).getFullYear()}年${months}`;
-    //     let index = month.indexOf(n);
-    //     if (index === -1) {
-    //       month.push(n);
-    //       monthList[month.length-1] = {};
-    //       monthList[month.length-1].month = n;
-    //       monthList[month.length-1].list = [];
-    //       monthList[month.length-1].list = [...monthList[month.length-1].list, item];
-    //     } else {
-    //       monthList[index].list = [...monthList[index].list, item];
-    //     }
-    //   });
-    //   console.log(monthList);
-    //   return {list: monthList}
-    // },
   }
 </script>
 <style lang="less" scoped>
