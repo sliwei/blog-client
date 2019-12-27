@@ -11,29 +11,29 @@
               <li>
                 <a target="_blank" href="http://manage.bstu.cn">
                   <i class="iconfont a-blog-edit-square"></i>
-                  写博客</a>
+                  {{$t('components.footer.new-blog')}}</a>
               </li>
               <li>
                 <a target="_blank" href="http://chat.bstu.cn">
                   <i class="iconfont a-blog-comment"></i>
-                  聊天室</a>
+                  {{$t('components.footer.chat-room')}}</a>
               </li>
               <li>
                 <a target="_blank" href="http://music.bstu.cn">
                   <i class="iconfont a-blog-app"></i>
-                  吉姆音乐厅</a>
+                  {{$t('components.footer.jim-nmusic')}}</a>
               </li>
               <li>
                 <a target="_blank" href="https://yun.bstu.cn">
                   <i class="iconfont a-blog-cloud-server"></i>
-                  在线云盘</a>
+                  {{$t('components.footer.cloud-disk')}}</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="copyright">
           <p>© Liwei 2019 - 2020</p> |
-          <p>风格灵感 <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p> |
+          <p>{{$t('components.footer.style')}} <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p> |
           <p><a target="_blank" href="http://www.miitbeian.gov.cn">渝ICP备15001052号-4</a></p> |
           <p><a href="javascript:;">
             <img style="vertical-align: top" height="14" src="~static/img/wb.png" alt="">

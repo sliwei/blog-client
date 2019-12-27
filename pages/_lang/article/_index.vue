@@ -15,7 +15,7 @@
 						<h1>{{data.title}}</h1>
 					</div>
 					<div class="time">
-						<span>发表于 - <span class="txt">{{getTime(data.time)}}</span></span>
+						<span>{{$t('pages.article.published')}} - <span class="txt">{{getTime(data.time)}}</span></span>
 					</div>
 					<!--<div v-html="data.content" class="markdown-body"></div>-->
 					<div v-html="html" class="markdown-body"></div>
@@ -26,7 +26,7 @@
 				<div class="left" v-if="neighbor.front.code">
 					<div class="txt">
 						<i class="iconfont a-blog-left"></i>
-						<span>上一篇</span>
+						<span>{{$t('components.page.prev')}}</span>
 					</div>
 					<div>
 						<nuxt-link :to="$i18n.path(`/article/${neighbor.front.code}`)">{{neighbor.front.title}}</nuxt-link>
@@ -34,7 +34,7 @@
 				</div>
 				<div class="right" v-if="neighbor.after.code">
 					<div class="txt">
-						<span>下一篇</span>
+						<span>{{$t('components.page.next')}}</span>
 						<i class="iconfont a-blog-right"></i>
 					</div>
 					<div>
@@ -76,7 +76,7 @@
 		async asyncData({app, route, error}) {
 			const {data} = await app.$axios.get(`/blog/client/blog/detail?code=${route.params.index}`)
 			if (!data.data) {
-				error({message: '你访问的页面不存在', statusCode: 404})
+				error({message: this.$t('global.not-found'), statusCode: 404})
 				return;
 			}
 			//
@@ -167,7 +167,7 @@
 				});
 			},
 			getTime(time) {
-				return Tool.formatDate(time, 'YY年MM月DD日hh时mm分')
+				return Tool.formatDate(time, this.$t('global.time-format'))
 			},
 			checkCountMax() {
 				this.$store.commit('screen/changeContMax')

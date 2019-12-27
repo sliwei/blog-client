@@ -9,7 +9,7 @@
       </div>
       <div class="info">
         <p class="name">Liwei</p>
-        <p class="job">前端工程师</p>
+        <p class="job">{{$t('components.user.job')}}</p>
         <p class="addr">
           <i class="iconfont a-blog-location"/>
           <span>Beijing</span>
@@ -19,26 +19,26 @@
       <div class="cont">
         <div class="item">
           <nuxt-link :to="$i18n.path('/')">
-            <p class="label">文章</p>
+            <p class="label">{{$t('components.user.article')}}</p>
             <p class="value">{{num.blog}}</p>
           </nuxt-link>
         </div>
         <div class="item">
           <nuxt-link :to="$i18n.path('/')">
-            <p class="label">分类</p>
+            <p class="label">{{$t('components.user.categories')}}</p>
             <p class="value">{{num.category}}</p>
           </nuxt-link>
         </div>
         <div class="item">
           <nuxt-link :to="$i18n.path('/')">
-            <p class="label">标签</p>
+            <p class="label">{{$t('components.user.tags')}}</p>
             <p class="value">{{num.tags}}</p>
           </nuxt-link>
         </div>
       </div>
 
       <div class="get_me">
-        <a target="_blank" href="https://github.com/sliwei">关注我</a>
+        <a target="_blank" href="https://github.com/sliwei">{{$t('components.user.follow')}}</a>
       </div>
 
       <div class="icons">

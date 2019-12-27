@@ -30,12 +30,12 @@
               </transition>
             </div>
             <!--当窄屏模式现实-->
-            <div class="right-content content">
+            <div :class="`${!(contMax && isDetailRoute) && 'right-content'} content`">
               <transition name="bounce">
-                <awei-search v-if="sta && searchSta"></awei-search>
+                <awei-search v-if="(sta && searchSta) || (contMax && isDetailRoute)"></awei-search>
               </transition>
               <transition name="bounce">
-                <awei-recent v-show="sta"></awei-recent>
+                <awei-recent v-show="sta || (contMax && isDetailRoute)"></awei-recent>
               </transition>
 <!--              <transition name="bounce">-->
 <!--                <awei-archives v-show="sta"></awei-archives>-->
@@ -44,7 +44,7 @@
 <!--                <awei-tags v-show="sta"></awei-tags>-->
 <!--              </transition>-->
               <transition name="bounce">
-                <awei-nav v-if="sta && navSta && menu.tocHtml"></awei-nav>
+                <awei-nav v-if="(sta && navSta && menu.tocHtml) || (contMax && isDetailRoute && menu.tocHtml)"></awei-nav>
               </transition>
             </div>
           </div>
@@ -125,7 +125,7 @@
         return this.$store.state.screen.contMax
       },
       isDetailRoute() {
-        return this.$route.name === 'detail-code'
+        return this.$route.name === 'article' || this.$route.name === 'lang-article';
       },
     },
     methods: {
@@ -134,7 +134,7 @@
         $('.to-top').toTop();
         this.sta = true;
         this.searchSta = this.$route.name !== 'search';
-        this.navSta = this.$route.name === 'detail-code';
+        this.navSta = (this.$route.name === 'article' || this.$route.name === 'lang-article');
       },
     },
     created() {
@@ -145,7 +145,7 @@
     watch: {
       '$route': function (newValue, oldValue) {
         this.searchSta = newValue.name !== 'search';
-        this.navSta = this.$route.name === 'detail-code';
+        this.navSta = (this.$route.name === 'article' || this.$route.name === 'lang-article');
       }
     },
   }
@@ -430,7 +430,9 @@
         padding: 20px 10px;
 
         .right-content {
-          display: none !important;
+          /*display: none !important;*/
+          position: fixed;
+          left: -10000px;
         }
       }
 
@@ -449,7 +451,8 @@
         display: block !important;
       }
       .cont-right-min {
-        display: none!important;
+        position: fixed;
+        left: -10000px;
       }
     }
   }
@@ -466,7 +469,9 @@
         padding: 20px 10px;
 
         .right-content {
-          display: none !important;
+          /*display: none !important;*/
+          position: fixed;
+          left: -10000px;
         }
       }
 
@@ -484,7 +489,8 @@
         display: block !important;
       }
       .cont-right-min {
-        display: none!important;
+        position: fixed;
+        left: -10000px;
       }
     }
   }

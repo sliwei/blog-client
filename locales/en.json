@@ -16,8 +16,8 @@
       "website": "Website",
       "website-placeholder": "Please enter website",
       "content": "Content",
-      "support": "can use",
-      "syntax": "syntax",
+      "support": "can use ",
+      "syntax": " syntax",
       "content-placeholder": "Please enter content",
       "emoji": "Emoji",
       "photo": "Photo",
@@ -31,7 +31,7 @@
       "symbol": "Symbol"
     },
     "evaluate": {
-      "note": "Be the first to comment."
+      "note": "^_^ Be the first to comment."
     },
     "footer": {
       "new-blog": "New blog",
@@ -89,11 +89,27 @@
     }
   },
   "pages": {
+    "article": {
+      "published": "Published in"
+    },
+    "page": {
+      "unknown": "Unknown",
+      "read-more": "Read more"
+    },
+    "search": {
+      "keyword": "Keyword:",
+      "results": "results"
+    },
+    "about": {
+      "say": "'I will work all my life.'—— Mr码·农"
+    }
   },
   "global": {
     "y": "/",
     "m": "/",
     "d": "",
-    "submit-success": "Submit successfully"
+    "submit-success": "Submit successfully",
+    "not-found": "Not Found~",
+    "time-format": "YY-MM-DD hh:mm"
   }
 }

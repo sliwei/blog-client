@@ -1,7 +1,7 @@
 <template>
   <div class="tags-cont">
     <div class="tags">
-      <p class="title">标签</p>
+      <p class="title">{{$t('components.tags.title')}}</p>
 
       <div class="list">
         <ul>

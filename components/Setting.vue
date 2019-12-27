@@ -4,7 +4,7 @@
 			<div class="icon_cont">
 				<div :class="`icon ${setSta ? 'icon_animation' : ''}`"><i class="iconfont a-blog-setting-fill"/></div>
 			</div>
-			<div class="title">设置</div>
+			<div class="title">{{$t('components.setting.title')}}</div>
 		</div>
 		<div class="panel">
 			<div class="theme" @click="changeTheme">

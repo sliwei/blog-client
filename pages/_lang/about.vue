@@ -3,7 +3,7 @@
     <div class="about ">
       <h2>About Me</h2>
       <div class="markdown-body" v-html="html"></div>
-      <p class="no_work">“打工是肯定要打工的，这一辈子都要打工！” —— Mr码·农</p>
+      <p class="no_work">{{$t('pages.about.say')}}</p>
     </div>
 
     <!--评论-->
@@ -36,7 +36,7 @@
     async asyncData({app, route, error}) {
       const {data} = await app.$axios.get(`/blog/client/blog/detail?code=about&type=1`)
       if (!data.data) {
-        error({message: '你访问的页面不存在', statusCode: 404})
+        error({message: this.$t('global.not-found'), statusCode: 404})
         return;
       }
       // const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=`)

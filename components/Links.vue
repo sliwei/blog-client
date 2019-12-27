@@ -1,7 +1,7 @@
 <template>
   <div class="links-cont" v-if="list.length">
     <div class="links">
-      <p class="title">友链</p>
+      <p class="title">{{$t('components.links.title')}}</p>
       <div class="list">
         <ul>
           <li v-for="(item, i) in list" :key="i">

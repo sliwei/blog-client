@@ -2,7 +2,7 @@
 	<div class="index">
 		<div class="search">
 			<div class="keyword animated faster pulse" v-if="parameter.keyword">
-				关键字：<a href="javascript:;">{{parameter.keyword}}</a> 得出以下结果
+				{{$t('pages.search.keyword')}}<a href="javascript:;">{{parameter.keyword}}</a> {{$t('pages.search.results')}}
 			</div>
 
 			<div class="item animated faster pulse" v-for="(item, i) in users.list" :key="i">
@@ -18,7 +18,7 @@
 						<i class="iconfont a-blog-date"></i>
 						<span>{{getTime(item.create_time)}}</span>
 						<i class="iconfont a-blog-address"></i>
-						<span>未知 {{item.user_name}}</span>
+						<span>{{$t('pages.page.unknown')}} {{item.user_name}}</span>
 					</div>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 			// console.log(keyword);
 			const {data} = await app.$axios.get(`/blog/client/blog/search?keyword=${encodeURIComponent(keyword)}&pageIndex=${route.params.index || 1}&pageSize=8`);
 			if (!data.data) {
-				error({message: '你访问的页面不存在', statusCode: 404});
+				error({message: this.$t('global.not-found'), statusCode: 404});
 				return;
 			}
 			let parameter = {

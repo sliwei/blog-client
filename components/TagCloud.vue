@@ -1,7 +1,7 @@
 <template>
   <div class="tag-cloud-cont">
     <div class="tag-cloud">
-      <p class="title">标签云</p>
+      <p class="title">{{$t('components.tag-cloud.title')}}</p>
 
       <div class="tagcloud">
         <nuxt-link v-for="(item, i) in list" :class="sty(item)" :to="$i18n.path(`/search?tag=${item.id}`)" :key="i">{{item.name}}</nuxt-link>

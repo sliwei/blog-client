@@ -1,7 +1,7 @@
 <template>
   <div class="evaluate" id="evaluate">
     <awei-item :list="list" v-if="list.length"/>
-    <p class="one_evaluate" v-if="!list.length">^_^成为第一个评论的人吧！</p>
+    <p class="one_evaluate" v-if="!list.length">{{$t('components.evaluate.note')}}</p>
     <!--<div class="separ"></div>-->
   </div>
 </template>

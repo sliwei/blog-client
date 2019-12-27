@@ -12,9 +12,9 @@
         </nuxt-link>
 
         <div class="info">
-          <div class="title">页面找不到啦~</div>
+          <div class="title">{{$t('layouts.error.not-found')}}</div>
           <p class="description">
-            <nuxt-link :to="$i18n.path('/')" class="error-link nuxt-link-active">回到首页</nuxt-link>
+            <nuxt-link :to="$i18n.path('/')" class="error-link nuxt-link-active">{{$t('layouts.error.back-home')}}</nuxt-link>
           </p>
         </div>
       </div>

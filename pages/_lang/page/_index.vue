@@ -17,13 +17,13 @@
 										<i class="iconfont a-blog-date"></i>
 										<span>{{getTime(item.create_time)}}</span>
 										<i class="iconfont a-blog-address"></i>
-										<span>未知 {{item.user_name}}</span>
+										<span>{{$t('pages.page.unknown')}} {{item.user_name}}</span>
 									</div>
 									<div class="title">
 										<nuxt-link :to="$i18n.path(`/article/${item.code}`)">{{item.title}}</nuxt-link>
 									</div>
 									<div class="more">
-										<nuxt-link :to="$i18n.path(`/article/${item.code}`)">阅读更多</nuxt-link>
+										<nuxt-link :to="$i18n.path(`/article/${item.code}`)">{{$t('pages.page.read-more')}}</nuxt-link>
 										<i class="iconfont a-blog-right"></i>
 									</div>
 								</div>
@@ -61,15 +61,7 @@
 		},
 		methods: {
 			getTime(time) {
-				return Tool.formatDate(time, 'YYYY-MM-DD hh:mm');
-			},
-			search() {
-				this.$router.push({
-					path: '/search',
-					query: {
-						keyword: this.searchVal
-					},
-				})
+				return Tool.formatDate(time, this.$t('global.time-format'));
 			},
 		},
 		head() {

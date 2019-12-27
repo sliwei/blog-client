@@ -1,7 +1,7 @@
 <template>
   <div class="nav-cont">
     <div class="nav">
-      <p class="title">目录</p>
+      <p class="title">{{$t('components.nav.title')}}</p>
       <div style="margin-left: -10px;" v-html="menu.tocHtml" id="nav"></div>
     </div>
   </div>
@@ -59,7 +59,10 @@
     watch: {
       menu: function (o, n) {
         this.init();
-      }
+      },
+      '$store.state.screen.contMax': function (o, n) {
+        this.init();
+      },
     },
   }
 </script>

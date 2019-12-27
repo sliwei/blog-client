@@ -3,49 +3,49 @@
     <p class="title">{{$t('components.comment.title')}}</p>
     <div class="forms">
       <div class="item">
-        <p>昵称</p>
+        <p>{{$t('components.comment.nickname')}}</p>
         <div class="sub">
-          <input v-model="name" v-validate="'required'" name="昵称" type="text" placeholder="请输入昵称">
-          <span>{{ errors.first('昵称') }}</span>
+          <input v-model="name" v-validate="'required'" :name="$t('components.comment.nickname')" type="text" :placeholder="$t('components.comment.nickname-placeholder')">
+          <span>{{ errors.first($t('components.comment.nickname')) }}</span>
         </div>
       </div>
       <div class="item">
-        <p class="email">邮箱 <span style="color: #a1a1a1;font-size: 12px">(回复通知)</span></p>
+        <p class="email">{{$t('components.comment.email')}} <span style="color: #a1a1a1;font-size: 12px">({{$t('components.comment.reply-notice')}})</span></p>
         <div class="sub">
-          <input v-model="mail" v-validate="'email'" name="邮箱" type="text" placeholder="请输入邮箱地址">
-          <span>{{ errors.first('邮箱') }}</span>
+          <input v-model="mail" v-validate="'email'" :name="$t('components.comment.email')" type="text" :placeholder="$t('components.comment.email-placeholder')">
+          <span>{{ errors.first($t('components.comment.email')) }}</span>
         </div>
       </div>
       <div class="item">
-        <p>站点</p>
+        <p>{{$t('components.comment.website')}}</p>
         <div class="sub">
-          <input v-model="website" name="站点" type="text" placeholder="请输入站点">
+          <input v-model="website" :name="$t('components.comment.website')" type="text" :placeholder="$t('components.comment.website-placeholder')">
         </div>
       </div>
     </div>
     <div class="forms">
       <div class="item">
-        <p>内容 <span style="color: #a1a1a1;font-size: 12px">(支持<a target="_blank"
-                                                                 href="https://segmentfault.com/markdown">Markdown</a>语法)</span>
+        <p>{{$t('components.comment.content')}} <span style="color: #a1a1a1;font-size: 12px">({{$t('components.comment.support')}}<a target="_blank"
+                                                                 href="https://segmentfault.com/markdown">Markdown</a>{{$t('components.comment.syntax')}})</span>
         </p>
         <div class="sub">
-          <textarea v-show="!previewSta" id="cont" v-model="cont" v-validate="'required'" name="内容" type="text"
-                    placeholder="请输入内容"></textarea>
+          <textarea v-show="!previewSta" id="cont" v-model="cont" v-validate="'required'" :name="$t('components.comment.content')" type="text"
+                    :placeholder="$t('components.comment.content-placeholder')"></textarea>
           <div v-show="previewSta" v-html="markdownHtml" class="markdown-body"></div>
 
           <div class="tool">
-            <div class="icons" title="表情">
+            <div class="icons" :title="$t('components.comment.emoji')">
               <i :class="{iconfont:1, 'a-blog-smile': 1, active: emojiSta}" @click="changeEmoji"/>
             </div>
-            <div class="icons" title="图片" @click="insertText('![]()')">
+            <div class="icons" :title="$t('components.comment.photo')" @click="insertText('![]()')">
               <i :class="{iconfont:1, 'a-blog-image': 1}"/>
             </div>
-            <div class="icons" title="代码" @click="insertText('```\n'+
+            <div class="icons" :title="$t('components.comment.code')" @click="insertText('```\n'+
 '\n'+
 '```')">
               <i :class="{iconfont:1, 'a-blog-code': 1}"/>
             </div>
-            <div class="icons" title="预览">
+            <div class="icons" :title="$t('components.comment.preview')">
               <i :class="{iconfont:1, 'a-blog-eye': 1, active: previewSta}" @click="changePreview"/>
             </div>
           </div>
@@ -64,13 +64,13 @@
             <span>{{reply.c_user.name}}</span>
             <i @click="empty" class="iconfont a-blog-close"></i>
           </div>
-          <span>{{ errors.first('内容') }}</span>
+          <span>{{ errors.first($t('components.comment.content')) }}</span>
         </div>
 
       </div>
     </div>
     <div class="btn">
-      <button @click="sub">提&ensp;交</button>
+      <button @click="sub">{{$t('components.comment.submit')}}</button>
     </div>
   </div>
 </template>
@@ -99,7 +99,7 @@
         emojiList: [
           {
             // name: 'People',
-            name: '人物',
+            name: this.$t('components.comment.people'),
             list: [
               // ':bowtie:',
               // ':smile:',
@@ -478,7 +478,7 @@
           },
           {
             // name: 'Nature',
-            name: '自然',
+            name: this.$t('components.comment.nature'),
             list: [
               // ':sunny:',
               // ':umbrella:',
@@ -713,7 +713,7 @@
           },
           {
             // name: 'Objects',
-            name: '物体',
+            name: this.$t('components.comment.object'),
             list: [
               // ':bamboo:',
               // ':gift_heart:',
@@ -1240,7 +1240,7 @@
           },
           {
             // name: 'Places',
-            name: '地方',
+            name: this.$t('components.comment.address'),
             list: [
               // ':house:',
               // ':house_with_garden:',
@@ -1459,7 +1459,7 @@
           },
           {
             // name: 'Symbols',
-            name: '符号',
+            name: this.$t('components.comment.symbol'),
             list: [
               // ':one:',
               // ':two:',
@@ -1904,7 +1904,7 @@
                 this.mail = '';
                 this.cont = '';
                 this.$validator.reset();
-                this.$message('提交成功', 'success');
+                this.$message(this.$t('global.submit-success'), 'success');
                 this.previewSta = false;
                 this.emojiSta = false;
                 this.empty();

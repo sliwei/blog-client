@@ -2,7 +2,7 @@
   <div class="search-cont">
     <div class="search">
       <form action="javascript:return true;">
-        <input @keyup.13="search" type="text" v-model="searchVal" placeholder="关键字">
+        <input @keyup.13="search" type="text" v-model="searchVal" :placeholder="$t('components.search.keyword')">
       </form>
       <i class="iconfont a-blog-max_search" @click="search"></i>
     </div>
@@ -21,7 +21,7 @@
       search() {
         // window.location.href = `/search?keyword=${this.searchVal}`;
         this.$router.push({
-          path: '/search/1',
+          path: this.$i18n.path('/search/1'),
           query: {
             keyword: this.searchVal
           },

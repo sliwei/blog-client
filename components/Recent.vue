@@ -1,7 +1,7 @@
 <template>
   <div class="recent-cont">
     <div class="recent">
-      <p class="title">最新文章</p>
+      <p class="title">{{$t('components.recent.title')}}</p>
       <div class="list">
         <ul>
           <li v-for="(item, i) in list" :key="i">

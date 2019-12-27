@@ -31,7 +31,7 @@
       "symbol": "符号"
     },
     "evaluate": {
-      "note": "成为第一个评论的人吧！"
+      "note": "^_^成为第一个评论的人吧！"
     },
     "footer": {
       "new-blog": "写博客",
@@ -89,11 +89,27 @@
     }
   },
   "pages": {
+    "article": {
+      "published": "发表于"
+    },
+    "page": {
+      "unknown": "未知",
+      "read-more": "阅读更多"
+    },
+    "search": {
+      "keyword": "关键字：",
+      "results": "得出以下结果"
+    },
+    "about": {
+      "say": "“打工是肯定要打工的，这一辈子都要打工！” —— Mr码·农"
+    }
   },
   "global": {
     "y": "年",
     "m": "月",
     "d": "日",
-    "submit-success": "提交成功"
+    "submit-success": "提交成功",
+    "not-found": "你访问的页面不存在",
+    "time-format": "YY年MM月DD日hh时mm分"
   }
 }

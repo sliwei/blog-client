@@ -12,11 +12,11 @@
         <div class="main">
           <div class="info">
             <div class="data">
-              <p class="name">{{item.c_user && item.c_user.name}}<span v-if="item.comment"> 回复 {{item.comment.c_user.name}}</span></p>
+              <p class="name">{{item.c_user && item.c_user.name}}<span v-if="item.comment"> {{$t('components.item.reply')}} {{item.comment.c_user.name}}</span></p>
               <p class="time">{{getTime(item.create_time)}}</p>
             </div>
             <div class="reply">
-              <a href="javascript:;" @click="reply(item)">回复</a>
+              <a href="javascript:;" @click="reply(item)">{{$t('components.item.reply')}}</a>
             </div>
           </div>
           <div class="cont">

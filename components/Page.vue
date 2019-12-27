@@ -2,7 +2,7 @@
 	<div class="page">
 
 		<div class="prev">
-			<nuxt-link :to="retUrl(pageIndex - 1)" v-if="pageIndex !== 1">
+			<nuxt-link :to="retUrl(pageIndex - 1)" v-if="pageIndex !== 1" :title="$t('components.page.prev')">
 				<i class="iconfont a-blog-left"></i>
 				<!--<span>前一页</span>-->
 			</nuxt-link>
@@ -20,7 +20,7 @@
 		<nuxt-link :to="retUrl(pageCount)" v-if="next" :class="{active: this.pageCount === pageIndex}">{{this.pageCount}}</nuxt-link>
 
 		<div class="next">
-			<nuxt-link :to="retUrl(pageIndex + 1)" v-if="pageCount !== pageIndex">
+			<nuxt-link :to="retUrl(pageIndex + 1)" v-if="pageCount !== pageIndex" :title="$t('components.page.next')">
 				<!--<span>后一页</span>-->
 				<i class="iconfont a-blog-right"></i>
 			</nuxt-link>
