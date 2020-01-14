@@ -113,11 +113,14 @@
 			font-size: 14px;
 			font-weight: bold;
 			margin-bottom: 20px;
-			color: #666666;
-			background-color: #ffffff;
+			color: var(--block_title);
+			background-color: var(--black_color);
 			border-radius: 4px;
 			box-shadow: var(--box_shadow);
 			padding: 20px;
+			a {
+				color: var(--color);
+			}
 		}
 
 		.item {
@@ -127,7 +130,7 @@
 			margin-bottom: 20px;
 			display: flex;
 
-			background-color: #ffffff;
+			background-color: var(--black_color);
 			border-radius: 4px;
 			box-shadow: var(--box_shadow);
 
@@ -172,12 +175,13 @@
 						font-size: 14px;
 						/*font-family: Montserrat-Medium;*/
 						font-weight: 500;
-						color: rgba(153, 153, 153, 1);
+						color: var(--block_title);
 						line-height: 23px;
 						vertical-align: middle;
 					}
 
 					i {
+						color: var(--block_title);
 						font-size: 30px;
 						vertical-align: middle;
 					}
@@ -188,7 +192,7 @@
 						font-size: 18px;
 						/*font-family: Montserrat-Regular;*/
 						font-weight: bold;
-						color: #666666;
+						color: var(--color);
 						line-height: 32px;
 						text-decoration: none;
 
