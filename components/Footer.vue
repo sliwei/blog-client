@@ -34,7 +34,7 @@
         <div class="copyright">
           <p>© Liwei 2019 - 2020</p> |
           <p>{{$t('components.footer.style')}} <a target="_blank" href="https://blog.zhangruipeng.me/hexo-theme-icarus/">Icarus</a></p> |
-          <p><a target="_blank" href="www.beian.miit.gov.cn">渝ICP备15001052号-4</a></p> |
+          <p><a target="_blank" href="http://www.beian.miit.gov.cn">渝ICP备15001052号-4</a></p> |
           <p><a href="javascript:;">
             <img style="vertical-align: top" height="14" src="~static/img/wb.png" alt="">
             <span style="vertical-align: top">公安网备：50010902000222</span>
