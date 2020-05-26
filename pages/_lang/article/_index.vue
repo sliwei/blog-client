@@ -296,7 +296,7 @@
 						color: var(--color);
 						font-size: 24px;
 						font-weight: 400;
-						font-family: Serif;
+						/*font-family: Serif;*/
 					}
 				}
 

@@ -191,10 +191,15 @@
     --border: #3e3e3e;
     --box_shadow: 0 0 4px #282c35, 0 0 1px #282c35;
   }
-  
+
+  @font-face{
+    font-family: 'AGaramondPro';
+    src : url('../assets/font/AGaramondPro-Regular.otf');
+  }
+
   html {
     /*font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
-    font-family: Serif;
+    font-family: 'AGaramondPro';
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -204,7 +209,7 @@
     box-sizing: border-box;
     color: var(--color);
   }
-  
+
   body {
     --color: #333333;
     --hover_color: #35CC62;
@@ -216,17 +221,17 @@
     --hljs: #2d2d2d;
     --border: #eaecef;
     --box_shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-    
+
     color: var(--color);
     background-color: var(--bg_color);
   }
-  
+
   a {
     color: var(--color);
   }
 
   input, textarea {
-    font-family: Serif;
+    font-family: 'AGaramondPro';
     color: var(--color);
     background-color: var(--bg_color);
     &::placeholder {

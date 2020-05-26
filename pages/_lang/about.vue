@@ -128,7 +128,7 @@
     margin-bottom: 20px;
     text-align: center;
     h2 {
-      font-family: serif;
+      /*font-family: serif;*/
       font-weight: 300;
       margin-bottom: 20px;
       color: var(--base_color);
@@ -138,7 +138,7 @@
       font-size: 14px;
       font-weight: 300;
       color: var(--base_color);
-      font-family: serif;
+      /*font-family: serif;*/
     }
   }
 </style>

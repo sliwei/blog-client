@@ -84,20 +84,23 @@
         ul {
           margin: 0;
           padding: 0;
+          height: 100%;
 
           li {
+            height: 100%;
             list-style: none;
             float: left;
             font-size: 14px;
             font-weight: 400;
             cursor: pointer;
             align-items: center;
+            display: flex;
 
             a {
               /*color: #4a4a4a;*/
               color: var(--color);
               text-decoration: none;
-              padding: 20px 10px;
+              padding: 0px 10px;
               display: block;
 
               &:hover {
