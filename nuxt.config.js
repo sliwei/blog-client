@@ -94,7 +94,10 @@ module.exports = {
   },
 
   proxy: {
-    '/blog': process.env.NODE_ENV === 'production' ? 'https://api.bstu.cn' : 'http://localhost:3004',
+    '/blog': {
+      target: 'https://api.bstu.cn',
+      changeOrigin: true,
+    },
   },
 
   /*
