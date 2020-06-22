@@ -193,13 +193,14 @@
   }
 
   @font-face{
-    font-family: 'AGaramondPro';
-    src : url('../assets/font/AGaramondPro-Regular.otf');
+    font-family: 'Gilroy-Medium';
+    /*src : url('../assets/font/AGaramondPro-Regular.otf');*/
+    src : url('../assets/font/Gilroy-Medium.ttf');
   }
 
   html {
     /*font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;*/
-    font-family: 'AGaramondPro';
+    font-family: 'Gilroy-Medium';
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -231,7 +232,7 @@
   }
 
   input, textarea {
-    font-family: 'AGaramondPro';
+    font-family: 'Gilroy-Medium';
     color: var(--color);
     background-color: var(--bg_color);
     &::placeholder {
