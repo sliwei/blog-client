@@ -36,7 +36,7 @@
     async asyncData({app, route, error}) {
       const {data} = await app.$axios.get(`/blog/client/blog/detail?code=about&type=1`)
       if (!data.data) {
-        error({message: this.$t('global.not-found'), statusCode: 404})
+        error({message: 'global.not-found', statusCode: 404})
         return;
       }
       // const evaluate = await app.$axios.get(`/blog/manage/comment/evaluate_list?code=`)

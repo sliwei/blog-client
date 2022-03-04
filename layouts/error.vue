@@ -7,9 +7,7 @@
         <!--d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"></path>-->
         <!--</svg>-->
 
-        <nuxt-link :to="$i18n.path('/')" class="error-link nuxt-link-active">
-          <img src="~static/img/404-0.png" alt="">
-        </nuxt-link>
+        <img src="~static/img/404-5.png" alt="404">
 
         <div class="info">
           <div class="title">{{$t('layouts.error.not-found')}}</div>
@@ -24,12 +22,15 @@
 
 <script>
   export default {
-    data() {
-      const n = Math.floor(Math.random() * 5+1);
-      return {
-        num: n,
+    props: {
+      error: {
+        type: Object,
+        default: null
       }
     },
+    mounted() {
+      console.log('AAAA',this);
+    }
   }
 </script>
 
@@ -47,14 +48,19 @@
     .error {
       /*max-width: 450px;*/
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 100px 0;
 
       img {
-        width: 100%;
+        width: 40%;
         float: left;
       }
 
       .info {
-        position: absolute;
+        //position: absolute;
         width: 100%;
         text-align: center;
         bottom: 0;

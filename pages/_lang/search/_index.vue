@@ -43,8 +43,8 @@
 			// keyword = keyword ? encodeURIComponent(keyword) : '';
 			// console.log(keyword);
 			const {data} = await app.$axios.get(`/blog/client/blog/search?keyword=${encodeURIComponent(keyword)}&pageIndex=${route.params.index || 1}&pageSize=8`);
-			if (!data.data) {
-				error({message: this.$t('global.not-found'), statusCode: 404});
+      if (!data.data) {
+				error({message: 'global.not-found', statusCode: 404});
 				return;
 			}
 			let parameter = {

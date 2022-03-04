@@ -74,9 +74,9 @@
 			'awei-comment': Comment,
 		},
 		async asyncData({app, route, error}) {
-			const {data} = await app.$axios.get(`/blog/client/blog/detail?code=${route.params.index}`)
-			if (!data.data) {
-				error({message: this.$t('global.not-found'), statusCode: 404})
+      const {data} = await app.$axios.get(`/blog/client/blog/detail?code=${route.params.index}`)
+      if (!data.data) {
+				error({message: 'global.not-found', statusCode: 404})
 				return;
 			}
 			//
