@@ -104,7 +104,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    publicPath: process.env.NODE_ENV === 'production' ? 'https://i.bstu.cn/static/blog-client/' : '',
+    // publicPath: process.env.NODE_ENV === 'production' ? 'https://i.bstu.cn/static/blog-client/' : '',
+    publicPath: process.env.NODE_ENV === 'production' ? `https://i.bstu.cn/static/blog-client/${pkg.version}/` : '',
     extractCSS: true,
     /*
     ** You can extend webpack config here
