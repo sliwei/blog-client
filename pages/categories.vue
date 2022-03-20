@@ -1,5 +1,5 @@
 <script>
-  import Categories from '~/pages/_lang/categories'
+import Categories from '~/pages/_lang/categories'
 
-  export default Categories
+export default Categories
 </script>

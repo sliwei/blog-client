@@ -1,5 +1,5 @@
 <script>
-  import Article from '~/pages/_lang/article/_index'
+import Article from '~/pages/_lang/article/_index'
 
-  export default Article
+export default Article
 </script>

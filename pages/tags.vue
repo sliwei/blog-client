@@ -1,5 +1,5 @@
 <script>
-  import Tags from '~/pages/_lang/tags'
+import Tags from '~/pages/_lang/tags'
 
-  export default Tags
+export default Tags
 </script>

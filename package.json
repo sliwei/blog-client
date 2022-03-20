@@ -5,19 +5,26 @@
   "author": "awei <274635143@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development PORT=3003 nodemon server/index.js --watch server",
-    "build": "node ./script/build.js",
-    "nuxt:build": "cross-env nuxt build",
-    "publish": "node ./script/upload.js",
-    "start": "cross-env PORT=3003 nuxt start",
-    "pm2": "pm2 start npm --name blog-client -- start",
-    "restart": "pm2 restart blog-client",
-    "generate": "nuxt generate"
+    "dev": "nuxt",
+    "build": "nuxt build && node ./script/upload.js",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,vue,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "cross-env": "^5.2.0",
     "koa": "^2.5.2",
     "markdown-it": "^12.3.2",
     "markdown-it-emoji": "^1.4.0",
@@ -25,16 +32,19 @@
     "markdown-it-kbd": "^2.0.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-toc-and-anchor": "^4.2.0",
-    "nuxt": "^2.0.0",
-    "request": "^2.88.2",
-    "shelljs": "^0.8.5",
     "vee-validate": "^2.1.6",
     "vue-i18n": "^8.15.3",
     "vue-photo-preview-op": "0.0.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
+    "css-loader": "4.3.0",
+    "husky": "^7.0.4",
     "less": "^3.9.0",
-    "less-loader": "^4.1.0"
+    "less-loader": "^4.1.0",
+    "lint-staged": "^12.1.7",
+    "nodemon": "^1.11.0",
+    "nuxt": "^2.0.0",
+    "prettier": "^2.5.1",
+    "request": "^2.88.2"
   }
 }

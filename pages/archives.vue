@@ -1,5 +1,5 @@
 <script>
-	import Archives from '~/pages/_lang/archives'
+import Archives from '~/pages/_lang/archives'
 
-	export default Archives
+export default Archives
 </script>

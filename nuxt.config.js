@@ -4,6 +4,10 @@ module.exports = {
   mode: 'universal',
 
   transition: 'bounce',
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
   /*
   ** Headers of the page
   */

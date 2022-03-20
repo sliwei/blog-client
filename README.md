@@ -2,6 +2,8 @@
 
 > 博客客户端
 
+[![Build Status](https://drone.bstu.cn/api/badges/sliwei/blog-client/status.svg)](https://drone.bstu.cn/sliwei/blog-client)
+
 ## Dev Setup
 
 ``` bash

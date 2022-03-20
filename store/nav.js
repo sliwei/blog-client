@@ -1,12 +1,12 @@
 export const state = () => ({
   menu: {
     tocArray: [],
-    tocHtml: '',
-  },
-});
+    tocHtml: ''
+  }
+})
 
 export const mutations = {
   setMenu(state, menu) {
-    state.menu = menu;
-  },
-};
+    state.menu = menu
+  }
+}

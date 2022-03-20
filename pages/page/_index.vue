@@ -1,5 +1,5 @@
 <script>
-	import Page from '~/pages/_lang/page/_index'
+import Page from '~/pages/_lang/page/_index'
 
-	export default Page
+export default Page
 </script>

@@ -1,5 +1,5 @@
 <script>
-	import Search from '~/pages/_lang/search/_index'
+import Search from '~/pages/_lang/search/_index'
 
-	export default Search
+export default Search
 </script>

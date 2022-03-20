@@ -7,67 +7,66 @@
  *  License: Licensed under MIT
  **/
 
-(function ($) {
-  'use strict';
+;(function ($) {
+  'use strict'
 
   $.fn.toTop = function (opt) {
-
     //variables
-    var elem = this;
-    var win = $(window);
-    var doc = $('html, body');
+    var elem = this
+    var win = $(window)
+    var doc = $('html, body')
 
     //Extended Options
-    var options = $.extend({
-      autohide: true,
-      offset: 420,
-      speed: 500,
-      position: true,
-      right: 15,
-      bottom: 30
-    }, opt);
+    var options = $.extend(
+      {
+        autohide: true,
+        offset: 420,
+        speed: 500,
+        position: true,
+        right: 15,
+        bottom: 30
+      },
+      opt
+    )
 
     elem.css({
-      'cursor': 'pointer'
-    });
+      cursor: 'pointer'
+    })
 
     if (options.autohide) {
-      elem.css('display', 'none');
+      elem.css('display', 'none')
     }
 
     if (options.position) {
       elem.css({
-        'position': 'fixed',
+        position: 'fixed'
         // 'right': options.right,
         // 'bottom': options.bottom,
-      });
+      })
     }
 
     elem.click(function () {
-      doc.animate({scrollTop: 0}, options.speed);
-    });
+      doc.animate({ scrollTop: 0 }, options.speed)
+    })
 
     win.scroll(function () {
-      var scrolling = win.scrollTop();
+      var scrolling = win.scrollTop()
 
       if (options.autohide) {
         if (scrolling > options.offset) {
-          elem.fadeIn(options.speed);
-        } else elem.fadeOut(options.speed);
+          elem.fadeIn(options.speed)
+        } else elem.fadeOut(options.speed)
       }
 
-      var scrollTop = $(this).scrollTop();
-      var scrollHeight = $(document).height();
-      var windowHeight = $(this).height();
-      if(scrollTop + windowHeight + 150 >= scrollHeight){
-        elem.addClass('but-top');
-        elem.css({bottom: scrollTop + windowHeight + 167 - scrollHeight})
+      var scrollTop = $(this).scrollTop()
+      var scrollHeight = $(document).height()
+      var windowHeight = $(this).height()
+      if (scrollTop + windowHeight + 150 >= scrollHeight) {
+        elem.addClass('but-top')
+        elem.css({ bottom: scrollTop + windowHeight + 167 - scrollHeight })
       } else {
         elem.removeClass('but-top')
       }
-
-    });
-
-  };
-
-}(jQuery));
+    })
+  }
+})(jQuery)
