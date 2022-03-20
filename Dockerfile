@@ -9,7 +9,5 @@ WORKDIR /www
 
 EXPOSE 3000
 
-RUN ["chmod", "+x", "./start.sh"]
-
 CMD ['nuxt', 'start']
 
