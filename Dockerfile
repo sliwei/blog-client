@@ -9,5 +9,5 @@ WORKDIR /www
 
 EXPOSE 3000
 
-CMD nuxt start
+CMD ./node_modules/nuxt/bin/nuxt.js start
 
