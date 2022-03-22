@@ -43,7 +43,7 @@ const upload = (files, prefix, cb) => {
     }
     request.post(
       {
-        url: 'http://172.18.109.153:3005/core/oss/build_upload',
+        url: 'http://core-serve:3000/core/oss/build_upload',
         formData
       },
       function (error, response, body) {
