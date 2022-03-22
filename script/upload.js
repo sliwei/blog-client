@@ -43,7 +43,8 @@ const upload = (files, prefix, cb) => {
     }
     request.post(
       {
-        url: 'http://core-serve:3000/core/oss/build_upload',
+        // url: 'http://core-serve:3000/core/oss/build_upload',
+        url: 'https://api.bstu.cn/core/oss/build_upload',
         formData
       },
       function (error, response, body) {
@@ -85,7 +86,6 @@ const main = async () => {
   await new Promise((resolve) => {
     upload(fixRes, prefix, resolve)
   })
-  console.log('\x1B[32m上传完成！\x1B[39m')
 }
 
 main()
