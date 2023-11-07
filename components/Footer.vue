@@ -47,7 +47,7 @@
           </p>
           |
           <p>
-            <a target="_blank" href="http://www.beian.miit.gov.cn"
+            <a target="_blank" href="https://beian.miit.gov.cn"
               >渝ICP备15001052号-4</a
             >
           </p>
