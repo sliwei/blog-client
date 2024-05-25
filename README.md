@@ -1,5 +1,7 @@
 # blog-client
 
+[![deploy](https://github.com/sliwei/blog-client/actions/workflows/action.yaml/badge.svg)](https://github.com/sliwei/blog-client/actions/workflows/action.yaml)
+
 > 博客客户端
 
 [![Build Status](https://drone.bstu.cn/api/badges/sliwei/blog-client/status.svg)](https://drone.bstu.cn/sliwei/blog-client)
