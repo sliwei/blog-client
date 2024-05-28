@@ -67,6 +67,14 @@ export default {
       this.setSta = true
     },
     changeTheme() {
+      umami.track((props) => ({
+        ...props,
+        name: 'changeTheme',
+        data: {
+          name: 'newsletter',
+          id: 123
+        }
+      }))
       if (this.theme === 'default') {
         this.theme = 'dark'
         document.querySelector('body').className = 'dark'
