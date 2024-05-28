@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>© Bstu 2019 - 2023</p>
+          <p>© Bstu 2019 - 2024</p>
           |
           <p>
             {{ $t('components.footer.style') }}
